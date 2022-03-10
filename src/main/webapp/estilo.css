@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+
+body{
+	padding: 0px 5% 0px 5%;
+}
+
+h3#titulo{
+	font-size: 1.3em;
+	margin-top: 8px;
+	font-weight: bold;
+	
+}
+
+h1.titulo{
+	margin: auto;
+	
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  padding-right: 5px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: white;
+  z-index: 1;
+}
+.dropdown-content a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+ 
+  
+}
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: #00A4BD;
+}
+

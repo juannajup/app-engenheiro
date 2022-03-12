@@ -84,8 +84,9 @@ public class EletricaServlet extends HttpServlet {
 			
 			
 			modelEletrica.calcularQuedaDeTensao(modelEletrica.getCorrente(), modelEletrica.getComprimento(), modelEletrica.getCaboTeste(), modelEletrica.getCondutor());
+			modelEletrica.calcularEspessuraCabo(modelEletrica.getCorrente(), 
+					modelEletrica.getComprimento(), modelEletrica.getCaboTeste(), modelEletrica.getCondutor(), modelEletrica.getQuedaPermitida());
 			
-			System.out.println(modelEletrica.getQuedaCalculada());
 			
 			//retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelEletrica", modelEletrica);

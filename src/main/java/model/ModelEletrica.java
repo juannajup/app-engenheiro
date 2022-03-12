@@ -162,7 +162,7 @@ public class ModelEletrica implements Serializable {
 			} else {
 
 				// quando o cabo é de cobre
-				quedaCalculada = (200 * 0.0172 * comprimento * corrente) / (caboTeste * tensao);
+				quedaCalculada = (200 * 0.0179 * comprimento * corrente) / (caboTeste * tensao);
 				return quedaCalculada;
 
 			}
@@ -178,7 +178,7 @@ public class ModelEletrica implements Serializable {
 			} else {
 
 				// quando o cabo é de cobre
-				quedaCalculada = (173.2 * 0.0172 * comprimento * corrente) / (caboTeste * tensao);
+				quedaCalculada = (173.2 * 0.0179 * comprimento * corrente) / (caboTeste * tensao);
 				return quedaCalculada;
 
 			}
@@ -188,6 +188,56 @@ public class ModelEletrica implements Serializable {
 			return null;
 		}
 
+	}
+	
+	public Double calcularEspessuraCabo(Double corrente, Double comprimento, Double caboTeste, String condutor, Double quedaPermitida) {
+		
+		if (tensao.equals(110) || tensao.equals(220)) {
+			
+			if (condutor.equalsIgnoreCase("aluminio")) {
+				
+				// quando o cabo é de aluminio
+				caboCalc = (200 * 0.0282 * comprimento * corrente) / (quedaPermitida * tensao);
+				return caboCalc;
+				
+			} else {
+				
+				// quando o cabo é de cobre
+				caboCalc = (200 * 0.0179 * comprimento * corrente) / (quedaPermitida * tensao);
+				return caboCalc;
+				
+			}
+			
+		} else if (tensao.equals(380)) {
+			
+			if (condutor.equalsIgnoreCase("aluminio")) {
+				
+				// quando o cabo é de aluminio
+				caboCalc = (173.2 * 0.0282 * comprimento * corrente) / (quedaPermitida * tensao);
+				return caboCalc;
+				
+			} else {
+				
+				// quando o cabo é de cobre
+				caboCalc = (173.2 * 0.0179 * comprimento * corrente) / (quedaPermitida * tensao);
+				return caboCalc;
+				
+			}
+			
+		} else {
+			
+			return null;
+		}
+		
+	}
+
+	@Override
+	public String toString() {
+		return "ModelEletrica [tensao=" + tensao + ", corrente=" + corrente + ", potencia=" + potencia
+				+ ", fatorDePotencia=" + fatorDePotencia + ", voltAmper=" + voltAmper + ", rede=" + rede
+				+ ", comprimento=" + comprimento + ", quedaPermitida=" + quedaPermitida + ", quedaCalculada="
+				+ quedaCalculada + ", caboTeste=" + caboTeste + ", caboCalc=" + caboCalc + ", condutor=" + condutor
+				+ "]";
 	}
 
 }

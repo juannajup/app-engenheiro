@@ -14,8 +14,9 @@
 				<div class="dropdown">
 					<button class="btn btn-warning">Instalações Elétricas</button>
 					<div class="dropdown-content">
-						<a href="correnteEletrica.jsp">Calculo de corrente elétrica</a> <a
-							href="quedaDeTensao.jsp">Calcular queda de tensão</a>
+						<a href="correnteEletrica.jsp">Calculo de corrente elétrica</a> 
+						<a href="quedaDeTensao.jsp">Calcular queda de tensão</a>
+						<a href="ocupação.jsp">Calcular ocupação de conduto</a>
 					</div>
 				</div>
 				<div class="dropdown">

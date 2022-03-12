@@ -1,7 +1,10 @@
 @charset "ISO-8859-1";
 
 body{
-	padding: 0px 5% 0px 5%;
+	padding: 0px 2% 0px 2%;
+	background-image: url("img/projeto.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h3#titulo{

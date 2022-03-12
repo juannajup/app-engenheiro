@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <jsp:include page="bootstrap-css.jsp"></jsp:include>
 
-<title>Calcular corrente</title>
+<title>Calcular Queda de Tensão</title>
 </head>
 <body>
 <jsp:include page="menu.jsp"></jsp:include>
@@ -47,7 +47,7 @@
 			<div class="mb-3">
 				<label for="rede" class="form-label">Selecione o condutor</label> 
 				<br>
-				<input type="radio" id="condutor" aria-describedby="condutor" name="condutor" value="cobre" required="required">
+				<input type="radio" id="condutor" aria-describedby="condutor" name="condutor" value="cobre" required="required" checked>
 				<label for="condutor" class="form-label">Cobre</label> 
 				<input type="radio" id="condutor" aria-describedby="condutor" name="condutor" value="aluminio" required="required">
 				<label for="condutor" class="form-label">Aluminio</label>
@@ -70,6 +70,7 @@
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 			</form>
 	</main>
+	
 	<script type="text/javascript">
 	function limpar() {
 	    

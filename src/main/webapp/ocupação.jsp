@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <jsp:include page="bootstrap-css.jsp"></jsp:include>
 
-<title>Calcular Corrente</title>
+<title>Calcular Ocupação</title>
 </head>
 <body>
 <jsp:include page="menu.jsp"></jsp:include>
@@ -16,9 +16,9 @@
 	<main>
 
 		<h3 id="titulo" class="form-control">
-			Calcular Corrente Eletrica no Condutor 
+			Calcular ocupação de conduto
 		</h3>
-		<form class="form-control" method="post" action="<%=request.getContextPath()%>/EletricaServlet?acao=corrente" id="form">
+		<form class="form-control" method="post" action="<%=request.getContextPath()%>/EletricaServlet?acao=ocupacao" id="form">
 			<div class="mb-3">
 				<label for="tensao" class="form-label">Tensão (V)</label> 
 				<input type="text" class="form-control" id="tensao" required="required"

@@ -41,7 +41,7 @@ public class EletricaServlet extends HttpServlet {
 		modelEletrica.setFatorDePotencia(Double.parseDouble(fatorDePotencia));
 		modelEletrica.setRede(rede);
 		
-		//verifica se a tensão é 220V ou 380V antes de calcular a corrente
+		//verifica se a tensï¿½o ï¿½ 220V ou 380V antes de calcular a corrente
 		if(modelEletrica.getTensao() == 110 && rede.equals("monofasico")) {
 			modelEletrica.calcularCorrenteMonofasica(modelEletrica.getTensao(), modelEletrica.getPotencia(), modelEletrica.getFatorDePotencia());
 			

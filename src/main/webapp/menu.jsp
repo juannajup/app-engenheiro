@@ -3,7 +3,9 @@
 <header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light form-control">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.jsp">App do Engenheiro</a>
+			
+				<a class="navbar-brand" href="index.jsp"><img id="iconemenu" alt="Icone" src="img/icone.png">App do Engenheiro</a>
+			
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -26,9 +28,9 @@
 					</div>
 				</div>
 				<div class="dropdown">
-					<button class="btn btn-secondary">Instalações Mecânicas</button>
+					<button id="button-mecanicas" class="btn btn-secondary">Instalações Mecânicas</button>
 					<div class="dropdown-content">
-						<a href="#">Em desenvolvimento</a> 
+						<a href="calcularBtuh.jsp">Calcular Split</a> 
 					</div>
 				</div>
 

@@ -1,7 +1,8 @@
+<%@page import="model.ModelEletrica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@
 			<div class="mb-3">
 				<label for="corrente" class="form-label">Corrente (A)</label> 
 				<input type="text" class="form-control" id="corrente" required="required"
-					aria-describedby="corrente" name="corrente" value="${modelEletrica.corrente}">
+					aria-describedby="corrente" name="corrente" value="<fmt:formatNumber pattern = "#.##"  value = "${modelEletrica.corrente}" />">
 			</div>
 			<div class="mb-3">
 				<label for="comprimento" class="form-label">Comprimento (m)</label> 
@@ -47,21 +48,32 @@
 			<div class="mb-3">
 				<label for="rede" class="form-label">Selecione o condutor</label> 
 				<br>
-				<input type="radio" id="condutor" aria-describedby="condutor" name="condutor" value="cobre" required="required" checked>
+				<input type="radio" id="condutor" aria-describedby="condutor" name="condutor" value="cobre" required="required" 
+				<%ModelEletrica modelEletrica = (ModelEletrica) request.getAttribute("modelEletrica");
+					if (modelEletrica != null && modelEletrica.getCondutor().equalsIgnoreCase("cobre")) {
+					out.print(" ");
+					out.print("checked=\"checked\"");
+					out.print(" ");
+				}%>>
 				<label for="condutor" class="form-label">Cobre</label> 
-				<input type="radio" id="condutor" aria-describedby="condutor" name="condutor" value="aluminio" required="required">
+				<input type="radio" id="condutor" aria-describedby="condutor" name="condutor" value="aluminio" required="required"
+				<% if (modelEletrica != null && modelEletrica.getCondutor().equalsIgnoreCase("aluminio")) {
+					out.print(" ");
+					out.print("checked=\"checked\"");
+					out.print(" ");
+				}%>>
 				<label for="condutor" class="form-label">Aluminio</label>
 			</div>
 			<div class="mb-3">
 				<label for="quedaCalculada" class="form-label">Queda de tensão calculada (%)</label> 
 				<input type="text" class="form-control" id="quedaCalculada" readonly="readonly"
-					aria-describedby="quedaCalculada" name="quedaCalculada" value="${modelEletrica.quedaCalculada}">
+					aria-describedby="quedaCalculada" name="quedaCalculada" value="<fmt:formatNumber pattern = "#.##"  value = "${modelEletrica.quedaCalculada}" />">
 			</div>
 			
 			<div class="mb-3">
 				<label for="caboCalc" class="form-label">Espessura calculada (mm²)</label> 
 				<input type="text" class="form-control" id="caboCalc" readonly="readonly"
-					aria-describedby="caboCalc" name="caboCalc" value="${modelEletrica.caboCalc}">
+					aria-describedby="caboCalc" name="caboCalc" value="<fmt:formatNumber pattern = "#.##"  value = "${modelEletrica.caboCalc}" />">
 			</div>
 			
 			

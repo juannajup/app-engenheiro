@@ -151,7 +151,7 @@ public class ModelEletrica implements Serializable {
 
 	public Double calcularQuedaDeTensao(Double corrente, Double comprimento, Double caboTeste, String condutor) {
 
-		if (tensao.equals(110) || tensao.equals(220)) {
+		if (tensao >= 110 || tensao <= 220) {
 
 			if (condutor.equalsIgnoreCase("aluminio")) {
 
@@ -192,7 +192,7 @@ public class ModelEletrica implements Serializable {
 	
 	public Double calcularEspessuraCabo(Double corrente, Double comprimento, Double caboTeste, String condutor, Double quedaPermitida) {
 		
-		if (tensao.equals(110) || tensao.equals(220)) {
+		if (tensao >= 110 || tensao <= 220) {
 			
 			if (condutor.equalsIgnoreCase("aluminio")) {
 				

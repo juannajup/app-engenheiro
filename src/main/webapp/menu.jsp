@@ -24,13 +24,13 @@
 				<div class="dropdown">
 					<button class="btn btn-primary">Instalações Hidráulicas</button>
 					<div class="dropdown-content">
-						<a href="#">Em desenvolvimento</a> 
+						<a href="calcularReservatorio.jsp">Calcular reseratório de água fria</a> 
 					</div>
 				</div>
 				<div class="dropdown">
 					<button id="button-mecanicas" class="btn btn-secondary">Instalações Mecânicas</button>
 					<div class="dropdown-content">
-						<a href="calcularBtuh.jsp">Calcular Split</a> 
+						<a href="calcularBtuh.jsp">Calcular ar condicionado split</a> 
 					</div>
 				</div>
 

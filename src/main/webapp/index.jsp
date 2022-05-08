@@ -17,5 +17,16 @@
 				<h1 class="titulo">Bem-vindo ao App do Engenheiro!</h1>
 			</div>
 		</nav>
+	<div class="container-fluid list-group form-control">
+		<ul>
+			<h2>Proximas implementações:</h2>
+
+			<li><h3>Converter tabelas de auxilio do calculo de
+					reservatorio de agua fria para html</h3></li>
+			<li><h3>Calculo de ocupação de eletroduto</h3></li>
+			<li><h3>Integração com banco de dados postgresql</h3></li>
+			<li><h3>Implementar botão de busca</h3></li>
+		</ul>
+	</div>
 </body>
 </html>

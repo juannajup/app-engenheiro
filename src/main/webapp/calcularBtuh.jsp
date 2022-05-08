@@ -20,12 +20,12 @@
 		</h3>
 		<form class="form-control" method="post" action="<%=request.getContextPath()%>/MecanicaServlet?acao=calcularSplit" id="form">
 			<div class="mb-3">
-				<label for="areaDoAmbiente" class="form-label">Área do ambiente</label> 
+				<label for="areaDoAmbiente" class="form-label">Área do ambiente (m²)</label> 
 				<input type="text" class="form-control" id="areaDoAmbiente" required="required"
 					aria-describedby="areaDoAmbiente" name="areaDoAmbiente" value="<fmt:formatNumber pattern = "#"  value = "${modelMecanica.areaDoAmbiente}" />">
 			</div>
 			<div class="mb-3">
-				<label for="rede" class="form-label">Incidencia de Sol</label> 
+				<label for="rede" class="form-label">Incidencia direta de Sol</label> 
 				<br> 
 				
 				<!-- Codigo java inline para retornar à tela, após a requisição, o valor marcado no input type radio -->

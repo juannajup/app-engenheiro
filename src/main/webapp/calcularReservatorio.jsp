@@ -22,13 +22,13 @@
 		<form class="form-control" method="post" action="<%=request.getContextPath()%>/HidrossanitarioServlet?acao=reservatorio" id="form">
 		
 			<div class="mb-3">
-				<label for="numeroDePessoas" class="form-label">Numero de pessoas na edificação (consultar tabela 1.2, abaixo)</label> 
+				<label for="numeroDePessoas" class="form-label">Numero de pessoas na edificação (consultar tabela 1, abaixo)</label> 
 				<input type="text" class="form-control" id="numeroDePessoas" required="required"
 					aria-describedby="numeroDePessoas" name="numeroDePessoas" value="${modelHidrossanitario.numeroDePessoas}">
 			</div>
 			
 			<div class="mb-3">
-				<label for="consumoPerCapita" class="form-label">Consumo per capita (l/dia) (consultar tabela 1.3, abaixo)</label> 
+				<label for="consumoPerCapita" class="form-label">Consumo per capita (l/dia) (consultar tabela 2, abaixo)</label> 
 				<input type="text" class="form-control" id="consumoPerCapita" required="required"
 					aria-describedby="consumoPerCapita" name="consumoPerCapita" value="${modelHidrossanitario.consumoPerCapita}">
 					
@@ -77,18 +77,11 @@
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 
 			<br>
-			
-				<div class="text-center">
-					<img src="img/pessoas_ambiente.png" class="img-fluid" alt="Numero de pessoas no ambiente">
-				</div>
-				
-				<br>
-				
-				<div class="text-center">
-					<img src="img/consumo_per_capita.png" class="img-fluid" alt="Consumo per capita">
-				</div>
-			
-			</form>
+			<jsp:include page="tabelasHelioCreder/taxaDeOcupacao/taxaDeOcupacao.jsp"></jsp:include>
+			<br>
+			<jsp:include page="tabelasHelioCreder/consumoDiario/consumoDiario.jsp"></jsp:include>
+
+		</form>
 	</main>
 	
 	<script type="text/javascript">

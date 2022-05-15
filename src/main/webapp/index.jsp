@@ -21,8 +21,7 @@
 		<ul>
 			<h2>Proximas implementações:</h2>
 
-			<li><h3>Converter tabelas de auxilio do calculo de
-					reservatorio de agua fria para html</h3></li>
+			<li><h3>Lista com os ultimos calculos da sessão com hora do calculo e botao de excluir</h3></li>
 			<li><h3>Calculo de ocupação de eletroduto</h3></li>
 			<li><h3>Integração com banco de dados postgresql</h3></li>
 			<li><h3>Implementar botão de busca</h3></li>

@@ -1,6 +1,9 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +23,9 @@ public class MecanicaServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		doPost(request, response);
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -30,6 +35,7 @@ public class MecanicaServlet extends HttpServlet {
 
 		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("calcularSplit")) {
 
+			String nomeDoAmbiente = request.getParameter("nomeDoAmbiente");
 			String areaDoAmbiente = request.getParameter("areaDoAmbiente").replace(",", ".");
 			String numeroDePessoas = request.getParameter("numeroDePessoas");
 			String quantidadeDeSol = request.getParameter("quantidadeDeSol");
@@ -37,6 +43,7 @@ public class MecanicaServlet extends HttpServlet {
 
 			ModelMecanica modelMecanica = new ModelMecanica();
 
+			modelMecanica.setNomeDoAmbiente(nomeDoAmbiente);
 			modelMecanica.setAreaDoAmbiente(Double.parseDouble(areaDoAmbiente));
 			modelMecanica.setNumeroDeEquipamentos(Integer.parseInt(numeroDeEquipamentos));
 			modelMecanica.setQuantidadeDeSol(quantidadeDeSol);
@@ -45,10 +52,17 @@ public class MecanicaServlet extends HttpServlet {
 			modelMecanica.calcularSplit(modelMecanica.getAreaDoAmbiente(), modelMecanica.getNumeroDePessoas(),
 					modelMecanica.getQuantidadeDeSol(), modelMecanica.getNumeroDeEquipamentos());
 			
+			List<ModelMecanica> listaCalculada = new ArrayList<ModelMecanica>();
+			
+				listaCalculada.add(modelMecanica);
+				
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelMecanica", modelMecanica);
+			request.setAttribute("listaCalculada", listaCalculada);
 
 			request.getRequestDispatcher("calcularBtuh.jsp").forward(request, response);
+			
+			
 		}
 
 	}

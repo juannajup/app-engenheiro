@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ModelMecanica {
 
 	private Double areaDoAmbiente;
@@ -7,6 +10,15 @@ public class ModelMecanica {
 	private Double btuh;
 	private String quantidadeDeSol;
 	private Integer numeroDeEquipamentos;
+	private String nomeDoAmbiente;
+	
+	public String getNomeDoAmbiente() {
+		return nomeDoAmbiente;
+	}
+
+	public void setNomeDoAmbiente(String nomeDoAmbiente) {
+		this.nomeDoAmbiente = nomeDoAmbiente;
+	}
 
 	public Double getAreaDoAmbiente() {
 		return areaDoAmbiente;
@@ -64,5 +76,5 @@ public class ModelMecanica {
 			return btuh;
 		}
 	}
-
+	
 }

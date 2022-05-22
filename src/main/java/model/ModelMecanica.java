@@ -1,7 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Date;
 
 public class ModelMecanica {
 
@@ -11,7 +10,16 @@ public class ModelMecanica {
 	private String quantidadeDeSol;
 	private Integer numeroDeEquipamentos;
 	private String nomeDoAmbiente;
+	private Date dataCalculo;
 	
+	public Date getDataCalculo() {
+		return dataCalculo;
+	}
+
+	public void setDataCalculo(Date dataCalculo) {
+		this.dataCalculo = dataCalculo;
+	}
+
 	public String getNomeDoAmbiente() {
 		return nomeDoAmbiente;
 	}

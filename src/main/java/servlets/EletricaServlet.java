@@ -59,7 +59,7 @@ public class EletricaServlet extends HttpServlet {
 		request.setAttribute("modelEletrica", modelEletrica);
 		
 			
-		request.getRequestDispatcher("correnteEletrica.jsp").forward(request, response);
+		request.getRequestDispatcher("principal/eletrica/correnteEletrica.jsp").forward(request, response);
 		
 		//if the choice is to calculate the voltage drop
 		} else if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("quedaDeTensao")) {
@@ -91,7 +91,7 @@ public class EletricaServlet extends HttpServlet {
 			request.setAttribute("modelEletrica", modelEletrica);
 			
 				
-			request.getRequestDispatcher("quedaDeTensao.jsp").forward(request, response);
+			request.getRequestDispatcher("principal/eletrica/quedaDeTensao.jsp").forward(request, response);
 			
 			
 		} else {

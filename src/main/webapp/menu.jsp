@@ -8,8 +8,8 @@
 		<div class="navbar" id="navbarSupportedContent">
 		
 			
-			<a class="navbar-brand" href="index.jsp"><img id="iconemenu"
-				alt="Icone" src="img/icone.png">App do Engenheiro</a>
+			<a class="navbar-brand" href="<%=request.getContextPath() %>/principal/principal.jsp"><img id="iconemenu"
+				alt="Icone" src="<%=request.getContextPath() %>/img/icone.png">App do Engenheiro</a>
 				
 				
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -29,10 +29,10 @@
 							aria-expanded="false"> Instalações Elétricas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 																
-								<a class="dropdown-item" href="correnteEletrica.jsp">Calculo de corrente elétrica</a> 
-								<a class="dropdown-item" href="quedaDeTensao.jsp">Calcular queda de tensão</a>
-								<a class="dropdown-item" href="ocupação.jsp">Calcular ocupação de conduto</a>
-								<a class="dropdown-item" href="tabelas5410.jsp">Tabelas NBR 5410</a>
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/correnteEletrica.jsp">Calculo de corrente elétrica</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/quedaDeTensao.jsp">Calcular queda de tensão</a>
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/ocupação.jsp">Calcular ocupação de conduto</a>
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/tabelas5410.jsp">Tabelas NBR 5410</a>
 							</div></li>
 							
 							<li class="nav-item dropdown">
@@ -40,7 +40,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="color: white;"> Instalações Hidráulicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="calcularReservatorio.jsp">Calcular reseratório de água fria</a> 					
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularReservatorio.jsp">Calcular reseratório de água fria</a> 					
 							</div></li>
 							
 							<li class="nav-item dropdown"> 
@@ -48,7 +48,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="background-color: purple; color: white;"> Instalações Mecânicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="calcularBtuh.jsp">Calcular ar condicionado split</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/calcularBtuh.jsp">Calcular ar condicionado split</a> 
 							</div></li>
 						
 					</ul>

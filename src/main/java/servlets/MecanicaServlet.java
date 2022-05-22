@@ -60,7 +60,7 @@ public class MecanicaServlet extends HttpServlet {
 			request.setAttribute("modelMecanica", modelMecanica);
 			request.setAttribute("listaCalculada", listaCalculada);
 
-			request.getRequestDispatcher("calcularBtuh.jsp").forward(request, response);
+			request.getRequestDispatcher("principal/mecanica/calcularBtuh.jsp").forward(request, response);
 			
 			
 		}

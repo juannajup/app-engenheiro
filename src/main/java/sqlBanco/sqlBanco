@@ -1,0 +1,33 @@
+-- Database: app-eng
+
+-- DROP DATABASE "app-eng";
+
+CREATE DATABASE "app-eng"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+    
+--------------------------------
+
+-- Table: public.tabela_split
+
+-- DROP TABLE public.tabela_split;
+
+CREATE TABLE public.tabela_split
+(
+    id integer NOT NULL DEFAULT nextval('tabela_split_id_seq'::regclass),
+    areadoambiente character varying(300) COLLATE pg_catalog."default" NOT NULL,
+    nomedoambiente character varying(300) COLLATE pg_catalog."default" NOT NULL,
+    btuh boolean NOT NULL DEFAULT false,
+    datacalculo character varying(300) COLLATE pg_catalog."default",
+    CONSTRAINT tabela_split_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.tabela_split
+    OWNER to postgres;

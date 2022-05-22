@@ -8,6 +8,7 @@
 	<packaging>war</packaging>
 
 	<dependencies>
+	
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -33,6 +34,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
 	</dependencies>
 	<build>
 		<plugins>

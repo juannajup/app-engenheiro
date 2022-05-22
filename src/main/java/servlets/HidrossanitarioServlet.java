@@ -58,7 +58,7 @@ public class HidrossanitarioServlet extends HttpServlet {
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
 			
-			request.getRequestDispatcher("calcularReservatorio.jsp").forward(request, response);		
+			request.getRequestDispatcher("principal/hidraulica/calcularReservatorio.jsp").forward(request, response);		
 			System.out.println(modelHidrossanitario.toString());
 			
 		} else {

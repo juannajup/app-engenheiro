@@ -14,9 +14,18 @@ public class ModelHidrossanitario implements Serializable{
 	private Integer volumeReservatorioInferior;
 	private Integer volumeReservatorio;
 	private Integer numeroDePavimentos;
+	private Integer diasSemAgua;
 	
-	public ModelHidrossanitario() {
-		// TODO Auto-generated constructor stub
+	public Integer getDiasSemAgua() {
+		return diasSemAgua;
+	}
+
+	public void setDiasSemAgua(Integer diasSemAgua) {
+		this.diasSemAgua = diasSemAgua;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public Integer getNumeroDePessoas() {
@@ -83,31 +92,37 @@ public class ModelHidrossanitario implements Serializable{
 				+ volumeReservatorio + ", numeroDePavimentos=" + numeroDePavimentos + "]";
 	}
 
-	public Integer calcularReservatorio(Integer numeroDePessoas, Integer consumoPerCapita) {
+	/*
+	 * 
+	 * 
+	 * 
+	 * */
+	
+	public Integer calcularReservatorio(Integer numeroDePessoas, Integer consumoPerCapita, Integer diasSemAgua) {
 
 		consumoDiario = numeroDePessoas * consumoPerCapita;
 
-		volumeReservatorio = consumoDiario * 2;
+		volumeReservatorio = consumoDiario * diasSemAgua;
 			
 			return volumeReservatorio;
 
 	}
 	
-	public Integer calcularReservatorioSuperior(Integer numeroDePessoas, Integer consumoPerCapita) {
+	public Integer calcularReservatorioSuperior(Integer numeroDePessoas, Integer consumoPerCapita, Integer diasSemAgua) {
 
 		consumoDiario = numeroDePessoas * consumoPerCapita;
 
-		volumeReservatorioSuperior = (int) (consumoDiario * 2 * 0.4);	
+		volumeReservatorioSuperior = (int) (consumoDiario * diasSemAgua * 0.4);	
 		
 		return volumeReservatorioSuperior;
 
 }
 	
-	public Integer calcularReservatorioInferior(Integer numeroDePessoas, Integer consumoPerCapita) {
+	public Integer calcularReservatorioInferior(Integer numeroDePessoas, Integer consumoPerCapita, Integer diasSemAgua) {
 		
 		consumoDiario = numeroDePessoas * consumoPerCapita;
 		
-		volumeReservatorioInferior = (int) (consumoDiario * 2 * 0.6);
+		volumeReservatorioInferior = (int) (consumoDiario * diasSemAgua * 0.6);
 		
 		return volumeReservatorioInferior;
 		

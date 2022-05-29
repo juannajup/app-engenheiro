@@ -55,6 +55,12 @@ public class EletricaServlet extends HttpServlet {
 			modelEletrica.calcularCorrenteTrifasica(modelEletrica.getTensao(), modelEletrica.getPotencia(), modelEletrica.getFatorDePotencia());
 		}
 		
+		//calcula a corrente do disjuntor
+		modelEletrica.calcularCorrenteDisjuntor(modelEletrica.getCorrente());
+		
+		//calcular a corrente minima para o condutor nao entrar no calculo da taxa de ocupação
+		modelEletrica.calcularCorrenteFatorDeAgrupamento(modelEletrica.getCorrente());
+		
 		//retorna a tela os dados enviados para o calculo
 		request.setAttribute("modelEletrica", modelEletrica);
 		
@@ -85,7 +91,6 @@ public class EletricaServlet extends HttpServlet {
 			modelEletrica.calcularQuedaDeTensao(modelEletrica.getCorrente(), modelEletrica.getComprimento(), modelEletrica.getCaboTeste(), modelEletrica.getCondutor());
 			modelEletrica.calcularEspessuraCabo(modelEletrica.getCorrente(), 
 					modelEletrica.getComprimento(), modelEletrica.getCaboTeste(), modelEletrica.getCondutor(), modelEletrica.getQuedaPermitida());
-			
 			
 			//retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelEletrica", modelEletrica);

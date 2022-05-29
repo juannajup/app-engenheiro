@@ -88,6 +88,7 @@
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 	
 			<!-- Tabela com os resultados anteriores -->
+			<!-- 
 			<c:if test="${modelMecanica.nomeDoAmbiente != null && modelMecanica.nomeDoAmbiente != ''}">
 				<div style="height: 300px; margin-top: 10px;">
 					<table class="table" id="tabelaresultadosview">
@@ -110,6 +111,7 @@
 					</table>
 				</div>
 			</c:if>
+			 -->
 		</form>
 
 

@@ -30,8 +30,8 @@
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 																
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/correnteEletrica.jsp">Calculo de corrente elétrica</a> 
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/quedaDeTensao.jsp">Calcular queda de tensão</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/ocupação.jsp">Calcular ocupação de conduto</a>
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/quedaDeTensao.jsp">Calcular queda de tensão</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/tabelas5410.jsp">Tabelas NBR 5410</a>
 							</div></li>
 							
@@ -48,16 +48,20 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="background-color: purple; color: white;"> Instalações Mecânicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/chapasDutos.jsp">Calcular peso de chapa de dutos</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/calcularBtuh.jsp">Calcular ar condicionado split</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/frigorigenas.jsp">Tabela de seleção de tubulações frigorigenas</a> 
 							</div></li>
 						
 					</ul>
 					
+					<!-- 
 					<form class="d-flex">
 						<input class="form-control mr-sm-2" type="search"
 							placeholder="Buscar" aria-label="Search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 					</form>
+					 -->
 					 
 				</div>
 			</div>

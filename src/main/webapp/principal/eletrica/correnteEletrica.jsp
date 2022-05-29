@@ -56,19 +56,29 @@
 					aria-describedby="potencia" name="potencia" value="<fmt:formatNumber pattern = "#"  value = "${modelEletrica.potencia}" />">
 			</div>
 			<div class="mb-3">
-				<label for="fatorDePotencia" class="form-label">Fator de Potência</label> 
+				<label for="fatorDePotencia" class="form-label">Fator de potência</label> 
 				<input type="text" class="form-control" required="required" id="fatorDePotencia" 
 				aria-describedby="fatorDePotencia" name="fatorDePotencia" value="${modelEletrica.fatorDePotencia}">
 			</div>
 			<div class="mb-3">
-				<label for="voltAmper" class="form-label">Volt-Amper (VA)</label> <input
+				<label for="voltAmper" class="form-label">Volt-amper (VA)</label> <input
 					type="text" class="form-control" id="voltAmper"
 					aria-describedby="voltAmper" readonly="readonly" name="voltAmper" value="<fmt:formatNumber pattern = "#"  value = "${modelEletrica.voltAmper}" />">
 			</div>
 			<div class="mb-3">
-				<label for="amper" class="form-label">Corrente Calculada (A)</label> 
+				<label for="amper" class="form-label">Corrente calculada (A)</label> 
 				<input type="text" class="form-control" id="corrente" aria-describedby="corrente" name="corrente" 
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelEletrica.corrente}" />" readonly="readonly">
+			</div>
+			<div class="mb-3">
+				<label for="amper" class="form-label">Corrente minima do disjuntor (In)</label> 
+				<input type="text" class="form-control" id="correnteDisjuntor" aria-describedby="correnteDisjuntor" name="correnteDisjuntor" 
+				value="<fmt:formatNumber pattern = "#"  value = "${modelEletrica.correnteDisjuntor}" />" readonly="readonly">
+			</div>
+			<div class="mb-3">
+				<label for="amper" class="form-label">Capacidade de corrente minima do condutor para não entrar no calculo do fator de agrupamento (A)</label> 
+				<input type="text" class="form-control" id="correnteFatorDeAgrupamento" aria-describedby="correnteFatorDeAgrupamento" name="correnteFatorDeAgrupamento" 
+				value="<fmt:formatNumber pattern = "#"  value = "${modelEletrica.correnteFatorDeAgrupamento}" />" readonly="readonly">
 			</div>
 
 			<button type="submit" class="btn btn-success">Calcular</button>

@@ -42,6 +42,12 @@
 			</div>
 			
 			<div class="mb-3">
+				<label for="diasSemAgua" class="form-label">Numero de dias sem abastecimento</label> 
+				<input type="text" class="form-control" id="diasSemAgua" required="required" placeholder="2"
+					aria-describedby="diasSemAgua" name="diasSemAgua" value="${modelHidrossanitario.diasSemAgua}">
+			</div>
+			
+			<div class="mb-3">
 				<label for="consumoDiario" class="form-label">Consumo diário calculado (l/dia)</label> 
 				<input type="text" class="form-control" id="consumoDiario" readonly="readonly"
 					aria-describedby="consumoDiario" name="consumoDiario" value="${modelHidrossanitario.consumoDiario}">

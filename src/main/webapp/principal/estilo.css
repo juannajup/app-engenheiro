@@ -2,10 +2,12 @@
 
 body {
 	padding: 0px 2% 0px 2%;
-	background-image: url("img/projeto.jpg");
+	background-image: url("../img/projeto.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 	font-family: sans-serif;
+	/*min-width: 1200px;*/
 }
 
 #container-menu{
@@ -45,30 +47,11 @@ h4{
 	margin-bottom: 0px;
 }
 
-/*
-.dropdown-content {
-	width: 100%;
-	overflow: auto;
-}
-
-.dropdown:hover .dropdown-content {
-	z-index: 1;
-}
-
-.dropdown-content a {
-	padding: 5px;
-}
-
-.dropdown-content a:hover {
-	color: #FFFFFF;
-	background-color: #00A4BD;
-} */
-
 small:hover {
 	color: white;
 }
 
-.tabelas-eletricas, .tabelas-hidraulicas {
+.tabelas-eletricas, .tabelas-hidraulicas, .tabelas-mecanicas {
 	text-align: center;
 	margin: auto;
 	min-width: 700px;

@@ -52,18 +52,37 @@ public class MecanicaServlet extends HttpServlet {
 			modelMecanica.calcularSplit(modelMecanica.getAreaDoAmbiente(), modelMecanica.getNumeroDePessoas(),
 					modelMecanica.getQuantidadeDeSol(), modelMecanica.getNumeroDeEquipamentos());
 			
-			List<ModelMecanica> listaCalculada = new ArrayList<ModelMecanica>();
-			
-				listaCalculada.add(modelMecanica);
-				
+					
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelMecanica", modelMecanica);
-			request.setAttribute("listaCalculada", listaCalculada);
 
 			request.getRequestDispatcher("principal/mecanica/calcularBtuh.jsp").forward(request, response);
 			
 			
-		}
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("chapasDuto")) {
+			
+			String larguraDuto = request.getParameter("larguraDuto");
+			String alturaDuto = request.getParameter("alturaDuto");
+			String comprimentoDuto = request.getParameter("comprimentoDuto").replace(",", ".");
+			
+			ModelMecanica modelMecanica = new ModelMecanica();
+			
+			modelMecanica.setLarguraDuto(Double.parseDouble(larguraDuto));
+			modelMecanica.setAlturaDuto(Double.parseDouble(alturaDuto));
+			modelMecanica.setComprimentoDuto(Double.parseDouble(comprimentoDuto));
+			
+			modelMecanica.calcularPesoDeChapaDeDuto(modelMecanica.getAlturaDuto(), modelMecanica.getLarguraDuto(), modelMecanica.getComprimentoDuto());
+			
+			
+			// retorna a tela os dados enviados para o calculo
+			request.setAttribute("modelMecanica", modelMecanica);
 
+			request.getRequestDispatcher("principal/mecanica/chapasDutos.jsp").forward(request, response);
+			
+			
+		} else {
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		
 	}
 }

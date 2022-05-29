@@ -19,6 +19,20 @@ public class ModelEletrica implements Serializable {
 	private Double caboTeste;
 	private Double caboCalc;
 	private String condutor;
+	private Double correnteDisjuntor;
+	private Double correnteFatorDeAgrupamento;
+
+	public Double getCorrenteTaxaDeOcupacao() {
+		return correnteFatorDeAgrupamento;
+	}
+
+	public void setCorrenteTaxaDeOcupacao(Double correnteTaxaDeOcupacao) {
+		this.correnteFatorDeAgrupamento = correnteTaxaDeOcupacao;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 	public String getCondutor() {
 		return condutor;
@@ -124,8 +138,36 @@ public class ModelEletrica implements Serializable {
 		this.voltAmper = voltAmper;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public Double getCorrenteDisjuntor() {
+		return correnteDisjuntor;
+	}
+
+	public void setCorrenteDisjuntor(Double correnteDisjuntor) {
+		this.correnteDisjuntor = correnteDisjuntor;
+	}
+
+	public Double getCorrenteFatorDeAgrupamento() {
+		return correnteFatorDeAgrupamento;
+	}
+
+	public void setCorrenteFatorDeAgrupamento(Double correnteFatorDeAgrupamento) {
+		this.correnteFatorDeAgrupamento = correnteFatorDeAgrupamento;
+	}
+
+	/*
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	
+	public Double calcularCorrenteFatorDeAgrupamento(Double corrente) {
+		return correnteFatorDeAgrupamento = this.corrente / 0.3;
+	}
+
+	public Double calcularCorrenteDisjuntor(Double corrente) {
+
+		return correnteDisjuntor = this.corrente / 0.8;
 	}
 
 	public Double calcularCorrenteMonofasica(Integer tensao, Double potencia, Double fatorDePotencia) {
@@ -188,46 +230,47 @@ public class ModelEletrica implements Serializable {
 		}
 
 	}
-	
-	public Double calcularEspessuraCabo(Double corrente, Double comprimento, Double caboTeste, String condutor, Double quedaPermitida) {
-		
+
+	public Double calcularEspessuraCabo(Double corrente, Double comprimento, Double caboTeste, String condutor,
+			Double quedaPermitida) {
+
 		if (tensao >= 110 || tensao <= 220) {
-			
+
 			if (condutor.equalsIgnoreCase("aluminio")) {
-				
+
 				// quando o cabo é de aluminio
 				caboCalc = (200 * 0.0282 * comprimento * corrente) / (quedaPermitida * tensao);
 				return caboCalc;
-				
+
 			} else {
-				
+
 				// quando o cabo é de cobre
 				caboCalc = (200 * 0.0179 * comprimento * corrente) / (quedaPermitida * tensao);
 				return caboCalc;
-				
+
 			}
-			
+
 		} else if (tensao.equals(380)) {
-			
+
 			if (condutor.equalsIgnoreCase("aluminio")) {
-				
+
 				// quando o cabo é de aluminio
 				caboCalc = (173.2 * 0.0282 * comprimento * corrente) / (quedaPermitida * tensao);
 				return caboCalc;
-				
+
 			} else {
-				
+
 				// quando o cabo é de cobre
 				caboCalc = (173.2 * 0.0179 * comprimento * corrente) / (quedaPermitida * tensao);
 				return caboCalc;
-				
+
 			}
-			
+
 		} else {
-			
+
 			return null;
 		}
-		
+
 	}
 
 	@Override

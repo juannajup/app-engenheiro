@@ -8,7 +8,7 @@
 
 <jsp:include page="bootstrap-css.jsp"></jsp:include>
 
-<title>Home</title>
+<title>Inicio</title>
 </head>
 <body>
 	<jsp:include page="/menu.jsp"></jsp:include>
@@ -18,16 +18,5 @@
 			</div>
 	</nav>
 	
-	<div class="container-fluid list-group form-control">
-		<ul>
-			<h2>Proximas implementações:</h2>
-
-			<li><h3>Implementar o Login de usuario</h3></li>
-			<li><h3>Lista com os ultimos calculos da sessão com hora do calculo e botao de excluir</h3></li>
-			<li><h3>Calculo de ocupação de eletroduto</h3></li>
-			<li><h3>Integração com banco de dados postgresql</h3></li>
-			<li><h3>Implementar botão de busca</h3></li>
-		</ul>
-	</div>
 </body>
 </html>

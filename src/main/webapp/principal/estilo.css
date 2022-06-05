@@ -10,15 +10,24 @@ body {
 	/*min-width: 1200px;*/
 }
 
-#container-menu{
+#container-menu {
 	justify-content: center;
+}
+
+.button-mecanicas {
+	background-color: #720b98;
 }
 
 .button-mecanicas:hover {
 	background-color: #8000ff;
 }
 
-.nav-item{
+.btn-dark:hover{
+	background-color: gray;
+	
+}
+
+.nav-item {
 	width: 265px;
 }
 
@@ -41,7 +50,7 @@ h1.titulo {
 	padding-right: 5px;
 }
 
-h4{
+h4 {
 	font-size: 1.1em;
 	font-weight: bold;
 	margin-bottom: 0px;
@@ -58,7 +67,6 @@ small:hover {
 	width: 50%;
 	vertical-align: middle;
 	align-content: center;
-	
 }
 
 tbody, td, tfoot, th, thead, tr {

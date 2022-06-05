@@ -44,13 +44,21 @@
 							</div></li>
 							
 							<li class="nav-item dropdown"> 
-							<a id="navbarDropdown" class="nav-link dropdown-toggle btn button-mecanicas" href="#"
+							<a id="navbarDropdown" class="nav-link dropdown-toggle button-mecanicas btn" href="#"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false" style="background-color: purple; color: white;"> Instalações Mecânicas </a>
+							aria-expanded="false" style="color:white;"> Instalações Mecânicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/chapasDutos.jsp">Calcular peso de chapa de dutos</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/calcularBtuh.jsp">Calcular ar condicionado split</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/frigorigenas.jsp">Tabela de seleção de tubulações frigorigenas</a> 
+							</div></li>
+							
+							<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbarDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false" style="color: white;"> Obra </a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/obra/traco-concreto.jsp">Calcular traço de concreto armado</a> 					
 							</div></li>
 						
 					</ul>

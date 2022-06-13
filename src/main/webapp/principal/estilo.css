@@ -7,7 +7,6 @@ body {
 	background-size: cover;
 	background-position: center;
 	font-family: sans-serif;
-	/*min-width: 1200px;*/
 }
 
 #container-menu {
@@ -60,7 +59,7 @@ small:hover {
 	color: white;
 }
 
-.tabelas-eletricas, .tabelas-hidraulicas, .tabelas-mecanicas {
+.tabelas-eletricas, .tabelas-hidraulicas, .tabelas-mecanicas, .tabelas-obras {
 	text-align: center;
 	margin: auto;
 	min-width: 700px;
@@ -72,4 +71,15 @@ small:hover {
 tbody, td, tfoot, th, thead, tr {
 	border-radius: 10px;
 	border: 2px solid black;
+}
+
+.div-imagem{
+	border: 2px;
+	padding: 10px;
+	border-style: solid;
+	text-align: center;
+	margin: 0 auto;
+	width: 850px;
+	height: 600px;
+	display: block;
 }

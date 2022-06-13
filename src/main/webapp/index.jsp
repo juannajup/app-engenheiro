@@ -22,7 +22,7 @@
 		<ul>
 			<h2>Proximas implementações:</h2>
 
-			<li><h3>Calculo de traço de concreto</h3></li>
+			<li><h3>Calculo das cotas para caixas de inspeção</h3></li>
 			<li><h3>Implementar botão de busca</h3></li>
 			<li><h3>Calculo de ocupação de eletroduto</h3></li>
 			<li><h3>Implementar o Login de usuario</h3></li>

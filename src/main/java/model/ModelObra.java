@@ -11,12 +11,10 @@ public class ModelObra implements Serializable {
 	private Double fcj;
 	private Double fatorAguaCimento;
 	private Double massaEspCimento;
-	private Double moduloDeFinuraAreia;
 	private Double massaEspAreia;
 	private Double massaUniAreia;
 	private Double massaEspBrita;
 	private Double massaUniBrita;
-	private Integer diametroMaxBrita;
 	private Double consumoDeAgua;
 	private Double consumoDeCimento;
 	private Double volumeDeBrita;
@@ -67,14 +65,6 @@ public class ModelObra implements Serializable {
 		this.massaEspCimento = massaEspCimento;
 	}
 
-	public Double getModuloDeFinuraAreia() {
-		return moduloDeFinuraAreia;
-	}
-
-	public void setModuloDeFinuraAreia(Double moduloDeFinuraAreia) {
-		this.moduloDeFinuraAreia = moduloDeFinuraAreia;
-	}
-
 	public Double getMassaEspAreia() {
 		return massaEspAreia;
 	}
@@ -105,14 +95,6 @@ public class ModelObra implements Serializable {
 
 	public void setMassaUniBrita(Double massaUniBrita) {
 		this.massaUniBrita = massaUniBrita;
-	}
-
-	public Integer getDiametroMaxBrita() {
-		return diametroMaxBrita;
-	}
-
-	public void setDiametroMaxBrita(Integer diametroMaxBrita) {
-		this.diametroMaxBrita = diametroMaxBrita;
 	}
 
 	public Double getConsumoDeAgua() {
@@ -187,14 +169,78 @@ public class ModelObra implements Serializable {
 		this.tracoAgua = tracoAgua;
 	}
 	
+
 	/*
 	 * 
 	 * 
 	 * 
 	 */
+
+	public Double calcularFcj(Double fck, Double desvioPadrao) {
+
+		fcj = fck + 1.65 * desvioPadrao;
+
+		return fcj;
+	}
+
+	public Double calcularConsumoCimento(Double consumoDeAgua, Double fatorAguaCimento) {
+
+		consumoDeCimento = consumoDeAgua / fatorAguaCimento;
+
+		return consumoDeCimento;
+	}
+
+	public Double calcularConsumoBrita(Double volumeDeBrita, Double massaUniBrita) {
+
+		consumoDeBrita = volumeDeBrita * massaUniBrita;
+
+		return consumoDeBrita;
+	}
+
+	public Double calcularVolumeAreia(Double consumoDeAgua, Double volumeDeBrita, Double massaUniBrita, Double massaEspBrita,
+			Double fatorAguaCimento, Double massaEspCimento) {
+
+		volumeDeAreia = 1 - ((consumoDeAgua / fatorAguaCimento / massaEspCimento) + 
+				(volumeDeBrita * massaUniBrita / massaEspBrita) + (consumoDeAgua / 1000));
+
+
+		return volumeDeAreia;
+
+	}
+
 	
-	public Double traco
-	
-	
+	public Double calcularConsumoAreia(Double consumoDeAgua, Double volumeDeBrita, Double massaUniBrita, Double massaEspBrita,
+			Double fatorAguaCimento, Double massaEspCimento, Double massaEspAreia) {
+
+		volumeDeAreia = 1 - ((consumoDeAgua / fatorAguaCimento / massaEspCimento) + 
+				(volumeDeBrita * massaUniBrita / massaEspBrita) + (consumoDeAgua / 1000));
+
+		consumoDeAreia = volumeDeAreia * massaEspAreia;
+
+		return consumoDeAreia;
+
+	}
+
+	public Double tracoAreia() {
+
+		tracoAreia = calcularConsumoAreia( consumoDeAgua, volumeDeBrita, massaUniBrita, massaEspBrita, fatorAguaCimento, massaEspCimento,
+				massaEspAreia) / calcularConsumoCimento(consumoDeAgua, fatorAguaCimento);
+
+		return tracoAreia;
+	}
+
+	public Double tracoBrita() {
+
+		tracoBrita = calcularConsumoBrita(volumeDeBrita, massaUniBrita) / calcularConsumoCimento(consumoDeAgua, fatorAguaCimento);
+
+		return tracoBrita;
+	}
+
+	public Double tracoAgua(Double consumoDeAgua) {
+
+		tracoAgua = consumoDeAgua / calcularConsumoCimento(consumoDeAgua, fatorAguaCimento);
+
+		return tracoAgua;
+	}
 
 }

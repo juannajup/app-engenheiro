@@ -40,6 +40,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="color: white;"> Instalações Hidráulicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularNivelCaixaInspecao.jsp">Calcular niveis das caixas de inspeção</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularReservatorio.jsp">Calcular reseratório de água fria</a> 					
 							</div></li>
 							

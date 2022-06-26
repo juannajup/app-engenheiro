@@ -88,6 +88,7 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 			modelHidrossanitario.alturaCaixaInsp2(modelHidrossanitario.getCotaTopo2());
 			
+			
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
 

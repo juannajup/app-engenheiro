@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="/principal/bootstrap-css.jsp"></jsp:include>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <title>Calcular Nivel Caixas de Inspeção</title>
 </head>
@@ -46,19 +47,19 @@
 					readonly="readonly" aria-describedby="altura1" name="altura1"
 					value="<fmt:formatNumber pattern = "#.##"  value = "${modelHidrossanitario.altura1}" />">
 			</div>
-	
-			<div class="mb-3">
-				<label for="distanciaCaixas" class="form-label">Distancia entre as caixas de inspeção (m)</label>
-				<input type="text" class="form-control" id="distanciaCaixas"
-					required="required" aria-describedby="distanciaCaixas" name="distanciaCaixas"
-					value="${modelHidrossanitario.distanciaCaixas}">
-			</div>
 			
 			<div class="mb-3">
 				<label for="inclinacaoTubo" class="form-label">Inclinação do tubo (%)</label>
 				<input type="text" class="form-control" id="inclinacaoTubo"
 					required="required" aria-describedby="inclinacaoTubo" name="inclinacaoTubo"
 					value="${modelHidrossanitario.inclinacaoTubo}">
+			</div>
+	
+			<div class="mb-3">
+				<label for="distanciaCaixas" class="form-label">Distancia entre as caixas de inspeção (m)</label>
+				<input type="text" class="form-control" id="distanciaCaixas"
+					required="required" aria-describedby="distanciaCaixas" name="distanciaCaixas"
+					value="${modelHidrossanitario.distanciaCaixas}">
 			</div>
 
 			<div class="mb-3">
@@ -106,11 +107,25 @@
 
 		function inspecao() {
 			
+			var cotaTopo1 = document.getElementById("cotaTopo1").value;
+			var cotaTopo2 = document.getElementById("cotaTopo2").value;
+			var cotaFundo1 = document.getElementById("cotaFundo1").value;
+			var cotaFundo2 = document.getElementById("cotaFundo2").value;
+			var altura1 = document.getElementById("altura1").value;
+			var altura2 = document.getElementById("altura2").value;
 			
+			//ajax para setar o valor que veio da tela de volta para o input
+			$('#cotaTopo1').val(cotaTopo2);
+			$('#cotaFundo1').val(cotaFundo2);
+			$('#altura1').val(altura2);
+			$('#altura2').val("");
+			$('#cotaTopo2').val("");
+			$('#cotaFundo2').val("");
+			$('#distanciaCaixas').val("");
 			
 		}
 	</script>
 
 
 </body>
-</html>
+</html>;

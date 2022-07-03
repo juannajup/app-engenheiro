@@ -22,27 +22,27 @@
 		<form class="form-control" method="post" action="<%=request.getContextPath()%>/EletricaServlet?acao=quedaDeTensao" id="form">
 			<div class="mb-3">
 				<label for="tensao" class="form-label">Tensão (V)</label> 
-				<input type="text" class="form-control" id="tensao" required="required"
+				<input type="number" class="form-control" id="tensao" required="required"
 					aria-describedby="tensao" name="tensao" value="${modelEletrica.tensao}" placeholder="110, 220 ou 380">
 			</div>
 			<div class="mb-3">
 				<label for="corrente" class="form-label">Corrente (A)</label> 
-				<input type="text" class="form-control" id="corrente" required="required"
+				<input type="number" class="form-control" id="corrente" required="required"
 					aria-describedby="corrente" name="corrente" value="<fmt:formatNumber pattern = "#.##"  value = "${modelEletrica.corrente}" />">
 			</div>
 			<div class="mb-3">
 				<label for="comprimento" class="form-label">Comprimento (m)</label> 
-				<input type="text" class="form-control" id="comprimento" required="required"
+				<input type="number" class="form-control" id="comprimento" required="required"
 					aria-describedby="comprimento" name="comprimento" value="${modelEletrica.comprimento}">
 			</div>
 			<div class="mb-3">
 				<label for="quedaPermitida" class="form-label">Queda de tensão permitida (%)</label> 
-				<input type="text" class="form-control" id="quedaPermitida" required="required"
+				<input type="number" class="form-control" id="quedaPermitida" required="required"
 					aria-describedby="quedaPermitida" name="quedaPermitida" value="${modelEletrica.quedaPermitida}">
 			</div>
 			<div class="mb-3">
 				<label for="caboTeste" class="form-label">Espessura do cabo para teste (mm²)</label> 
-				<input type="text" class="form-control" id="caboTeste" required="required"
+				<input type="number" class="form-control" id="caboTeste" required="required"
 					aria-describedby="caboTeste" name="caboTeste" value="${modelEletrica.caboTeste}">
 			</div>
 			<div class="mb-3">
@@ -84,6 +84,7 @@
 	</main>
 	
 	<script type="text/javascript">
+	
 	function limpar() {
 	    
 	    var elementos = document.getElementById("form").elements; /*Retorna os elementos html dentro do form*/

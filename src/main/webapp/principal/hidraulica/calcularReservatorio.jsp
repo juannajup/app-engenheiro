@@ -23,13 +23,13 @@
 		
 			<div class="mb-3">
 				<label for="numeroDePessoas" class="form-label">Numero de pessoas na edificação (consultar tabela 1, abaixo)</label> 
-				<input type="text" class="form-control" id="numeroDePessoas" required="required"
+				<input type="number" class="form-control" id="numeroDePessoas" required="required"
 					aria-describedby="numeroDePessoas" name="numeroDePessoas" value="${modelHidrossanitario.numeroDePessoas}">
 			</div>
 			
 			<div class="mb-3">
 				<label for="consumoPerCapita" class="form-label">Consumo per capita (l/dia) (consultar tabela 2, abaixo)</label> 
-				<input type="text" class="form-control" id="consumoPerCapita" required="required"
+				<input type="number" class="form-control" id="consumoPerCapita" required="required"
 					aria-describedby="consumoPerCapita" name="consumoPerCapita" value="${modelHidrossanitario.consumoPerCapita}">
 					
 					
@@ -37,13 +37,13 @@
 			
 			<div class="mb-3">
 				<label for="numeroDePavimentos" class="form-label">Numero de pavimentos do prédio </label> 
-				<input type="text" class="form-control" id="numeroDePavimentos" required="required" placeholder="Se for térreo, considerar 1"
+				<input type="number" class="form-control" id="numeroDePavimentos" required="required" placeholder="Se for térreo, considerar 1"
 					aria-describedby="numeroDePavimentos" name="numeroDePavimentos" value="${modelHidrossanitario.numeroDePavimentos}">
 			</div>
 			
 			<div class="mb-3">
 				<label for="diasSemAgua" class="form-label">Numero de dias sem abastecimento</label> 
-				<input type="text" class="form-control" id="diasSemAgua" required="required" placeholder="2"
+				<input type="number" class="form-control" id="diasSemAgua" required="required" placeholder="2"
 					aria-describedby="diasSemAgua" name="diasSemAgua" value="${modelHidrossanitario.diasSemAgua}">
 			</div>
 			
@@ -91,6 +91,7 @@
 	</main>
 	
 	<script type="text/javascript">
+	
 	function limpar() {
 	    
 	    var elementos = document.getElementById("form").elements; /*Retorna os elementos html dentro do form*/

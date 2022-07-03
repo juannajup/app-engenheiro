@@ -7,6 +7,7 @@ body {
 	background-size: cover;
 	background-position: center;
 	font-family: sans-serif;
+	background-color: #2B577A;
 }
 
 #container-menu {
@@ -21,9 +22,8 @@ body {
 	background-color: #8000ff;
 }
 
-.btn-dark:hover{
+.btn-dark:hover {
 	background-color: gray;
-	
 }
 
 .nav-item {
@@ -59,7 +59,8 @@ small:hover {
 	color: white;
 }
 
-.tabelas-eletricas, .tabelas-hidraulicas, .tabelas-mecanicas, .tabelas-obras {
+.tabelas-eletricas, .tabelas-hidraulicas, .tabelas-mecanicas,
+	.tabelas-obras {
 	text-align: center;
 	margin: auto;
 	min-width: 700px;
@@ -73,7 +74,7 @@ tbody, td, tfoot, th, thead, tr {
 	border: 2px solid black;
 }
 
-.div-imagem{
+.div-imagem {
 	border: 2px;
 	padding: 10px;
 	border-style: solid;

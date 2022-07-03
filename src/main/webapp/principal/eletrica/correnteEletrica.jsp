@@ -22,7 +22,7 @@
 		<form class="form-control" method="post" action="<%=request.getContextPath()%>/EletricaServlet?acao=corrente" id="form">
 			<div class="mb-3">
 				<label for="tensao" class="form-label">Tensão (V)</label> 
-				<input type="text" class="form-control" id="tensao" required="required"
+				<input type="number" class="form-control" id="tensao" required="required"
 					aria-describedby="tensao" name="tensao" value="${modelEletrica.tensao}" placeholder="110, 220 ou 380">
 			</div>
 			<div class="mb-3">
@@ -52,12 +52,12 @@
 			</div>
 			<div class="mb-3">
 				<label for="potencia" class="form-label">Potência (W)</label> 
-				<input type="text" class="form-control" id="potencia" required="required"
+				<input type="number" class="form-control" id="potencia" required="required"
 					aria-describedby="potencia" name="potencia" value="<fmt:formatNumber pattern = "#"  value = "${modelEletrica.potencia}" />">
 			</div>
 			<div class="mb-3">
 				<label for="fatorDePotencia" class="form-label">Fator de potência</label> 
-				<input type="text" class="form-control" required="required" id="fatorDePotencia" 
+				<input type="number" class="form-control" required="required" id="fatorDePotencia" 
 				aria-describedby="fatorDePotencia" name="fatorDePotencia" value="${modelEletrica.fatorDePotencia}">
 			</div>
 			<div class="mb-3">
@@ -87,6 +87,7 @@
 		<small>*Caso seja bifasico 220V, marcar monofasico 220V</small>
 	</main>
 	<script type="text/javascript">
+	
 	function limpar() {
 	    
 	    var elementos = document.getElementById("form").elements; /*Retorna os elementos html dentro do form*/

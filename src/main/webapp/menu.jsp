@@ -49,9 +49,10 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="color:white;"> Instalações Mecânicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/chapasDutos.jsp">Calcular peso de chapa de dutos</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/calcularBtuh.jsp">Calcular ar condicionado split</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/chapasDutos.jsp">Calcular peso de chapa de dutos</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/frigorigenas.jsp">Tabela de seleção de tubulações frigorigenas</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/selecaoTubos.jsp">Tabela de seleção de tubulações de água gelada</a> 
 							</div></li>
 							
 							<li class="nav-item dropdown">
@@ -74,32 +75,6 @@
 					 
 				</div>
 			</div>
-
-			<!-- 
-			<div class="navbar" id="navbarSupportedContent">
-				<div class="dropdown">
-					<button class="btn btn-warning">Instalações Elétricas</button>
-					<div class="dropdown-content">
-						<a href="correnteEletrica.jsp">Calculo de corrente elétrica</a> 
-						<a href="quedaDeTensao.jsp">Calcular queda de tensão</a>
-						<a href="ocupação.jsp">Calcular ocupação de conduto</a>
-						<a href="tabelas5410.jsp">Tabelas NBR 5410</a>
-					</div>
-				</div>
-				<div class="dropdown">
-					<button class="btn btn-primary">Instalações Hidráulicas</button>
-					<div class="dropdown-content">
-						<a href="calcularReservatorio.jsp">Calcular reseratório de água fria</a> 
-					</div>
-				</div>
-				<div class="dropdown">
-					<button id="button-mecanicas" class="btn btn-secondary">Instalações Mecânicas</button>
-					<div class="dropdown-content">
-						<a href="calcularBtuh.jsp">Calcular ar condicionado split</a> 
-					</div>
-				</div>
-			</div>
-		 -->
 		</div>
 	</nav>
 

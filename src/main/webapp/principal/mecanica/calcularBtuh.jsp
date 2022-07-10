@@ -20,6 +20,7 @@
 		<form class="form-control" method="post"
 			action="<%=request.getContextPath()%>/MecanicaServlet?acao=calcularSplit"
 			id="form">
+			<!-- 
 			<div class="mb-3">
 				<label for="nomeDoAmbiente" class="form-label">Nome do
 					ambiente</label>
@@ -27,6 +28,7 @@
 					required="required" aria-describedby="nomeDoAmbiente"
 					name="nomeDoAmbiente" value="${modelMecanica.nomeDoAmbiente}">
 			</div>
+			 -->
 			<div class="mb-3">
 				<label for="areaDoAmbiente" class="form-label">Área do
 					ambiente (m²)</label>
@@ -45,20 +47,20 @@
 					aria-describedby="quantidadeDeSol" name="quantidadeDeSol"
 					value="sim" required="required"
 					<%ModelMecanica modelMecanica = (ModelMecanica) request.getAttribute("modelMecanica");
-					if (modelMecanica != null && modelMecanica.getQuantidadeDeSol().equalsIgnoreCase("sim")) {
-					out.print(" ");
-					out.print("checked=\"checked\"");
-					out.print(" ");
-					}%>>
+if (modelMecanica != null && modelMecanica.getQuantidadeDeSol().equalsIgnoreCase("sim")) {
+	out.print(" ");
+	out.print("checked=\"checked\"");
+	out.print(" ");
+}%>>
 				<label for="quantidadeDeSol" class="form-label">Sim</label>
 				<input type="radio" id="quantidadeDeSol"
 					aria-describedby="quantidadeDeSol" name="quantidadeDeSol"
 					value="não" required="required"
 					<%if (modelMecanica != null && modelMecanica.getQuantidadeDeSol().equalsIgnoreCase("não")) {
-					out.print(" ");
-					out.print("checked=\"checked\"");
-					out.print(" ");
-					}%>>
+	out.print(" ");
+	out.print("checked=\"checked\"");
+	out.print(" ");
+}%>>
 				<label for="quantidadeDeSol" class="form-label">Não</label>
 
 			</div>

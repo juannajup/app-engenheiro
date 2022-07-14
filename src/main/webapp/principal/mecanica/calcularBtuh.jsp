@@ -32,7 +32,7 @@
 			<div class="mb-3">
 				<label for="areaDoAmbiente" class="form-label">Área do
 					ambiente (m²)</label>
-				<input type="number" class="form-control" id="areaDoAmbiente"
+				<input type="text" class="form-control" id="areaDoAmbiente"
 					required="required" aria-describedby="areaDoAmbiente"
 					name="areaDoAmbiente"
 					value="<fmt:formatNumber pattern = "#"  value = "${modelMecanica.areaDoAmbiente}" />">

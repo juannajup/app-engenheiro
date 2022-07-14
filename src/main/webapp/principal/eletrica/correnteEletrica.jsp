@@ -57,7 +57,7 @@
 			</div>
 			<div class="mb-3">
 				<label for="fatorDePotencia" class="form-label">Fator de potência</label> 
-				<input type="number" class="form-control" required="required" id="fatorDePotencia" 
+				<input type="text" class="form-control" required="required" id="fatorDePotencia" 
 				aria-describedby="fatorDePotencia" name="fatorDePotencia" value="${modelEletrica.fatorDePotencia}">
 			</div>
 			<div class="mb-3">

@@ -42,7 +42,7 @@
 			</div>
 			<div class="mb-3">
 				<label for="caboTeste" class="form-label">Espessura do cabo para teste (mm²)</label> 
-				<input type="number" class="form-control" id="caboTeste" required="required"
+				<input type="text" class="form-control" id="caboTeste" required="required"
 					aria-describedby="caboTeste" name="caboTeste" value="${modelEletrica.caboTeste}">
 			</div>
 			<div class="mb-3">

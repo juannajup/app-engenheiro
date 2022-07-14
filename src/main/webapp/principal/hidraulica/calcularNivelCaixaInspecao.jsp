@@ -27,7 +27,7 @@
 			<div class="mb-3">
 				<label for="cotaTopo1" class="form-label">1° caixa - Cota de
 					topo (m)</label>
-				<input type="number" class="form-control" id="cotaTopo1"
+				<input type="text" class="form-control" id="cotaTopo1"
 					required="required" aria-describedby="cotaTopo1" name="cotaTopo1"
 					value="${modelHidrossanitario.cotaTopo1}">
 			</div>
@@ -35,7 +35,7 @@
 			<div class="mb-3">
 				<label for="cotaFundo1" class="form-label">1° caixa - Cota
 					de fundo (m)</label>
-				<input type="number" class="form-control" id="cotaFundo1"
+				<input type="text" class="form-control" id="cotaFundo1"
 					required="required" aria-describedby="cotaFundo1" name="cotaFundo1"
 					value="${modelHidrossanitario.cotaFundo1}">
 			</div>
@@ -50,14 +50,14 @@
 			
 			<div class="mb-3">
 				<label for="inclinacaoTubo" class="form-label">Inclinação do tubo (%)</label>
-				<input type="number" class="form-control" id="inclinacaoTubo"
+				<input type="text" class="form-control" id="inclinacaoTubo"
 					required="required" aria-describedby="inclinacaoTubo" name="inclinacaoTubo"
 					value="${modelHidrossanitario.inclinacaoTubo}">
 			</div>
 	
 			<div class="mb-3">
 				<label for="distanciaCaixas" class="form-label">Distancia entre as caixas de inspeção (m)</label>
-				<input type="number" class="form-control" id="distanciaCaixas"
+				<input type="text" class="form-control" id="distanciaCaixas"
 					required="required" aria-describedby="distanciaCaixas" name="distanciaCaixas"
 					value="${modelHidrossanitario.distanciaCaixas}">
 			</div>
@@ -65,7 +65,7 @@
 			<div class="mb-3">
 				<label for="cotaTopo2" class="form-label">2° caixa - Cota de
 					topo (m)</label>
-				<input type="number" class="form-control" id="cotaTopo2"
+				<input type="text" class="form-control" id="cotaTopo2"
 					required="required" aria-describedby="cotaTopo2" name="cotaTopo2"
 					value="${modelHidrossanitario.cotaTopo2}">
 			</div>

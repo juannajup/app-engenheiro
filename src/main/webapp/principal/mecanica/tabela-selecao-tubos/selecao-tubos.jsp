@@ -20,7 +20,7 @@
 			style='mso-width-source: userset; mso-width-alt: 2450; width: 50pt'>
 		<tr height=20 style='height: 15.0pt'>
 			<td colspan=8 height=20 class=xl65 width=702
-				style='height: 15.0pt; width: 527pt'>NBR 6401/1980</td>
+				style='height: 15.0pt; width: 527pt'><h3 id="titulo">NBR 6401/1980</h3></td>
 		</tr>
 		<tr height=20 style='height: 15.0pt'>
 			<td colspan=8 height=20 class=xl65 style='height: 15.0pt'>TABELA

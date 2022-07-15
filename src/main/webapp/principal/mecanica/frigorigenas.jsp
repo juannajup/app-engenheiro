@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <jsp:include page="/principal/bootstrap-css.jsp"></jsp:include>
 
-<title>Tabelas Tubulações Frigorigenas</title>
+<title>Tabela Tubulações Frigorigenas</title>
 </head>
 <body>
 	<jsp:include page="/menu.jsp"></jsp:include>
@@ -191,10 +191,6 @@
 					(3/8&quot;)</td>
 			</tr>
 		</table>
-		<br>
-		<jsp:include page="tubos-cobre/tubos-cobre.jsp"></jsp:include>
-		
-		
 		
 	</form>
 </body>

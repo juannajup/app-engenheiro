@@ -1,0 +1,22 @@
+https://appengenheiro.herokuapp.com/ | https://git.heroku.com/appengenheiro.git
+
+DATABASE_URL: postgres://
+
+user
+bmtxatnjmgjbwf
+
+password
+5d626d2d74d87f145ad3cf6774ca26ad7358bc64d2c7f631bb283b20645ffa82
+
+banco e url
+ec2-34-200-35-222.compute-1.amazonaws.com:5432/deane8k7c6bhi3
+
+passo a passo para deploy
+
+1- heroku login
+2- mvn clean package
+3- git init
+4- git add .
+5- git commit -m "aaa" (-m é a mensagem)
+6- heroku git:remote -a appengenheiro
+7- git push heroku Juan:main

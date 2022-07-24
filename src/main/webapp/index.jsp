@@ -22,8 +22,6 @@
 		<ul>
 			<h2>Proximas implementações:</h2>
 
-			<li><h3>Implementar o Login de usuario</h3></li>
-			<li><h3>Botoes e textos responsivos</h3></li>
 			<li><h3>Implementar botão de busca</h3></li>
 			<li><h3>Calculo de ocupação de eletroduto</h3></li>
 		</ul>

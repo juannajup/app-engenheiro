@@ -4,10 +4,11 @@ body {
 	padding: 0px 2% 0px 2%;
 	background-image: url("../img/projeto.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size:  1680px 1050px;
 	background-position: center;
 	font-family: sans-serif;
 	background-color: #2B577A;
+	margin: 0 auto;
 }
 
 #container-menu {
@@ -83,4 +84,13 @@ tbody, td, tfoot, th, thead, tr {
 	width: 850px;
 	height: 600px;
 	display: block;
+}
+
+@media all and (max-width: 990px) {
+	.dropdown-menu {
+		position: absolute !important;
+	}
+	.btn {
+		display: block;
+	}
 }

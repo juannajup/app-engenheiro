@@ -43,7 +43,7 @@
 			<div class="mb-3">
 				<label for="comprimentoDuto" class="form-label">Comprimento
 					do duto (m)</label>
-				<input type="number" class="form-control" id="comprimentoDuto"
+				<input type="text" class="form-control" id="comprimentoDuto"
 					required="required" aria-describedby="comprimentoDuto"
 					name="comprimentoDuto" value="${modelMecanica.comprimentoDuto}">
 			</div>

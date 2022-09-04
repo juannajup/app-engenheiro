@@ -20,10 +20,26 @@
 	
 	<div class="container-fluid list-group form-control">
 		<ul>
+			<h2>Novas funcionalidades:</h2>
+			<li>
+				<h3>
+					<a class="dropdown-item"
+						href="<%=request.getContextPath()%>/principal/eletrica/ocupacaoDados.jsp">Calcular
+						ocupação de conduto - dados e voz</a>
+				</h3>
+			</li>
+			<li>
+				<h3>
+					<a class="dropdown-item"
+						href="<%=request.getContextPath()%>/principal/eletrica/ocupacaoEletrica.jsp">Calcular
+						ocupação de conduto - eletrica</a>
+				</h3>
+			</li>
+		</ul>
+		<ul>
 			<h2>Proximas implementações:</h2>
-
-			<li><h3>Implementar botão de busca</h3></li>
-			<li><h3>Calculo de ocupação de eletroduto</h3></li>
+			<li><h3>Calculo luminotecnico</h3></li>
+			<li><h3>Dimensionamento de dutos</h3></li>
 		</ul>
 	</div>
 </body>

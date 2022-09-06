@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class ModelCabos implements Serializable {
+public class ModelCabosEletricos implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -53,27 +53,6 @@ public class ModelCabos implements Serializable {
 	private String eprotenax_1500;
 	private String eprotenax_1850;
 	private String eprotenax_2400;
-
-	private String rg11;
-	private String rg59;
-
-	private String cat5;
-	private String cat5e;
-	private String cat6;
-	private String cat6a;
-	private String cat7;
-
-	private String fibras2;
-	private String fibras4;
-	private String fibras6;
-	private String fibras8;
-	private String fibras10;
-	private String fibras12;
-	private String fibras16;
-	private String fibras24;
-	private String fibras36;
-	private String fibras48;
-	private String fibras72;
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -259,78 +238,6 @@ public class ModelCabos implements Serializable {
 		return eprotenax_2400;
 	}
 
-	public String getRg11() {
-		return rg11;
-	}
-
-	public String getRg59() {
-		return rg59;
-	}
-
-	public String getCat5() {
-		return cat5;
-	}
-
-	public String getCat5e() {
-		return cat5e;
-	}
-
-	public String getCat6() {
-		return cat6;
-	}
-
-	public String getCat6a() {
-		return cat6a;
-	}
-
-	public String getCat7() {
-		return cat7;
-	}
-
-	public String getFibras2() {
-		return fibras2;
-	}
-
-	public String getFibras4() {
-		return fibras4;
-	}
-
-	public String getFibras6() {
-		return fibras6;
-	}
-
-	public String getFibras8() {
-		return fibras8;
-	}
-
-	public String getFibras10() {
-		return fibras10;
-	}
-
-	public String getFibras12() {
-		return fibras12;
-	}
-
-	public String getFibras16() {
-		return fibras16;
-	}
-
-	public String getFibras24() {
-		return fibras24;
-	}
-
-	public String getFibras36() {
-		return fibras36;
-	}
-
-	public String getFibras48() {
-		return fibras48;
-	}
-
-	public String getFibras72() {
-		return fibras72;
-	}
-
 	public void setPirastic_15(String pirastic_15) {
 		this.pirastic_15 = pirastic_15;
 	}
@@ -509,103 +416,6 @@ public class ModelCabos implements Serializable {
 
 	public void setEprotenax_2400(String eprotenax_2400) {
 		this.eprotenax_2400 = eprotenax_2400;
-	}
-
-	public void setRg11(String rg11) {
-		this.rg11 = rg11;
-	}
-
-	public void setRg59(String rg59) {
-		this.rg59 = rg59;
-	}
-
-	public void setCat5(String cat5) {
-		this.cat5 = cat5;
-	}
-
-	public void setCat5e(String cat5e) {
-		this.cat5e = cat5e;
-	}
-
-	public void setCat6(String cat6) {
-		this.cat6 = cat6;
-	}
-
-	public void setCat6a(String cat6a) {
-		this.cat6a = cat6a;
-	}
-
-	public void setCat7(String cat7) {
-		this.cat7 = cat7;
-	}
-
-	public void setFibras2(String fibras2) {
-		this.fibras2 = fibras2;
-	}
-
-	public void setFibras4(String fibras4) {
-		this.fibras4 = fibras4;
-	}
-
-	public void setFibras6(String fibras6) {
-		this.fibras6 = fibras6;
-	}
-
-	public void setFibras8(String fibras8) {
-		this.fibras8 = fibras8;
-	}
-
-	public void setFibras10(String fibras10) {
-		this.fibras10 = fibras10;
-	}
-
-	public void setFibras12(String fibras12) {
-		this.fibras12 = fibras12;
-	}
-
-	public void setFibras16(String fibras16) {
-		this.fibras16 = fibras16;
-	}
-
-	public void setFibras24(String fibras24) {
-		this.fibras24 = fibras24;
-	}
-
-	public void setFibras36(String fibras36) {
-		this.fibras36 = fibras36;
-	}
-
-	public void setFibras48(String fibras48) {
-		this.fibras48 = fibras48;
-	}
-
-	public void setFibras72(String fibras72) {
-		this.fibras72 = fibras72;
-	}
-
-	@Override
-	public String toString() {
-		return "ModelCabos [pirastic_15=" + pirastic_15 + ", pirastic_25=" + pirastic_25 + ", pirastic_40="
-				+ pirastic_40 + ", pirastic_60=" + pirastic_60 + ", pirastic_100=" + pirastic_100 + ", pirastic_160="
-				+ pirastic_160 + ", pirastic_250=" + pirastic_250 + ", pirastic_350=" + pirastic_350 + ", pirastic_500="
-				+ pirastic_500 + ", pirastic_700=" + pirastic_700 + ", pirastic_950=" + pirastic_950
-				+ ", pirastic_1200=" + pirastic_1200 + ", pirastic_1500=" + pirastic_1500 + ", pirastic_1850="
-				+ pirastic_1850 + ", pirastic_2400=" + pirastic_2400 + ", sintenax_15=" + sintenax_15 + ", sintenax_25="
-				+ sintenax_25 + ", sintenax_40=" + sintenax_40 + ", sintenax_60=" + sintenax_60 + ", sintenax_100="
-				+ sintenax_100 + ", sintenax_160=" + sintenax_160 + ", sintenax_250=" + sintenax_250 + ", sintenax_350="
-				+ sintenax_350 + ", sintenax_500=" + sintenax_500 + ", sintenax_700=" + sintenax_700 + ", sintenax_950="
-				+ sintenax_950 + ", sintenax_1200=" + sintenax_1200 + ", sintenax_1500=" + sintenax_1500
-				+ ", sintenax_1850=" + sintenax_1850 + ", sintenax_2400=" + sintenax_2400 + ", eprotenax_15="
-				+ eprotenax_15 + ", eprotenax_25=" + eprotenax_25 + ", eprotenax_40=" + eprotenax_40 + ", eprotenax_60="
-				+ eprotenax_60 + ", eprotenax_100=" + eprotenax_100 + ", eprotenax_160=" + eprotenax_160
-				+ ", eprotenax_250=" + eprotenax_250 + ", eprotenax_350=" + eprotenax_350 + ", eprotenax_500="
-				+ eprotenax_500 + ", eprotenax_700=" + eprotenax_700 + ", eprotenax_950=" + eprotenax_950
-				+ ", eprotenax_1200=" + eprotenax_1200 + ", eprotenax_1500=" + eprotenax_1500 + ", eprotenax_1850="
-				+ eprotenax_1850 + ", eprotenax_2400=" + eprotenax_2400 + ", rg11=" + rg11 + ", rg59=" + rg59
-				+ ", cat5=" + cat5 + ", cat5e=" + cat5e + ", cat6=" + cat6 + ", cat6a=" + cat6a + ", cat7=" + cat7
-				+ ", fibras2=" + fibras2 + ", fibras4=" + fibras4 + ", fibras6=" + fibras6 + ", fibras8=" + fibras8
-				+ ", fibras10=" + fibras10 + ", fibras12=" + fibras12 + ", fibras16=" + fibras16 + ", fibras24="
-				+ fibras24 + ", fibras36=" + fibras36 + ", fibras48=" + fibras48 + ", fibras72=" + fibras72 + "]";
 	}
 
 }

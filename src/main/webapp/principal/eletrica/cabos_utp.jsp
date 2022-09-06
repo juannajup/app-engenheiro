@@ -43,23 +43,23 @@
   <td class=xl69 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="cat5"
 				aria-describedby="cat5" name="cat5"
-				value="${modelCabos.cat5}"></td>
+				value="${modelCabosDados.cat5}"></td>
   <td class=xl69 width=75 style='border-top:none;border-left:none;width:56pt'><input
 				type="text" class="form-control" id="cat5e"
 				aria-describedby="cat5e" name="cat5e"
-				value="${modelCabos.cat5e}"></td>
+				value="${modelCabosDados.cat5e}"></td>
   <td class=xl69 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="cat6"
 				aria-describedby="cat6" name="cat6"
-				value="${modelCabos.cat6}"></td>
+				value="${modelCabosDados.cat6}"></td>
   <td class=xl69 width=75 style='border-top:none;border-left:none;width:56pt'><input
 				type="text" class="form-control" id="cat6a"
 				aria-describedby="cat6a" name="cat6a"
-				value="${modelCabos.cat6a}"></td>
+				value="${modelCabosDados.cat6a}"></td>
   <td class=xl77 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="cat7"
 				aria-describedby="cat7" name="cat7"
-				value="${modelCabos.cat7}"></td>
+				value="${modelCabosDados.cat7}"></td>
  </tr>
  
 </table>

@@ -31,7 +31,7 @@
   <td class=xl67 width=102 style='border-top:none;border-left:none;width:77pt'><input
 				type="text" class="form-control" id="perf38_38"
 				aria-describedby="perf38_38" name="perf38_38"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.perf38_38}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.perf38_38}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -43,7 +43,7 @@
   <td class=xl66 width=102 style='border-top:none;border-left:none;width:77pt'><input
 				type="text" class="form-control" id="perf200_70"
 				aria-describedby="perf200_70" name="perf200_70"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.perf200_70}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.perf200_70}" />"
 				readonly="readonly"></td>
  </tr>
  <![if supportMisalignedColumns]>

@@ -31,11 +31,11 @@
   <td class=xl69 width=55 style='border-top:none;border-left:none;width:41pt'><input
 				type="text" class="form-control" id="rg11"
 				aria-describedby="rg11" name="rg11"
-				value="${modelCabos.rg11}"></td>
+				value="${modelCabosDados.rg11}"></td>
 		<td class=xl74 width=64
 			style='border-top: none; border-left: none; width: 48pt'><input
 				type="text" class="form-control" id="rg59" aria-describedby="rg59"
-				name="rg59" value="${modelCabos.rg59}"></td>
+				name="rg59" value="${modelCabosDados.rg59}"></td>
 	</tr>
  
 </table>

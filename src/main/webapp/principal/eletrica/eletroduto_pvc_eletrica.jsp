@@ -30,7 +30,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc20mm"
 				aria-describedby="pvc20mm" name="pvc20mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc20mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc20mm}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -41,7 +41,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc25mm"
 				aria-describedby="pvc25mm" name="pvc25mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc25mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc25mm}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -52,7 +52,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc32mm"
 				aria-describedby="pvc32mm" name="pvc32mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc32mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc32mm}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -63,7 +63,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc40mm"
 				aria-describedby="pvc40mm" name="pvc40mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc40mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc40mm}" />"
 				readonly="readonly"></td>
  <tr height=20 style='height:15.0pt'>
   <td height=20 class=xl67 width=164 style='height:15.0pt;border-top:none;
@@ -73,7 +73,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc50mm"
 				aria-describedby="pvc50mm" name="pvc50mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc50mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc50mm}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -84,7 +84,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc60mm"
 				aria-describedby="pvc60mm" name="pvc60mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc60mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc60mm}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -95,7 +95,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc75mm"
 				aria-describedby="pvc75mm" name="pvc75mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc75mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc75mm}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -106,7 +106,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc85mm"
 				aria-describedby="pvc85mm" name="pvc85mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc85mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc85mm}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -117,7 +117,7 @@
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
 				type="text" class="form-control" id="pvc100mm"
 				aria-describedby="pvc100mm" name="pvc100mm"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.pvc100mm}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc100mm}" />"
 				readonly="readonly"></td>
  </tr>
 </table>

@@ -1,5 +1,5 @@
-<%@page import="model.ModelInfra"%>
-<%@page import="model.ModelCabos"%>
+<%@page import="model.ModelInfraDados"%>
+<%@page import="model.ModelCabosDados"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -38,13 +38,13 @@
 			Resultado
 		</h3>
 		<br>
-		<jsp:include page="eletroduto_aco.jsp"></jsp:include>
+		<jsp:include page="eletroduto_aco_dados.jsp"></jsp:include>
 		<br>
-		<jsp:include page="eletroduto_pvc.jsp"></jsp:include>
+		<jsp:include page="eletroduto_pvc_dados.jsp"></jsp:include>
 		<br>
-		<jsp:include page="eletrocalha.jsp"></jsp:include>
+		<jsp:include page="eletrocalha_dados.jsp"></jsp:include>
 		<br>
-		<jsp:include page="perfilado.jsp"></jsp:include>
+		<jsp:include page="perfilado_dados.jsp"></jsp:include>
 		<br>
 		
 		</form>

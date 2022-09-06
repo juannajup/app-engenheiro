@@ -57,47 +57,47 @@
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras2"
 				aria-describedby="fibras2" name="fibras2"
-				value="${modelCabos.fibras2}"></td>
+				value="${modelCabosDados.fibras2}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras4"
 				aria-describedby="fibras4" name="fibras4"
-				value="${modelCabos.fibras4}"></td>
+				value="${modelCabosDados.fibras4}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras6"
 				aria-describedby="fibras6" name="fibras6"
-				value="${modelCabos.fibras6}"></td>
+				value="${modelCabosDados.fibras6}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras8"
 				aria-describedby="fibras8" name="fibras8"
-				value="${modelCabos.fibras8}"></td>
+				value="${modelCabosDados.fibras8}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras10"
 				aria-describedby="fibras10" name="fibras10"
-				value="${modelCabos.fibras10}"></td>
+				value="${modelCabosDados.fibras10}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras12"
 				aria-describedby="fibras12" name="fibras12"
-				value="${modelCabos.fibras12}"></td>
+				value="${modelCabosDados.fibras12}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras16"
 				aria-describedby="fibras16" name="fibras16"
-				value="${modelCabos.fibras16}"></td>
+				value="${modelCabosDados.fibras16}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras24"
 				aria-describedby="fibras24" name="fibras24"
-				value="${modelCabos.fibras24}"></td>
+				value="${modelCabosDados.fibras24}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras36"
 				aria-describedby="fibras36" name="fibras36"
-				value="${modelCabos.fibras36}"></td>
+				value="${modelCabosDados.fibras36}"></td>
   <td class=xl70 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras48"
 				aria-describedby="fibras48" name="fibras48"
-				value="${modelCabos.fibras48}"></td>
+				value="${modelCabosDados.fibras48}"></td>
   <td class=xl75 width=64 style='border-top:none;border-left:none;width:48pt'><input
 				type="text" class="form-control" id="fibras72"
 				aria-describedby="fibras72" name="fibras72"
-				value="${modelCabos.fibras72}"></td>
+				value="${modelCabosDados.fibras72}"></td>
  </tr>
  
 </table>

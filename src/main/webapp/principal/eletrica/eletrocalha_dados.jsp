@@ -32,7 +32,7 @@
   <td class=xl68 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha50_50"
 				aria-describedby=eletrocalha50_50 name="eletrocalha50_50"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha50_50}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha50_50}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -44,7 +44,7 @@
   <td class=xl69 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha100_50"
 				aria-describedby=eletrocalha100_50 name="eletrocalha100_50"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha100_50}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha100_50}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -56,7 +56,7 @@
   <td class=xl68 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha100_100"
 				aria-describedby=eletrocalha100_100 name="eletrocalha100_100"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha100_100}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha100_100}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -68,7 +68,7 @@
   <td class=xl69 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha150_50"
 				aria-describedby=eletrocalha150_50 name="eletrocalha150_50"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha150_50}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha150_50}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -80,7 +80,7 @@
   <td class=xl68 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha150_100"
 				aria-describedby=eletrocalha150_100 name="eletrocalha150_100"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha150_100}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha150_100}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -92,7 +92,7 @@
   <td class=xl69 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha200_50"
 				aria-describedby=eletrocalha200_50 name="eletrocalha200_50"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha200_50}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha200_50}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -104,7 +104,7 @@
   <td class=xl68 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha200_100"
 				aria-describedby=eletrocalha200_100 name="eletrocalha200_100"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha200_100}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha200_100}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -116,7 +116,7 @@
   <td class=xl69 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha300_100"
 				aria-describedby=eletrocalha300_100 name="eletrocalha300_100"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha300_100}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha300_100}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -128,7 +128,7 @@
   <td class=xl68 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha400_100"
 				aria-describedby=eletrocalha400_100 name="eletrocalha400_100"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha400_100}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha400_100}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -140,7 +140,7 @@
   <td class=xl69 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalha500_100"
 				aria-describedby=eletrocalha500_100 name="eletrocalha500_100"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalha500_100}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalha500_100}" />"
 				readonly="readonly"></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
@@ -148,24 +148,24 @@
 			style='height: 15.0pt; border-top: none; width: 123pt'><input
 				type="text" class="form-control" id="eletrocalhaLarg"
 				aria-describedby=eletrocalhaLarg name="eletrocalhaLarg"
-				value="${modelInfra.eletrocalhaLarg}" placeholder="Digite a largura"></td>
+				value="${modelInfraDados.eletrocalhaLarg}" placeholder="Digite a largura"></td>
 		<td class=xl66 width=163 style='border-top:none;border-left:none;width:122pt'><input
 				type="text" class="form-control" id="eletrocalhaAlt"
 				aria-describedby=eletrocalhaAlt name="eletrocalhaAlt"
-				value="${modelInfra.eletrocalhaAlt}" placeholder="Digite a altura"></td>
+				value="${modelInfraDados.eletrocalhaAlt}" placeholder="Digite a altura"></td>
   <td class=xl66 width=170 style='border-top:none;border-left:none;width:128pt'><input
 				type="text" class="form-control" id="eletrocalhaAreaCustom"
 				aria-describedby=eletrocalhaAreaCustom name="eletrocalhaAreaCustom"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalhaAreaCustom}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalhaAreaCustom}" />"
 				readonly="readonly"></td>
   <td class=xl66 width=213 style='border-top:none;border-left:none;width:160pt'><input
 				type="text" class="form-control" id="eletrocalhaOcupMax"
 				aria-describedby=eletrocalhaOcupMax name="eletrocalhaOcupMax"
-				value="${modelInfra.eletrocalhaOcupMax}" readonly="readonly"></td>
+				value="${modelInfraDados.eletrocalhaOcupMax}" readonly="readonly"></td>
   <td class=xl69 width=106 style='border-top:none;border-left:none;width:80pt'><input
 				type="text" class="form-control" id="eletrocalhaOcupPercent"
 				aria-describedby=eletrocalhaOcupPercent name="eletrocalhaOcupPercent"
-				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfra.eletrocalhaOcupPercent}" />"
+				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraDados.eletrocalhaOcupPercent}" />"
 				readonly="readonly"></td>
  </tr>
 </table>

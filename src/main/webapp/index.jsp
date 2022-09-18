@@ -38,6 +38,7 @@
 		</ul>
 		<ul>
 			<h2>Proximas implementações:</h2>
+			<li><h3>Ajuste da tabela de cabos de fibra otica</h3></li>
 			<li><h3>Calculo luminotecnico</h3></li>
 			<li><h3>Dimensionamento de dutos</h3></li>
 		</ul>

@@ -24,11 +24,11 @@
 			action="<%=request.getContextPath()%>/EletricaServlet?acao=condutoDados"
 			id="form">
 		
-		<jsp:include page="cabos_fibra.jsp"></jsp:include>
+		<jsp:include page="cabos/cabos_fibra.jsp"></jsp:include>
 		<br>
-		<jsp:include page="cabos_utp.jsp"></jsp:include>
+		<jsp:include page="cabos/cabos_utp.jsp"></jsp:include>
 		<br>
-		<jsp:include page="cabos_coaxial.jsp"></jsp:include>
+		<jsp:include page="cabos/cabos_coaxial.jsp"></jsp:include>
 		<br>
 		<div style="text-align: center;">	
 		<button type="submit" class="btn btn-success">Calcular</button>
@@ -38,13 +38,13 @@
 			Resultado
 		</h3>
 		<br>
-		<jsp:include page="eletroduto_aco_dados.jsp"></jsp:include>
+		<jsp:include page="condutos/eletroduto_aco_dados.jsp"></jsp:include>
 		<br>
-		<jsp:include page="eletroduto_pvc_dados.jsp"></jsp:include>
+		<jsp:include page="condutos/eletroduto_pvc_dados.jsp"></jsp:include>
 		<br>
-		<jsp:include page="eletrocalha_dados.jsp"></jsp:include>
+		<jsp:include page="condutos/eletrocalha_dados.jsp"></jsp:include>
 		<br>
-		<jsp:include page="perfilado_dados.jsp"></jsp:include>
+		<jsp:include page="condutos/perfilado_dados.jsp"></jsp:include>
 		<br>
 		
 		</form>

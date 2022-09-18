@@ -25,7 +25,11 @@
 			id="form">
 		
 		<br>
-		<jsp:include page="cabos_eletricos.jsp"></jsp:include>
+		<jsp:include page="cabos/pirastic.jsp"></jsp:include>
+		<br>
+		<jsp:include page="cabos/sintenax.jsp"></jsp:include>
+		<br>
+		<jsp:include page="cabos/eprotenax.jsp"></jsp:include>
 		<br>
 		
 		<div style="text-align: center;">	
@@ -38,13 +42,13 @@
 		</h3>
 		
 		<br>
-		<jsp:include page="eletroduto_aco_eletrica.jsp"></jsp:include>
+		<jsp:include page="condutos/eletroduto_aco_eletrica.jsp"></jsp:include>
 		<br>
-		<jsp:include page="eletroduto_pvc_eletrica.jsp"></jsp:include>
+		<jsp:include page="condutos/eletroduto_pvc_eletrica.jsp"></jsp:include>
 		<br>
-		<jsp:include page="eletrocalha_eletrica.jsp"></jsp:include>
+		<jsp:include page="condutos/eletrocalha_eletrica.jsp"></jsp:include>
 		<br>
-		<jsp:include page="perfilado_eletrica.jsp"></jsp:include>
+		<jsp:include page="condutos/perfilado_eletrica.jsp"></jsp:include>
 		<br>
 		
 		</form>

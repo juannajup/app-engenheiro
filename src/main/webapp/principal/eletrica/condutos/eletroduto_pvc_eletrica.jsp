@@ -28,7 +28,7 @@
   <td class=xl67 width=163 style='border-top:none;border-left:none;width:122pt'>10</td>
   <td class=xl68 width=170 style='border-top:none;border-left:none;width:128pt'>126</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc20mm"
+				type="text" class="form-control" id="pvc20mm" style="text-align:center;"
 				aria-describedby="pvc20mm" name="pvc20mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc20mm}" />"
 				readonly="readonly"></td>
@@ -39,7 +39,7 @@
   <td class=xl66 width=163 style='border-top:none;border-left:none;width:122pt'>12,5</td>
   <td class=xl69 width=170 style='border-top:none;border-left:none;width:128pt'>196</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc25mm"
+				type="text" class="form-control" id="pvc25mm" style="text-align:center;"
 				aria-describedby="pvc25mm" name="pvc25mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc25mm}" />"
 				readonly="readonly"></td>
@@ -50,7 +50,7 @@
   <td class=xl67 width=163 style='border-top:none;border-left:none;width:122pt'>16</td>
   <td class=xl68 width=170 style='border-top:none;border-left:none;width:128pt'>322</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc32mm"
+				type="text" class="form-control" id="pvc32mm" style="text-align:center;"
 				aria-describedby="pvc32mm" name="pvc32mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc32mm}" />"
 				readonly="readonly"></td>
@@ -61,7 +61,7 @@
   <td class=xl66 width=163 style='border-top:none;border-left:none;width:122pt'>20</td>
   <td class=xl69 width=170 style='border-top:none;border-left:none;width:128pt'>503</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc40mm"
+				type="text" class="form-control" id="pvc40mm" style="text-align:center;"
 				aria-describedby="pvc40mm" name="pvc40mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc40mm}" />"
 				readonly="readonly"></td>
@@ -71,7 +71,7 @@
   <td class=xl67 width=163 style='border-top:none;border-left:none;width:122pt'>25</td>
   <td class=xl68 width=170 style='border-top:none;border-left:none;width:128pt'>785</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc50mm"
+				type="text" class="form-control" id="pvc50mm" style="text-align:center;"
 				aria-describedby="pvc50mm" name="pvc50mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc50mm}" />"
 				readonly="readonly"></td>
@@ -82,7 +82,7 @@
   <td class=xl66 width=163 style='border-top:none;border-left:none;width:122pt'>30</td>
   <td class=xl69 width=170 style='border-top:none;border-left:none;width:128pt'>1131</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc60mm"
+				type="text" class="form-control" id="pvc60mm" style="text-align:center;"
 				aria-describedby="pvc60mm" name="pvc60mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc60mm}" />"
 				readonly="readonly"></td>
@@ -93,7 +93,7 @@
   <td class=xl67 width=163 style='border-top:none;border-left:none;width:122pt'>37,5</td>
   <td class=xl68 width=170 style='border-top:none;border-left:none;width:128pt'>1767</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc75mm"
+				type="text" class="form-control" id="pvc75mm" style="text-align:center;"
 				aria-describedby="pvc75mm" name="pvc75mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc75mm}" />"
 				readonly="readonly"></td>
@@ -104,7 +104,7 @@
   <td class=xl66 width=163 style='border-top:none;border-left:none;width:122pt'>42,5</td>
   <td class=xl69 width=170 style='border-top:none;border-left:none;width:128pt'>2270</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc85mm"
+				type="text" class="form-control" id="pvc85mm" style="text-align:center;"
 				aria-describedby="pvc85mm" name="pvc85mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc85mm}" />"
 				readonly="readonly"></td>
@@ -115,7 +115,7 @@
   <td class=xl67 width=163 style='border-top:none;border-left:none;width:122pt'>50</td>
   <td class=xl68 width=170 style='border-top:none;border-left:none;width:128pt'>3142</td>
   <td colspan=2 class=xl71 width=315 style='border-left:none;width:237pt'><input
-				type="text" class="form-control" id="pvc100mm"
+				type="text" class="form-control" id="pvc100mm" style="text-align:center;"
 				aria-describedby="pvc100mm" name="pvc100mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.pvc100mm}" />"
 				readonly="readonly"></td>

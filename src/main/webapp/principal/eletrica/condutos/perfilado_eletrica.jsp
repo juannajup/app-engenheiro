@@ -29,7 +29,7 @@
   <td class=xl67 width=170 style='border-top:none;border-left:none;width:128pt'>1444</td>
   <td class=xl67 width=213 style='border-top:none;border-left:none;width:160pt'>577,6</td>
   <td class=xl67 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="perf38_38"
+				type="text" class="form-control" id="perf38_38" style="text-align:center;"
 				aria-describedby="perf38_38" name="perf38_38"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.perf38_38}" />"
 				readonly="readonly"></td>
@@ -41,7 +41,7 @@
   <td class=xl66 width=170 style='border-top:none;border-left:none;width:128pt'>14000</td>
   <td class=xl66 width=213 style='border-top:none;border-left:none;width:160pt'>5600</td>
   <td class=xl66 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="perf200_70"
+				type="text" class="form-control" id="perf200_70" style="text-align:center;"
 				aria-describedby="perf200_70" name="perf200_70"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.perf200_70}" />"
 				readonly="readonly"></td>

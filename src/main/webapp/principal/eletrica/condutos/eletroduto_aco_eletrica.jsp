@@ -33,7 +33,7 @@
   <td class=xl68 width=213 style='border-top:none;border-left:none;width:160pt'>71</td>
 		<td class=xl69 width=102
 			style='border-top: none; border-left: none; width: 77pt'><input
-				type="text" class="form-control" id="aco15mm"
+				type="text" class="form-control" id="aco15mm" style="text-align:center;"
 				aria-describedby="aco15mm" name="aco15mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco15mm}" />"
 				readonly="readonly"></td>
@@ -47,7 +47,7 @@
   <td class=xl70 width=213 style='border-top:none;border-left:none;width:160pt'>126</td>
 		<td class=xl71 width=102
 			style='border-top: none; border-left: none; width: 77pt'><input
-				type="text" class="form-control" id="aco20mm"
+				type="text" class="form-control" id="aco20mm" style="text-align:center;"
 				aria-describedby="aco20mm" name="aco20mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco20mm}" />"
 				readonly="readonly"></td>
@@ -60,7 +60,7 @@
   / M / SP / P</td>
   <td class=xl68 width=213 style='border-top:none;border-left:none;width:160pt'>196</td>
   <td class=xl69 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="aco25mm"
+				type="text" class="form-control" id="aco25mm" style="text-align:center;"
 				aria-describedby="aco25mm" name="aco25mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco25mm}" />"
 				readonly="readonly"></td>
@@ -73,7 +73,7 @@
   / M / SP / P</td>
   <td class=xl70 width=213 style='border-top:none;border-left:none;width:160pt'>322</td>
   <td class=xl71 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="aco32mm"
+				type="text" class="form-control" id="aco32mm" style="text-align:center;"
 				aria-describedby="aco32mm" name="aco32mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco32mm}" />"
 				readonly="readonly"></td>
@@ -86,7 +86,7 @@
   / M / SP / P</td>
   <td class=xl68 width=213 style='border-top:none;border-left:none;width:160pt'>503</td>
   <td class=xl69 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="aco40mm"
+				type="text" class="form-control" id="aco40mm" style="text-align:center;"
 				aria-describedby="aco40mm" name="aco40mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco40mm}" />"
 				readonly="readonly"></td>
@@ -99,7 +99,7 @@
   / M / SP / P</td>
   <td class=xl70 width=213 style='border-top:none;border-left:none;width:160pt'>785</td>
   <td class=xl71 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="aco50mm"
+				type="text" class="form-control" id="aco50mm" style="text-align:center;"
 				aria-describedby="aco50mm" name="aco50mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco50mm}" />"
 				readonly="readonly"></td>
@@ -112,7 +112,7 @@
   / M / SP / P</td>
   <td class=xl68 width=213 style='border-top:none;border-left:none;width:160pt'>1327</td>
   <td class=xl69 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="aco65mm"
+				type="text" class="form-control" id="aco65mm" style="text-align:center;"
 				aria-describedby="aco65mm" name="aco65mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco65mm}" />"
 				readonly="readonly"></td>
@@ -125,7 +125,7 @@
   / SP / P</td>
   <td class=xl70 width=213 style='border-top:none;border-left:none;width:160pt'>2011</td>
   <td class=xl71 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="aco80mm"
+				type="text" class="form-control" id="aco80mm" style="text-align:center;"
 				aria-describedby="aco80mm" name="aco80mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco80mm}" />"
 				readonly="readonly"></td>
@@ -138,7 +138,7 @@
   / SP / P</td>
   <td class=xl68 width=213 style='border-top:none;border-left:none;width:160pt'>3142</td>
   <td class=xl69 width=102 style='border-top:none;border-left:none;width:77pt'><input
-				type="text" class="form-control" id="aco100mm"
+				type="text" class="form-control" id="aco100mm" style="text-align:center;"
 				aria-describedby="aco100mm" name="aco100mm"
 				value="<fmt:formatNumber pattern = "#.##"  value = "${modelInfraEletrica.aco100mm}" />"
 				readonly="readonly"></td>

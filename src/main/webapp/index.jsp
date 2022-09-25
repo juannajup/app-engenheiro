@@ -13,11 +13,11 @@
 <body>
 	<jsp:include page="/menu.jsp"></jsp:include>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light form-control">
-			<div class="container-fluid">
-				<h1 class="titulo">Bem-vindo ao App do Engenheiro!</h1>
-			</div>
+		<div class="container-fluid">
+			<h1 class="titulo">Bem-vindo ao App do Engenheiro!</h1>
+		</div>
 	</nav>
-	
+
 	<div class="container-fluid list-group form-control">
 		<ul>
 			<h2>Novas funcionalidades:</h2>
@@ -43,5 +43,9 @@
 			<li><h3>Dimensionamento de dutos</h3></li>
 		</ul>
 	</div>
+	<footer id="rodape">
+		<a href="https://github.com/juannajup" target="_blank">Desenvolvido
+			por Juan Pablo - https://github.com/juannajup</a>
+	</footer>
 </body>
 </html>

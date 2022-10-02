@@ -24,21 +24,14 @@
 			<li>
 				<h3>
 					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/eletrica/ocupacaoDados.jsp">Calcular
-						ocupação de conduto - dados e voz</a>
-				</h3>
-			</li>
-			<li>
-				<h3>
-					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/eletrica/ocupacaoEletrica.jsp">Calcular
-						ocupação de conduto - eletrica</a>
+						href="<%=request.getContextPath()%>/principal/hidraulica/dimTubosEsgoto.jsp">Dimensionamento
+						de Tubos de Esgoto (NBR 8160/99)</a>
 				</h3>
 			</li>
 		</ul>
 		<ul>
 			<h2>Proximas implementações:</h2>
-			<li><h3>Ajuste da tabela de cabos de fibra otica</h3></li>
+			<li><h3>Formula de blondel</h3></li>
 			<li><h3>Calculo luminotecnico</h3></li>
 			<li><h3>Dimensionamento de dutos</h3></li>
 		</ul>

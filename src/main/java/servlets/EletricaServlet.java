@@ -81,7 +81,7 @@ public class EletricaServlet extends HttpServlet {
 		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("quedaDeTensao")) {
 
 			String tensao = request.getParameter("tensao");
-			String corrente = request.getParameter("corrente");
+			String corrente = request.getParameter("corrente").replace(",", ".");
 			String comprimento = request.getParameter("comprimento").replace(",", ".");
 			String quedaPermitida = request.getParameter("quedaPermitida").replace(",", ".");
 			String caboTeste = request.getParameter("caboTeste").replace(",", ".");

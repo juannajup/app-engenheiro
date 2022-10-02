@@ -15,25 +15,15 @@
 
 	<main>
 		<h3 id="titulo" class="form-control">Tabelas NBR 5410</h3>
-
 		<form class="form-control">
-		<jsp:include page="tabelas5410/tabela36/tabela36.jsp"></jsp:include>
-		<br>	
-		<jsp:include page="tabelas5410/tabela37/tabela37.jsp"></jsp:include>
-		<br>	
-		<jsp:include page="tabelas5410/tabela42/tabela42.jsp"></jsp:include>
-		<br>	
-		<jsp:include page="tabelas5410/tabela59/tabela59.jsp"></jsp:include>
-		
-		
-		
-		
-		
+			<jsp:include page="tabelas5410/tabela36/tabela36.jsp"></jsp:include>
+			<br>
+			<jsp:include page="tabelas5410/tabela37/tabela37.jsp"></jsp:include>
+			<br>
+			<jsp:include page="tabelas5410/tabela42/tabela42.jsp"></jsp:include>
+			<br>
+			<jsp:include page="tabelas5410/tabela59/tabela59.jsp"></jsp:include>
 		</form>
-		
-		
-		
-		
 	</main>
 </body>
 </html>

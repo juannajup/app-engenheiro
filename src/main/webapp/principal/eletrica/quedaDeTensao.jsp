@@ -27,12 +27,12 @@
 			</div>
 			<div class="mb-3">
 				<label for="corrente" class="form-label">Corrente (A)</label> 
-				<input type="number" class="form-control" id="corrente" required="required"
+				<input type="text" class="form-control" id="corrente" required="required"
 					aria-describedby="corrente" name="corrente" value="<fmt:formatNumber pattern = "#.##"  value = "${modelEletrica.corrente}" />">
 			</div>
 			<div class="mb-3">
 				<label for="comprimento" class="form-label">Comprimento (m)</label> 
-				<input type="number" class="form-control" id="comprimento" required="required"
+				<input type="text" class="form-control" id="comprimento" required="required"
 					aria-describedby="comprimento" name="comprimento" value="${modelEletrica.comprimento}">
 			</div>
 			<div class="mb-3">

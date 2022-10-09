@@ -110,9 +110,13 @@ tbody, td, tfoot, th, thead, tr {
 
 @media all and (max-width: 990px) {
 	.dropdown-menu {
-		position: absolute !important;
+		position: relative;
 	}
-	.btn {
+	a.btn {
 		display: block;
+		margin: 0 auto;
 	}
+	.nav-item {
+    width: 900px;
+}
 }

@@ -119,4 +119,15 @@ tbody, td, tfoot, th, thead, tr {
 	.nav-item {
     width: 900px;
 }
+	#telaComputador{
+	display: none;
+	}
+
+}
+
+@media all and (min-width: 1350px) {
+	#telaCelular{
+	display: none;
+	}
+	
 }

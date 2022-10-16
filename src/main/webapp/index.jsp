@@ -28,10 +28,14 @@
 						de Tubos de Esgoto (NBR 8160/99)</a>
 				</h3>
 			</li>
+			<li>
+				<h3>
+					<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/arq/blondel.jsp">Calcular Escada - Formula de Blondel</a>
+				</h3>
+			</li>
 		</ul>
 		<ul>
 			<h2>Proximas implementações:</h2>
-			<li><h3>Formula de blondel</h3></li>
 			<li><h3>Calculo luminotecnico</h3></li>
 			<li><h3>Dimensionamento de dutos</h3></li>
 		</ul>

@@ -24,6 +24,9 @@
 			action="<%=request.getContextPath()%>/EletricaServlet?acao=condutoEletrico"
 			id="form">
 		
+		
+		<!-- quando a tela for de celular, no css com @media a tabela abaixo sera ocultada -->
+		<div id="telaCelular">
 		<br>
 		<jsp:include page="cabos/pirastic.jsp"></jsp:include>
 		<br>
@@ -31,6 +34,13 @@
 		<br>
 		<jsp:include page="cabos/eprotenax.jsp"></jsp:include>
 		<br>
+		</div>
+		
+		<!-- quando a tela for de computador, no css com @media as tabelas acima serão ocultadas-->
+		<div id="telaComputador">
+		<jsp:include page="cabos/cabos_eletricos.jsp"></jsp:include>
+		<br>
+		</div>
 		
 		<div style="text-align: center;">	
 		<button type="submit" class="btn btn-success">Calcular</button>

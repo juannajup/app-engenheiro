@@ -61,9 +61,10 @@
 							<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbarDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false" style="color: white;"> Obra </a>
+							aria-expanded="false" style="color: white;"> Arquitetura/Civil </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/obra/traco-concreto.jsp">Calcular traço de concreto armado</a> 					
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/arq/blondel.jsp">Calcular escada - Formula de Blondel</a>
 							</div></li>
 						
 					</ul>

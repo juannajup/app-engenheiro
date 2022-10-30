@@ -24,7 +24,7 @@
 			
 				<div class="col-md-12" style="padding-bottom: 16px;">
 					<label for="espelho" class="form-label">Altura espelho (entre 16 e 18cm)</label>
-					<input type="text" class="form-control" id="espelho" onblur="blondel();"
+					<input type="text" class="form-control" id="espelho" onchange="blondel();"
 						required="required" aria-describedby="espelho" name="espelho"
 						value="<fmt:formatNumber pattern = "#"  value = "${modelArq.espelho}" />">
 				</div>

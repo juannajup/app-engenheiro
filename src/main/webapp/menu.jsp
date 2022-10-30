@@ -30,6 +30,7 @@
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 																
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/correnteEletrica.jsp">Calculo de corrente elétrica</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/luminotecnico.jsp">Calculo luminotécnico</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/ocupacaoDados.jsp">Calcular ocupação de conduto - dados e voz</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/ocupacaoEletrica.jsp">Calcular ocupação de conduto - eletrica</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/quedaDeTensao.jsp">Calcular queda de tensão</a>

@@ -62,7 +62,9 @@ small:hover {
 
 #rodape {
 	position: fixed;
-	bottom: 0; left : 0; right : 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	display: block;
 	height: 50px;
 	width: 100%;
@@ -73,12 +75,12 @@ small:hover {
 	color: white;
 }
 
-#rodape > a{
+#rodape>a {
 	text-decoration: none;
 	color: black;
 }
 
-#rodape a:hover{
+#rodape a:hover {
 	color: white;
 }
 
@@ -117,17 +119,6 @@ tbody, td, tfoot, th, thead, tr {
 		margin: 0 auto;
 	}
 	.nav-item {
-    width: 900px;
-}
-	#telaComputador{
-	display: none;
+		width: 900px;
 	}
-
-}
-
-@media all and (min-width: 1350px) {
-	#telaCelular{
-	display: none;
-	}
-	
 }

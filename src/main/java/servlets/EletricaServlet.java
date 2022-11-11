@@ -13,6 +13,7 @@ import model.ModelCabosEletricos;
 import model.ModelEletrica;
 import model.ModelInfraDados;
 import model.ModelInfraEletrica;
+import model.ModelLum;
 
 @WebServlet("/EletricaServlet")
 public class EletricaServlet extends HttpServlet {
@@ -46,7 +47,7 @@ public class EletricaServlet extends HttpServlet {
 			modelEletrica.setFatorDePotencia(Double.parseDouble(fatorDePotencia));
 			modelEletrica.setRede(rede);
 
-			// verifica se a tensï¿½o ï¿½ 220V ou 380V antes de calcular a corrente
+			// verifica se a tensao é 220V ou 380V antes de calcular a corrente
 			if (modelEletrica.getTensao() == 110 && rede.equals("monofasico")) {
 				modelEletrica.calcularCorrenteMonofasica(modelEletrica.getTensao(), modelEletrica.getPotencia(),
 						modelEletrica.getFatorDePotencia());
@@ -105,6 +106,57 @@ public class EletricaServlet extends HttpServlet {
 			request.setAttribute("modelEletrica", modelEletrica);
 
 			request.getRequestDispatcher("principal/eletrica/quedaDeTensao.jsp").forward(request, response);
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("luminotecnico")) {
+
+			String comprimento = request.getParameter("comprimento").replace(",", ".");
+			String largura = request.getParameter("largura").replace(",", ".");
+			String alturaInstalacao = request.getParameter("alturaInstalacao").replace(",", ".");
+
+			ModelLum modelLum = new ModelLum();
+
+			modelLum.setComprimento(Double.parseDouble(comprimento));
+			modelLum.setLargura(Double.parseDouble(largura));
+			modelLum.setAlturaInstalacao(Double.parseDouble(alturaInstalacao));
+
+			modelLum.calcularIndiceK(modelLum.getComprimento(), modelLum.getLargura(), modelLum.getAlturaInstalacao());
+
+			// retorna a tela os dados enviados para o calculo
+			request.setAttribute("modelLum", modelLum);
+
+			request.getRequestDispatcher("principal/eletrica/luminotecnico2.jsp").forward(request, response);
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("luminotecnico2")) {
+
+			String comprimento = request.getParameter("comprimento").replace(",", ".");
+			String largura = request.getParameter("largura").replace(",", ".");
+			String alturaInstalacao = request.getParameter("alturaInstalacao").replace(",", ".");
+			String fluxoLuminoso = request.getParameter("fluxoLuminoso").replace(",", ".");
+			String nivelLuminancia = request.getParameter("nivelLuminancia").replace(",", ".");
+			String depreciacao = request.getParameter("depreciacao").replace(",", ".");
+			String fatorUtilizacao = request.getParameter("fatorUtilizacao").replace(",", ".");
+			String indiceK = request.getParameter("indiceK").replace(",", ".");
+
+			ModelLum modelLum = new ModelLum();
+
+			modelLum.setComprimento(Double.parseDouble(comprimento));
+			modelLum.setLargura(Double.parseDouble(largura));
+			modelLum.setAlturaInstalacao(Double.parseDouble(alturaInstalacao));
+			modelLum.setFluxoLuminoso(Double.parseDouble(fluxoLuminoso));
+			modelLum.setNivelLuminancia(Double.parseDouble(nivelLuminancia));
+			modelLum.setDepreciacao(Double.parseDouble(depreciacao));
+			modelLum.setFatorUtilizacao(Double.parseDouble(fatorUtilizacao));
+			modelLum.setIndiceK(Double.parseDouble(indiceK));
+
+			modelLum.calcularFluxoLuminosoTotal(modelLum.getComprimento(), modelLum.getLargura(),
+					modelLum.getNivelLuminancia(), modelLum.getDepreciacao(), modelLum.getFatorUtilizacao());
+			modelLum.calcularNumeroDeLuminarias(modelLum.getFluxoLuminosoTotal(), modelLum.getFluxoLuminoso());
+			modelLum.mostrarIndiceK(modelLum.getIndiceK());
+
+			// retorna a tela os dados enviados para o calculo
+			request.setAttribute("modelLum", modelLum);
+
+			request.getRequestDispatcher("principal/eletrica/luminotecnico2.jsp").forward(request, response);
 
 		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("condutoEletrico")) {
 
@@ -1364,7 +1416,7 @@ public class EletricaServlet extends HttpServlet {
 					modelCabosDados.getCat6a(), modelCabosDados.getCat7(),
 
 					modelCabosDados.getRg11(), modelCabosDados.getRg59());
-			
+
 			modelInfraDados.CalcEletrocalha300_100mm(modelCabosDados.getFibras2(), modelCabosDados.getFibras4(),
 					modelCabosDados.getFibras6(), modelCabosDados.getFibras8(), modelCabosDados.getFibras10(),
 					modelCabosDados.getFibras12(), modelCabosDados.getFibras16(), modelCabosDados.getFibras24(),

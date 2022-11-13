@@ -32,7 +32,7 @@ public class ArqServlet extends HttpServlet {
 
 			String espelho = request.getParameter("espelho");
 			String pisoPiso = request.getParameter("pisoPiso");
-			
+
 			ModelArq modelArq = new ModelArq();
 
 			modelArq.setEspelho(Double.parseDouble(espelho));
@@ -40,12 +40,28 @@ public class ArqServlet extends HttpServlet {
 
 			modelArq.calcularPiso(modelArq.getEspelho());
 			modelArq.calcularDegrau(modelArq.getPisoPiso(), modelArq.getEspelho());
-			
-			
+
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelArq", modelArq);
 
 			request.getRequestDispatcher("principal/arq/blondel.jsp").forward(request, response);
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("rampa")) {
+
+			String comprimento = request.getParameter("comprimento").replace(",", ".");
+			String altura = request.getParameter("altura").replace(",", ".");
+
+			ModelArq modelArq = new ModelArq();
+
+			modelArq.setComprimento(Double.parseDouble(comprimento));
+			modelArq.setAltura(Double.parseDouble(altura));
+
+			modelArq.calcularInclinacaoRampa(modelArq.getComprimento(), modelArq.getAltura());
+
+			// retorna a tela os dados enviados para o calculo
+			request.setAttribute("modelArq", modelArq);
+
+			request.getRequestDispatcher("principal/arq/rampa.jsp").forward(request, response);
 
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request, response);

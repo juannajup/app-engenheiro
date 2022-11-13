@@ -11,6 +11,10 @@ public class ModelArq implements Serializable {
 	private Double piso;
 	private Double quantDegraus;
 
+	private Double inclinacao;
+	private Double comprimento;
+	private Double altura;
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -31,6 +35,18 @@ public class ModelArq implements Serializable {
 		return quantDegraus;
 	}
 
+	public Double getInclinacao() {
+		return inclinacao;
+	}
+
+	public Double getComprimento() {
+		return comprimento;
+	}
+
+	public Double getAltura() {
+		return altura;
+	}
+
 	public void setEspelho(Double espelho) {
 		this.espelho = espelho;
 	}
@@ -47,6 +63,18 @@ public class ModelArq implements Serializable {
 		this.quantDegraus = quantDegraus;
 	}
 
+	public void setInclinacao(Double inclinacao) {
+		this.inclinacao = inclinacao;
+	}
+
+	public void setComprimento(Double comprimento) {
+		this.comprimento = comprimento;
+	}
+
+	public void setAltura(Double altura) {
+		this.altura = altura;
+	}
+
 	public Double calcularPiso(Double espelho) {
 
 		piso = 64 - 2 * espelho;
@@ -59,6 +87,12 @@ public class ModelArq implements Serializable {
 		quantDegraus = pisoPiso / espelho;
 
 		return quantDegraus;
+	}
+
+	public Double calcularInclinacaoRampa(Double comprimento, Double altura) {
+
+		return inclinacao = (altura * 100) / comprimento;
+
 	}
 
 }

@@ -42,6 +42,13 @@
 						Calculo luminotecnico - Metodo dos Lumens </a>
 				</h3>
 			</li>
+			<li>
+				<h3>
+					<a class="dropdown-item"
+						href="<%=request.getContextPath()%>/principal/arq/rampa.jsp">
+						Calcular inclinação rampa </a>
+				</h3>
+			</li>
 		</ul>
 		<ul>
 			<h2>Proximas implementações:</h2>

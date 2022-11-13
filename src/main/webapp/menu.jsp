@@ -54,6 +54,7 @@
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/calcularBtuh.jsp">Calcular ar condicionado split</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/chapasDutos.jsp">Calcular peso de chapa de dutos</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/isolamento_tubulacoes.jsp">Isolamento tubulações frigorigenas</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/conversao.jsp">Tabela de conversão de tubos de cobre</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/frigorigenas.jsp">Tabela de seleção de tubulações frigorigenas</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/selecaoTubos.jsp">Tabela de seleção de tubulações de água gelada</a> 
@@ -66,6 +67,7 @@
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/obra/traco-concreto.jsp">Calcular traço de concreto armado</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/arq/blondel.jsp">Calcular escada - Formula de Blondel</a>
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/arq/rampa.jsp">Calcular inclinação rampa</a>
 							</div></li>
 						
 					</ul>

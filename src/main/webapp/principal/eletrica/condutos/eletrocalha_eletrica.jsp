@@ -8,7 +8,7 @@
  <col width=213 style='mso-width-source:userset;mso-width-alt:7789;width:160pt'>
  <col width=106 style='mso-width-source:userset;mso-width-alt:3876;width:80pt'>
  <tr height=20 style='height:15.0pt'>
-  <td colspan=5 height=20 class=xl70 width=816 style='height:15.0pt;width:613pt'>ELETROCALHA</td>
+  <td colspan=5 height=20 class=xl70 width=816 style='height:15.0pt;width:613pt'><strong>ELETROCALHA</strong></td>
  </tr>
  <tr height=40 style='height:30.0pt'>
   <td height=40 class=xl66 width=164 style='height:30.0pt;border-top:none;

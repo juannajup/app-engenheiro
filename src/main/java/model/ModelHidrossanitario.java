@@ -22,9 +22,34 @@ public class ModelHidrossanitario implements Serializable {
 	private Double altura2;
 	private Double distanciaCaixas;
 	private Double inclinacaoTubo;
-	
-	
-	
+	private Double areaMolhada;
+	private Double intensidadePluviometrica;
+	private Double vazaoDeProjeto;
+
+	public Double getAreaMolhada() {
+		return areaMolhada;
+	}
+
+	public Double getIntensidadePluviometrica() {
+		return intensidadePluviometrica;
+	}
+
+	public Double getVazaoDeProjeto() {
+		return vazaoDeProjeto;
+	}
+
+	public void setAreaMolhada(Double areaMolhada) {
+		this.areaMolhada = areaMolhada;
+	}
+
+	public void setIntensidadePluviometrica(Double intensidadePluviometrica) {
+		this.intensidadePluviometrica = intensidadePluviometrica;
+	}
+
+	public void setVazaoDeProjeto(Double vazaoDeProjeto) {
+		this.vazaoDeProjeto = vazaoDeProjeto;
+	}
+
 	public Double getDistanciaCaixas() {
 		return distanciaCaixas;
 	}
@@ -157,7 +182,6 @@ public class ModelHidrossanitario implements Serializable {
 		this.numeroDePavimentos = numeroDePavimentos;
 	}
 
-	
 	/*
 	 * 
 	 * 
@@ -195,27 +219,32 @@ public class ModelHidrossanitario implements Serializable {
 		return volumeReservatorioInferior;
 
 	}
-	
+
 	public Double alturaCaixaInsp1(Double cotaTopo1, Double cotaFundo1) {
-		
+
 		altura1 = cotaTopo1 - cotaFundo1;
-		
+
 		return altura1;
 	}
-	
+
 	public Double calcularCotaCaixaInsp(Double cotaFundo1, Double distanciaCaixas, Double inclinacaoTubo) {
-		
+
 		cotaFundo2 = cotaFundo1 - distanciaCaixas * (inclinacaoTubo / 100);
-		
+
 		return cotaFundo2;
 	}
-	
+
 	public Double alturaCaixaInsp2(Double cotaTopo2) {
-		
+
 		altura2 = cotaTopo2 - calcularCotaCaixaInsp(cotaFundo1, distanciaCaixas, inclinacaoTubo);
-		
+
 		return altura2;
 	}
 	
-	
+	public Double calcularVazao(Double areaMolhada, Double intensidadePluviometrica) {
+		
+		return vazaoDeProjeto =  (areaMolhada * intensidadePluviometrica ) / 60;
+		
+	}
+
 }

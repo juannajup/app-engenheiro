@@ -6,8 +6,8 @@
  <col width=77 span=5 style='mso-width-source:userset;mso-width-alt:2816;
  width:58pt'>
  <tr height=28 style='height:21.0pt'>
-  <td colspan=6 height=28 class=xl67 width=723 style='height:21.0pt;width:544pt'>CABOS
-  SINTENAX FLEX - ISOLAÇÃO DE PVC</td>
+  <td colspan=6 height=28 class=xl67 width=723 style='height:21.0pt;width:544pt'><strong>CABOS
+  SINTENAX FLEX - ISOLAÇÃO DE PVC</strong></td>
  </tr>
  <tr height=28 style='height:21.0pt'>
   <td height=28 class=xl68 width=338 style='height:21.0pt;border-top:none;

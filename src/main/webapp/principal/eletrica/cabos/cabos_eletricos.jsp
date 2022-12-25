@@ -22,8 +22,8 @@
 		style='mso-width-source: userset; mso-width-alt: 2596; width: 53pt'>
 	<tr height=21 style='height: 15.75pt'>
 		<td colspan=16 height=21 class=xl73 width=1249
-			style='height: 15.75pt; width: 938pt'>CABOS PIRASTIC - ISOLAÇÃO
-			DE PVC</td>
+			style='height: 15.75pt; width: 938pt'><strong>CABOS PIRASTIC - ISOLAÇÃO
+			DE PVC</strong></td>
 	</tr>
 	<tr height=21 style='height: 15.75pt'>
 		<td height=21 class=xl67 width=257

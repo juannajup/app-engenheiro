@@ -45,6 +45,7 @@
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularNivelCaixaInspecao.jsp">Calcular niveis das caixas de inspeção</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularReservatorio.jsp">Calcular reseratório de água fria</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/dimTubosEsgoto.jsp">Dimensionamento de tubos de esgoto</a> 					
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularVazaoAguasPluviais.jsp">Dimensionamento aguas pluviais</a> 					
 							</div></li>
 							
 							<li class="nav-item dropdown"> 

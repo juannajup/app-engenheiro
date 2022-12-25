@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<jsp:include page="/principal/bootstrap-css.jsp"></jsp:include>
+<meta charset="ISO-8859-1"><jsp:include
+	page="/principal/bootstrap-css.jsp"></jsp:include>
 
 <title>Calcular Split</title>
 </head>
@@ -20,15 +20,7 @@
 		<form class="form-control" method="post"
 			action="<%=request.getContextPath()%>/MecanicaServlet?acao=calcularSplit"
 			id="form">
-			<!-- 
-			<div class="mb-3">
-				<label for="nomeDoAmbiente" class="form-label">Nome do
-					ambiente</label>
-				<input type="text" class="form-control" id="nomeDoAmbiente"
-					required="required" aria-describedby="nomeDoAmbiente"
-					name="nomeDoAmbiente" value="${modelMecanica.nomeDoAmbiente}">
-			</div>
-			 -->
+			
 			<div class="mb-3">
 				<label for="areaDoAmbiente" class="form-label">Área do
 					ambiente (m²)</label>
@@ -47,20 +39,20 @@
 					aria-describedby="quantidadeDeSol" name="quantidadeDeSol"
 					value="sim" required="required"
 					<%ModelMecanica modelMecanica = (ModelMecanica) request.getAttribute("modelMecanica");
-if (modelMecanica != null && modelMecanica.getQuantidadeDeSol().equalsIgnoreCase("sim")) {
-	out.print(" ");
-	out.print("checked=\"checked\"");
-	out.print(" ");
-}%>>
+			if (modelMecanica != null && modelMecanica.getQuantidadeDeSol().equalsIgnoreCase("sim")) {
+				out.print(" ");
+				out.print("checked=\"checked\"");
+				out.print(" ");
+			}%>>
 				<label for="quantidadeDeSol" class="form-label">Sim</label>
 				<input type="radio" id="quantidadeDeSol"
 					aria-describedby="quantidadeDeSol" name="quantidadeDeSol"
 					value="não" required="required"
 					<%if (modelMecanica != null && modelMecanica.getQuantidadeDeSol().equalsIgnoreCase("não")) {
-	out.print(" ");
-	out.print("checked=\"checked\"");
-	out.print(" ");
-}%>>
+				out.print(" ");
+				out.print("checked=\"checked\"");
+				out.print(" ");
+			}%>>
 				<label for="quantidadeDeSol" class="form-label">Não</label>
 
 			</div>
@@ -92,31 +84,6 @@ if (modelMecanica != null && modelMecanica.getQuantidadeDeSol().equalsIgnoreCase
 			<button type="submit" class="btn btn-success">Calcular</button>
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 
-			<!-- Tabela com os resultados anteriores -->
-			<!-- 
-			<c:if test="${modelMecanica.nomeDoAmbiente != null && modelMecanica.nomeDoAmbiente != ''}">
-				<div style="height: 300px; margin-top: 10px;">
-					<table class="table" id="tabelaresultadosview">
-						<thead>
-							<tr>
-								<th scope="col">Nome</th>
-								<th scope="col">Area do ambiente</th>
-								<th scope="col">Btu/h calculado</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items='${listaCalculada}' var='mm'>
-								<tr>
-									<td><c:out value="${mm.nomeDoAmbiente}"></c:out></td>
-									<td><fmt:formatNumber pattern = "#"  value = "${mm.areaDoAmbiente}" /></td>
-									<td><fmt:formatNumber pattern = "#"  value = "${mm.btuh}" /></td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-				</div>
-			</c:if>
-			 -->
 		</form>
 
 

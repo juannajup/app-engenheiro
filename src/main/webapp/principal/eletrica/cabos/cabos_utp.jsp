@@ -8,7 +8,7 @@
  <col width=64 style='mso-width-source:userset;mso-width-alt:2340;width:48pt'>
  <tr height=20 style='height:15.0pt'>
   <td colspan=6 height=20 class=xl70 width=734 style='border-right:1.0pt solid black;
-  height:15.0pt;width:550pt'>CABOS UTP - NÃO BLINDADO</td>
+  height:15.0pt;width:550pt'><strong>CABOS UTP - NÃO BLINDADO</strong></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
   <td height=20 class=xl73 width=392 style='height:15.0pt;border-top:none;

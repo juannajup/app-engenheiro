@@ -5,7 +5,7 @@
  <col width=64 style='width:48pt'>
  <tr height=20 style='height:15.0pt'>
   <td colspan=3 height=20 class=xl78 width=411 style='border-right:1.0pt solid black;
-  height:15.0pt;width:308pt'>CABOS COAXIAL</td>
+  height:15.0pt;width:308pt'><strong>CABOS COAXIAL</strong></td>
  </tr>
  <tr height=20 style='height:15.0pt'>
   <td height=20 class=xl70 width=292 style='height:15.0pt;border-top:none;

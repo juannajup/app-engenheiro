@@ -8,8 +8,8 @@
 		style='mso-width-source: userset; mso-width-alt: 2816; width: 58pt'>
 	<tr height=28 style='height: 21.0pt'>
 		<td colspan=6 height=28 class=xl68 width=605
-			style='border-right: 1.0pt solid black; height: 21.0pt; width: 455pt'>CABOS
-			EPROTENAX GSETTE - EPR 0,6/1 kV</td>
+			style='border-right: 1.0pt solid black; height: 21.0pt; width: 455pt'><strong>CABOS
+			EPROTENAX GSETTE - EPR 0,6/1 kV</strong></td>
 	</tr>
 	<tr height=28 style='height: 21.0pt'>
 		<td height=28 class=xl72 width=220

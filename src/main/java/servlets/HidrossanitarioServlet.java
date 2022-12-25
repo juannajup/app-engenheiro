@@ -94,6 +94,24 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 			request.getRequestDispatcher("principal/hidraulica/calcularNivelCaixaInspecao.jsp").forward(request, response);
 
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("calcularVazaoAguasPluviais")) {
+			
+			String areaMolhada = request.getParameter("areaMolhada").replace(",", ".");
+			String intensidadePluviometrica = request.getParameter("intensidadePluviometrica").replace(",", ".");
+			
+			ModelHidrossanitario modelHidrossanitario = new ModelHidrossanitario();
+			
+			modelHidrossanitario.setAreaMolhada(Double.parseDouble(areaMolhada));
+			modelHidrossanitario.setIntensidadePluviometrica(Double.parseDouble(intensidadePluviometrica));
+			
+			modelHidrossanitario.calcularVazao(modelHidrossanitario.getAreaMolhada(), modelHidrossanitario.getIntensidadePluviometrica());
+			
+			
+			// retorna a tela os dados enviados para o calculo
+			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
+			
+			request.getRequestDispatcher("principal/hidraulica/calcularVazaoAguasPluviais.jsp").forward(request, response);
+			
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}

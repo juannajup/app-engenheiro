@@ -9,7 +9,7 @@
 		style='mso-width-source: userset; mso-width-alt: 2413; width: 50pt'>
 	<tr height=28 style='height: 21.0pt'>
 		<td colspan=7 height=28 class=xl73 width=789
-			style='height: 21.0pt; width: 594pt'>FIBRA ÓPTICA</td>
+			style='height: 21.0pt; width: 594pt'><strong>FIBRA ÓPTICA</strong></td>
 	</tr>
 	<tr height=28 style='height: 21.0pt'>
 		<td height=28 class=xl67 width=338

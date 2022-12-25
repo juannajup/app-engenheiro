@@ -9,23 +9,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <jsp:include page="/principal/bootstrap-css.jsp"></jsp:include>
-<!-- 
-<style type="text/css">
-
-@media all and (max-width: 1348px) {
-	#telaComputador {
-		display: none;
-	}
-}
-
-@media all and (min-width: 1350px) {
-	#telaCelular {
-		display: none;
-	}
-}
-</style>
- -->
-
 <title>Calcular ocupação de conduto - Eletrica</title>
 </head>
 <body>

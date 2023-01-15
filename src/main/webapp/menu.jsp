@@ -42,10 +42,11 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="color: white;"> Instalações Hidráulicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularCalha.jsp">Calcular capacidade de calha</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularNivelCaixaInspecao.jsp">Calcular niveis das caixas de inspeção</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularReservatorio.jsp">Calcular reseratório de água fria</a> 					
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularVazaoAguasPluviais.jsp">Calcular vazão de projeto - águas pluviais</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/dimTubosEsgoto.jsp">Dimensionamento de tubos de esgoto</a> 					
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularVazaoAguasPluviais.jsp">Dimensionamento aguas pluviais</a> 					
 							</div></li>
 							
 							<li class="nav-item dropdown"> 

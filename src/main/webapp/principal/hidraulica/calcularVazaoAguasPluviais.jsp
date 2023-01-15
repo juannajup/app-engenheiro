@@ -10,12 +10,11 @@
 	page="/principal/bootstrap-css.jsp"></jsp:include><script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<title>Dimensionamento Aguas Pluviais</title>
+<title>Calcular Vazão de Projeto Aguas Pluviais</title>
 </head>
 <body>
 	<jsp:include page="/menu.jsp"></jsp:include>
-	<h3 id="titulo" class="form-control">Dimensionamento dos tubos e
-		calhas de aguas pluviais</h3>
+	<h3 id="titulo" class="form-control">Tubos verticais e horizontais</h3>
 	<form class="form-control" method="post"
 		action="<%=request.getContextPath()%>/HidrossanitarioServlet?acao=calcularVazaoAguasPluviais"
 		id="form">
@@ -47,8 +46,6 @@
 		<br>
 		<br>
 		<jsp:include page="tabelasAguasPluviais/coeficiente_rugosidade.jsp"></jsp:include>
-		<br>
-		<jsp:include page="tabelasAguasPluviais/capacidade_calhas.jsp"></jsp:include>
 		<br>
 		<jsp:include page="tabelasAguasPluviais/conduto_vertical.jsp"></jsp:include>
 		<br>

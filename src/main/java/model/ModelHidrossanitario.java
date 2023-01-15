@@ -25,6 +25,74 @@ public class ModelHidrossanitario implements Serializable {
 	private Double areaMolhada;
 	private Double intensidadePluviometrica;
 	private Double vazaoDeProjeto;
+	private Double capacidadeCalha;
+	private Double declividade;
+	private Double rugosidade;
+	private Double perimetroMolhado;
+
+	public Integer getNumeroDePessoas() {
+		return numeroDePessoas;
+	}
+
+	public Integer getConsumoPerCapita() {
+		return consumoPerCapita;
+	}
+
+	public Integer getConsumoDiario() {
+		return consumoDiario;
+	}
+
+	public Integer getVolumeReservatorioSuperior() {
+		return volumeReservatorioSuperior;
+	}
+
+	public Integer getVolumeReservatorioInferior() {
+		return volumeReservatorioInferior;
+	}
+
+	public Integer getVolumeReservatorio() {
+		return volumeReservatorio;
+	}
+
+	public Integer getNumeroDePavimentos() {
+		return numeroDePavimentos;
+	}
+
+	public Integer getDiasSemAgua() {
+		return diasSemAgua;
+	}
+
+	public Double getCotaTopo1() {
+		return cotaTopo1;
+	}
+
+	public Double getCotaTopo2() {
+		return cotaTopo2;
+	}
+
+	public Double getCotaFundo1() {
+		return cotaFundo1;
+	}
+
+	public Double getCotaFundo2() {
+		return cotaFundo2;
+	}
+
+	public Double getAltura1() {
+		return altura1;
+	}
+
+	public Double getAltura2() {
+		return altura2;
+	}
+
+	public Double getDistanciaCaixas() {
+		return distanciaCaixas;
+	}
+
+	public Double getInclinacaoTubo() {
+		return inclinacaoTubo;
+	}
 
 	public Double getAreaMolhada() {
 		return areaMolhada;
@@ -36,6 +104,86 @@ public class ModelHidrossanitario implements Serializable {
 
 	public Double getVazaoDeProjeto() {
 		return vazaoDeProjeto;
+	}
+
+	public Double getCapacidadeCalha() {
+		return capacidadeCalha;
+	}
+
+	public Double getDeclividade() {
+		return declividade;
+	}
+
+	public Double getRugosidade() {
+		return rugosidade;
+	}
+
+	public Double getPerimetroMolhado() {
+		return perimetroMolhado;
+	}
+
+	public void setNumeroDePessoas(Integer numeroDePessoas) {
+		this.numeroDePessoas = numeroDePessoas;
+	}
+
+	public void setConsumoPerCapita(Integer consumoPerCapita) {
+		this.consumoPerCapita = consumoPerCapita;
+	}
+
+	public void setConsumoDiario(Integer consumoDiario) {
+		this.consumoDiario = consumoDiario;
+	}
+
+	public void setVolumeReservatorioSuperior(Integer volumeReservatorioSuperior) {
+		this.volumeReservatorioSuperior = volumeReservatorioSuperior;
+	}
+
+	public void setVolumeReservatorioInferior(Integer volumeReservatorioInferior) {
+		this.volumeReservatorioInferior = volumeReservatorioInferior;
+	}
+
+	public void setVolumeReservatorio(Integer volumeReservatorio) {
+		this.volumeReservatorio = volumeReservatorio;
+	}
+
+	public void setNumeroDePavimentos(Integer numeroDePavimentos) {
+		this.numeroDePavimentos = numeroDePavimentos;
+	}
+
+	public void setDiasSemAgua(Integer diasSemAgua) {
+		this.diasSemAgua = diasSemAgua;
+	}
+
+	public void setCotaTopo1(Double cotaTopo1) {
+		this.cotaTopo1 = cotaTopo1;
+	}
+
+	public void setCotaTopo2(Double cotaTopo2) {
+		this.cotaTopo2 = cotaTopo2;
+	}
+
+	public void setCotaFundo1(Double cotaFundo1) {
+		this.cotaFundo1 = cotaFundo1;
+	}
+
+	public void setCotaFundo2(Double cotaFundo2) {
+		this.cotaFundo2 = cotaFundo2;
+	}
+
+	public void setAltura1(Double altura1) {
+		this.altura1 = altura1;
+	}
+
+	public void setAltura2(Double altura2) {
+		this.altura2 = altura2;
+	}
+
+	public void setDistanciaCaixas(Double distanciaCaixas) {
+		this.distanciaCaixas = distanciaCaixas;
+	}
+
+	public void setInclinacaoTubo(Double inclinacaoTubo) {
+		this.inclinacaoTubo = inclinacaoTubo;
 	}
 
 	public void setAreaMolhada(Double areaMolhada) {
@@ -50,136 +198,20 @@ public class ModelHidrossanitario implements Serializable {
 		this.vazaoDeProjeto = vazaoDeProjeto;
 	}
 
-	public Double getDistanciaCaixas() {
-		return distanciaCaixas;
+	public void setCapacidadeCalha(Double capacidadeCalha) {
+		this.capacidadeCalha = capacidadeCalha;
 	}
 
-	public void setDistanciaCaixas(Double distanciaCaixas) {
-		this.distanciaCaixas = distanciaCaixas;
+	public void setDeclividade(Double declividade) {
+		this.declividade = declividade;
 	}
 
-	public Double getInclinacaoTubo() {
-		return inclinacaoTubo;
+	public void setRugosidade(Double rugosidade) {
+		this.rugosidade = rugosidade;
 	}
 
-	public void setInclinacaoTubo(Double inclinacaoTubo) {
-		this.inclinacaoTubo = inclinacaoTubo;
-	}
-
-	public Double getCotaTopo1() {
-		return cotaTopo1;
-	}
-
-	public void setCotaTopo1(Double cotaTopo1) {
-		this.cotaTopo1 = cotaTopo1;
-	}
-
-	public Double getCotaTopo2() {
-		return cotaTopo2;
-	}
-
-	public void setCotaTopo2(Double cotaTopo2) {
-		this.cotaTopo2 = cotaTopo2;
-	}
-
-	public Double getCotaFundo1() {
-		return cotaFundo1;
-	}
-
-	public void setCotaFundo1(Double cotaFundo1) {
-		this.cotaFundo1 = cotaFundo1;
-	}
-
-	public Double getCotaFundo2() {
-		return cotaFundo2;
-	}
-
-	public void setCotaFundo2(Double cotaFundo2) {
-		this.cotaFundo2 = cotaFundo2;
-	}
-
-	public Double getAltura1() {
-		return altura1;
-	}
-
-	public void setAltura1(Double altura1) {
-		this.altura1 = altura1;
-	}
-
-	public Double getAltura2() {
-		return altura2;
-	}
-
-	public void setAltura2(Double altura2) {
-		this.altura2 = altura2;
-	}
-
-	public Integer getDiasSemAgua() {
-		return diasSemAgua;
-	}
-
-	public void setDiasSemAgua(Integer diasSemAgua) {
-		this.diasSemAgua = diasSemAgua;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public Integer getNumeroDePessoas() {
-		return numeroDePessoas;
-	}
-
-	public void setNumeroDePessoas(Integer numeroDePessoas) {
-		this.numeroDePessoas = numeroDePessoas;
-	}
-
-	public Integer getConsumoPerCapita() {
-		return consumoPerCapita;
-	}
-
-	public void setConsumoPerCapita(Integer consumoPerCapita) {
-		this.consumoPerCapita = consumoPerCapita;
-	}
-
-	public Integer getConsumoDiario() {
-		return consumoDiario;
-	}
-
-	public void setConsumoDiario(Integer consumoDiario) {
-		this.consumoDiario = consumoDiario;
-	}
-
-	public Integer getVolumeReservatorioSuperior() {
-		return volumeReservatorioSuperior;
-	}
-
-	public void setVolumeReservatorioSuperior(Integer volumeReservatorioSuperior) {
-		this.volumeReservatorioSuperior = volumeReservatorioSuperior;
-	}
-
-	public Integer getVolumeReservatorioInferior() {
-		return volumeReservatorioInferior;
-	}
-
-	public void setVolumeReservatorioInferior(Integer volumeReservatorioInferior) {
-		this.volumeReservatorioInferior = volumeReservatorioInferior;
-	}
-
-	public Integer getVolumeReservatorio() {
-		return volumeReservatorio;
-	}
-
-	public void setVolumeReservatorio(Integer volumeReservatorio) {
-		this.volumeReservatorio = volumeReservatorio;
-	}
-
-	public Integer getNumeroDePavimentos() {
-		return numeroDePavimentos;
-	}
-
-	public void setNumeroDePavimentos(Integer numeroDePavimentos) {
-		this.numeroDePavimentos = numeroDePavimentos;
+	public void setPerimetroMolhado(Double perimetroMolhado) {
+		this.perimetroMolhado = perimetroMolhado;
 	}
 
 	/*
@@ -240,11 +272,23 @@ public class ModelHidrossanitario implements Serializable {
 
 		return altura2;
 	}
-	
+
 	public Double calcularVazao(Double areaMolhada, Double intensidadePluviometrica) {
-		
-		return vazaoDeProjeto =  (areaMolhada * intensidadePluviometrica ) / 60;
-		
+
+		return vazaoDeProjeto = (areaMolhada * intensidadePluviometrica) / 60;
+
+	}
+
+	public Double calcularCapacidadeDeCalha(Double areaMolhada, Double perimetroMolhado, Double rugosidade,
+			Double declividade) {
+
+		Double raioHidraulico = areaMolhada / perimetroMolhado;
+		Double percentual = declividade / 100;
+
+		capacidadeCalha = (60000 * areaMolhada * Math.pow(raioHidraulico, 0.66666667) * Math.pow(percentual, 0.5))
+				/ rugosidade;
+
+		return capacidadeCalha;
 	}
 
 }

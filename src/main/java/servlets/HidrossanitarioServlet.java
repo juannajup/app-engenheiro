@@ -112,6 +112,28 @@ public class HidrossanitarioServlet extends HttpServlet {
 			
 			request.getRequestDispatcher("principal/hidraulica/calcularVazaoAguasPluviais.jsp").forward(request, response);
 			
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("calha")) {
+			
+			String areaMolhada = request.getParameter("areaMolhada").replace(",", ".");
+			String perimetroMolhado = request.getParameter("perimetroMolhado").replace(",", ".");
+			String rugosidade = request.getParameter("rugosidade").replace(",", ".");
+			String declividade = request.getParameter("declividade").replace(",", ".");
+			
+			ModelHidrossanitario modelHidrossanitario = new ModelHidrossanitario();
+			
+			modelHidrossanitario.setAreaMolhada(Double.parseDouble(areaMolhada));
+			modelHidrossanitario.setPerimetroMolhado(Double.parseDouble(perimetroMolhado));
+			modelHidrossanitario.setRugosidade(Double.parseDouble(rugosidade));
+			modelHidrossanitario.setDeclividade(Double.parseDouble(declividade));
+			
+			modelHidrossanitario.calcularCapacidadeDeCalha(modelHidrossanitario.getAreaMolhada(), modelHidrossanitario.getPerimetroMolhado(),
+					modelHidrossanitario.getRugosidade(), modelHidrossanitario.getDeclividade());
+			
+			// retorna a tela os dados enviados para o calculo
+			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
+			
+			request.getRequestDispatcher("principal/hidraulica/calcularCalha.jsp").forward(request, response);
+			
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}

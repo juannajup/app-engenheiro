@@ -55,6 +55,8 @@
 
 		<br>
 		<br>
+		<jsp:include page="tabelasAguasPluviais/materiais_calhas.jsp"></jsp:include>
+		<br>
 		<jsp:include page="tabelasAguasPluviais/capacidade_calhas.jsp"></jsp:include>
 		
 	</form>

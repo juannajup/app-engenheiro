@@ -24,29 +24,7 @@
 			<li>
 				<h3>
 					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/hidraulica/dimTubosEsgoto.jsp">Dimensionamento
-						de Tubos de Esgoto (NBR 8160/99)</a>
-				</h3>
-			</li>
-			<li>
-				<h3>
-					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/arq/blondel.jsp">Calcular
-						Escada - Formula de Blondel</a>
-				</h3>
-			</li>
-			<li>
-				<h3>
-					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/eletrica/luminotecnico.jsp">
-						Calculo luminotecnico - Metodo dos Lumens </a>
-				</h3>
-			</li>
-			<li>
-				<h3>
-					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/arq/rampa.jsp">
-						Calcular inclinação rampa </a>
+						href="<%=request.getContextPath()%>/principal/hidraulica/calcularCalha.jsp.jsp">Calcular capacidade de calha</a>
 				</h3>
 			</li>
 		</ul>

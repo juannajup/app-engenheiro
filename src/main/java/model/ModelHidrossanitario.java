@@ -29,6 +29,87 @@ public class ModelHidrossanitario implements Serializable {
 	private Double declividade;
 	private Double rugosidade;
 	private Double perimetroMolhado;
+	private Double contribuicao;
+	private Double contribuicaoDiaria;
+	private Double altura;
+	private Double taxaAcumulacao;
+	private Double lodoFresco;
+	private Double larguraPrismatico;
+	private Double comprimentoPrismatico;
+	private Double alturaTotalPrismatico;
+	private Double alturaTotalCilindrico;
+
+	public Double getContribuicao() {
+		return contribuicao;
+	}
+
+	public Double getContribuicaoDiaria() {
+		return contribuicaoDiaria;
+	}
+
+	public Double getAltura() {
+		return altura;
+	}
+
+	public Double getTaxaAcumulacao() {
+		return taxaAcumulacao;
+	}
+
+	public Double getLodoFresco() {
+		return lodoFresco;
+	}
+
+	public Double getLarguraPrismatico() {
+		return larguraPrismatico;
+	}
+
+	public Double getComprimentoPrismatico() {
+		return comprimentoPrismatico;
+	}
+
+	public Double getAlturaTotalPrismatico() {
+		return alturaTotalPrismatico;
+	}
+
+	public Double getAlturaTotalCilindrico() {
+		return alturaTotalCilindrico;
+	}
+
+	public void setContribuicao(Double contribuicao) {
+		this.contribuicao = contribuicao;
+	}
+
+	public void setContribuicaoDiaria(Double contribuicaoDiaria) {
+		this.contribuicaoDiaria = contribuicaoDiaria;
+	}
+
+	public void setAltura(Double altura) {
+		this.altura = altura;
+	}
+
+	public void setTaxaAcumulacao(Double taxaAcumulacao) {
+		this.taxaAcumulacao = taxaAcumulacao;
+	}
+
+	public void setLodoFresco(Double lodoFresco) {
+		this.lodoFresco = lodoFresco;
+	}
+
+	public void setLarguraPrismatico(Double larguraPrismatico) {
+		this.larguraPrismatico = larguraPrismatico;
+	}
+
+	public void setComprimentoPrismatico(Double comprimentoPrismatico) {
+		this.comprimentoPrismatico = comprimentoPrismatico;
+	}
+
+	public void setAlturaTotalPrismatico(Double alturaTotalPrismatico) {
+		this.alturaTotalPrismatico = alturaTotalPrismatico;
+	}
+
+	public void setAlturaTotalCilindrico(Double alturaTotalCilindrico) {
+		this.alturaTotalCilindrico = alturaTotalCilindrico;
+	}
 
 	public Integer getNumeroDePessoas() {
 		return numeroDePessoas;

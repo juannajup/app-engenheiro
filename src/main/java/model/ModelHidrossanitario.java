@@ -35,9 +35,28 @@ public class ModelHidrossanitario implements Serializable {
 	private Double taxaAcumulacao;
 	private Double lodoFresco;
 	private Double larguraPrismatico;
+	private Double larguraCilindrico;
 	private Double comprimentoPrismatico;
 	private Double alturaTotalPrismatico;
 	private Double alturaTotalCilindrico;
+	private Double volumeTanqueSeptico;
+	private Double tempoDeDetencao;
+
+	public Double getLarguraCilindrico() {
+		return larguraCilindrico;
+	}
+
+	public void setLarguraCilindrico(Double larguraCilindrico) {
+		this.larguraCilindrico = larguraCilindrico;
+	}
+
+	public Double getTempoDeDetencao() {
+		return tempoDeDetencao;
+	}
+
+	public void setTempoDeDetencao(Double tempoDeDetencao) {
+		this.tempoDeDetencao = tempoDeDetencao;
+	}
 
 	public Double getContribuicao() {
 		return contribuicao;
@@ -295,6 +314,14 @@ public class ModelHidrossanitario implements Serializable {
 		this.perimetroMolhado = perimetroMolhado;
 	}
 
+	public Double getVolumeTanqueSeptico() {
+		return volumeTanqueSeptico;
+	}
+
+	public void setVolumeTanqueSeptico(Double volumeTanqueSeptico) {
+		this.volumeTanqueSeptico = volumeTanqueSeptico;
+	}
+
 	/*
 	 * 
 	 * 
@@ -372,4 +399,60 @@ public class ModelHidrossanitario implements Serializable {
 		return capacidadeCalha;
 	}
 
+	public Double calcularContribuicaoDiaria(Integer numeroDePessoas, Double contribuicao) {
+		return contribuicaoDiaria = contribuicao * numeroDePessoas;
+	}
+
+	public Double volumeTanqueSeptico(Double taxaAcumulacao, Double lodoFresco) {
+
+		if (contribuicaoDiaria <= 1500) {
+			tempoDeDetencao = 1.00;
+		} else if (contribuicaoDiaria >= 1501 || contribuicaoDiaria <= 3000) {
+			tempoDeDetencao = 0.92;
+		} else if (contribuicaoDiaria >= 3001 || contribuicaoDiaria <= 4500) {
+			tempoDeDetencao = 0.83;
+		} else if (contribuicaoDiaria >= 4501 || contribuicaoDiaria <= 6000) {
+			tempoDeDetencao = 0.75;
+		} else if (contribuicaoDiaria >= 6001 || contribuicaoDiaria <= 7500) {
+			tempoDeDetencao = 0.67;
+		} else if (contribuicaoDiaria >= 7501 || contribuicaoDiaria <= 9000) {
+			tempoDeDetencao = 0.58;
+		} else {
+			tempoDeDetencao = 0.50;
+		}
+
+		volumeTanqueSeptico = (1000 + numeroDePessoas * (contribuicao * tempoDeDetencao + lodoFresco * taxaAcumulacao))
+				/ 1000;
+
+		return volumeTanqueSeptico;
+	}
+
+	public Double calcularLarguraTanquePrismatico(Double altura) {
+
+		Double raiz = volumeTanqueSeptico / (2 * altura);
+
+		return larguraPrismatico = Math.sqrt(raiz);
+	}
+
+	public Double calcularComprimentoTanquePrismatico() {
+
+		return comprimentoPrismatico = larguraPrismatico * 2;
+	}
+
+	public Double calcularAlturaTotalTanquePrismatico() {
+
+		return alturaTotalPrismatico = altura + 0.25;
+	}
+
+	public Double calcularLarguraTanqueCilindrico() {
+
+		Double raiz = (volumeTanqueSeptico * 4) / (Math.PI * altura);
+
+		return larguraCilindrico = Math.sqrt(raiz);
+	}
+
+	public Double calcularAlturaTotalTanqueCilindrico() {
+		alturaTotalCilindrico = altura + 0.25;
+		return alturaTotalCilindrico;
+	}
 }

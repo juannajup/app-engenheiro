@@ -83,57 +83,92 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 			modelHidrossanitario.calcularCotaCaixaInsp(modelHidrossanitario.getCotaFundo1(),
 					modelHidrossanitario.getDistanciaCaixas(), modelHidrossanitario.getInclinacaoTubo());
-			
-			modelHidrossanitario.alturaCaixaInsp1(modelHidrossanitario.getCotaTopo1(), modelHidrossanitario.getCotaFundo1());
+
+			modelHidrossanitario.alturaCaixaInsp1(modelHidrossanitario.getCotaTopo1(),
+					modelHidrossanitario.getCotaFundo1());
 
 			modelHidrossanitario.alturaCaixaInsp2(modelHidrossanitario.getCotaTopo2());
-			
-			
+
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
 
-			request.getRequestDispatcher("principal/hidraulica/calcularNivelCaixaInspecao.jsp").forward(request, response);
+			request.getRequestDispatcher("principal/hidraulica/calcularNivelCaixaInspecao.jsp").forward(request,
+					response);
 
 		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("calcularVazaoAguasPluviais")) {
-			
+
 			String areaMolhada = request.getParameter("areaMolhada").replace(",", ".");
 			String intensidadePluviometrica = request.getParameter("intensidadePluviometrica").replace(",", ".");
-			
+
 			ModelHidrossanitario modelHidrossanitario = new ModelHidrossanitario();
-			
+
 			modelHidrossanitario.setAreaMolhada(Double.parseDouble(areaMolhada));
 			modelHidrossanitario.setIntensidadePluviometrica(Double.parseDouble(intensidadePluviometrica));
-			
-			modelHidrossanitario.calcularVazao(modelHidrossanitario.getAreaMolhada(), modelHidrossanitario.getIntensidadePluviometrica());
-			
-			
+
+			modelHidrossanitario.calcularVazao(modelHidrossanitario.getAreaMolhada(),
+					modelHidrossanitario.getIntensidadePluviometrica());
+
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
-			
-			request.getRequestDispatcher("principal/hidraulica/calcularVazaoAguasPluviais.jsp").forward(request, response);
-			
+
+			request.getRequestDispatcher("principal/hidraulica/calcularVazaoAguasPluviais.jsp").forward(request,
+					response);
+
 		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("calha")) {
-			
+
 			String areaMolhada = request.getParameter("areaMolhada").replace(",", ".");
 			String perimetroMolhado = request.getParameter("perimetroMolhado").replace(",", ".");
 			String rugosidade = request.getParameter("rugosidade").replace(",", ".");
 			String declividade = request.getParameter("declividade").replace(",", ".");
-			
+
 			ModelHidrossanitario modelHidrossanitario = new ModelHidrossanitario();
-			
+
 			modelHidrossanitario.setAreaMolhada(Double.parseDouble(areaMolhada));
 			modelHidrossanitario.setPerimetroMolhado(Double.parseDouble(perimetroMolhado));
 			modelHidrossanitario.setRugosidade(Double.parseDouble(rugosidade));
 			modelHidrossanitario.setDeclividade(Double.parseDouble(declividade));
+
+			modelHidrossanitario.calcularCapacidadeDeCalha(modelHidrossanitario.getAreaMolhada(),
+					modelHidrossanitario.getPerimetroMolhado(), modelHidrossanitario.getRugosidade(),
+					modelHidrossanitario.getDeclividade());
+
+			// retorna a tela os dados enviados para o calculo
+			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
+
+			request.getRequestDispatcher("principal/hidraulica/calcularCalha.jsp").forward(request, response);
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("tanqueSeptico")) {
+
+			String numeroDePessoas = request.getParameter("numeroDePessoas").replace(",", ".");
+			String contribuicao = request.getParameter("contribuicao").replace(",", ".");
+			String lodoFresco = request.getParameter("lodoFresco").replace(",", ".");
+			String taxaAcumulacao = request.getParameter("taxaAcumulacao").replace(",", ".");
+			String altura = request.getParameter("altura").replace(",", ".");
+
+			ModelHidrossanitario modelHidrossanitario = new ModelHidrossanitario();
+
+			modelHidrossanitario.setNumeroDePessoas(Integer.parseInt(numeroDePessoas));
+			modelHidrossanitario.setContribuicao(Double.parseDouble(contribuicao));
+			modelHidrossanitario.setLodoFresco(Double.parseDouble(lodoFresco));
+			modelHidrossanitario.setTaxaAcumulacao(Double.parseDouble(taxaAcumulacao));
+			modelHidrossanitario.setAltura(Double.parseDouble(altura));
+
+			modelHidrossanitario.calcularContribuicaoDiaria(modelHidrossanitario.getNumeroDePessoas(),
+					modelHidrossanitario.getContribuicao());
+
+			modelHidrossanitario.volumeTanqueSeptico(modelHidrossanitario.getTaxaAcumulacao(), modelHidrossanitario.getLodoFresco());
 			
-			modelHidrossanitario.calcularCapacidadeDeCalha(modelHidrossanitario.getAreaMolhada(), modelHidrossanitario.getPerimetroMolhado(),
-					modelHidrossanitario.getRugosidade(), modelHidrossanitario.getDeclividade());
+			modelHidrossanitario.calcularLarguraTanquePrismatico(modelHidrossanitario.getAltura());
+			modelHidrossanitario.calcularComprimentoTanquePrismatico();
+			modelHidrossanitario.calcularAlturaTotalTanquePrismatico();
+			modelHidrossanitario.calcularLarguraTanqueCilindrico();
+			modelHidrossanitario.calcularAlturaTotalTanqueCilindrico();
 			
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
-			
-			request.getRequestDispatcher("principal/hidraulica/calcularCalha.jsp").forward(request, response);
-			
+
+			request.getRequestDispatcher("principal/hidraulica/calcularTanqueSeptico.jsp").forward(request, response);
+
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}

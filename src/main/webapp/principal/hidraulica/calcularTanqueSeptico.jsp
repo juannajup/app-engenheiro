@@ -113,8 +113,13 @@
 			
 			<button type="submit" class="btn btn-success">Calcular</button>
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
-
-
+			<br>
+			<br>
+			<jsp:include page="tabelas7229/tabela1.jsp"></jsp:include>
+			<br>
+			<jsp:include page="tabelas7229/tabela2.jsp"></jsp:include>
+			<br>
+			<jsp:include page="tabelas7229/tabela3.jsp"></jsp:include>
 		</form>
 	</main>
 

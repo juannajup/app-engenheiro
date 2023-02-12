@@ -24,14 +24,20 @@
 			<li>
 				<h3>
 					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/hidraulica/calcularCalha.jsp">Calcular capacidade de calha</a>
+						href="<%=request.getContextPath()%>/principal/hidraulica/calcularCalha.jsp">Calcular
+						capacidade de calha</a>
+				</h3>
+			</li>
+			<li>
+				<h3>
+					<a class="dropdown-item"
+						href="<%=request.getContextPath()%>/principal/hidraulica/calcularTanqueSeptico.jsp">Dimensionamento tanque septico</a>
 				</h3>
 			</li>
 		</ul>
 		<ul>
 			<h2>Proximas implementações:</h2>
 			<li><h3>Dimensionamento de dutos</h3></li>
-			<li><h3>Dimensionamento de fossa septica</h3></li>
 			<li><h3>Dimensionamento de caixa coletora de oleo</h3></li>
 			<li><h3>Dimensionamento de sumidouro</h3></li>
 		</ul>

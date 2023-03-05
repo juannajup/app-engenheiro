@@ -91,8 +91,7 @@
 					value="<fmt:formatNumber pattern = "#.##"  value = "${modelHidrossanitario.altura2}" />">
 			</div>
 
-			<button type="submit" class="btn btn-success">Calcular 1°
-				caixa</button>
+			<button type="submit" class="btn btn-success">Calcular caixa</button>
 			<button type="submit" class="btn btn-warning" onclick="inspecao();">Calcular
 				próxima caixa</button>
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>

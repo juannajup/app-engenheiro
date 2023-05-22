@@ -11,7 +11,7 @@
 <title>Tabelas NBR 5410</title>
 </head>
 <body>
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
 	<main>
 		<h3 id="titulo" class="form-control">Tabelas NBR 5410</h3>

@@ -1,23 +1,68 @@
 package model;
 
-import java.sql.Date;
+import java.io.Serializable;
+import java.util.Objects;
 
-public class ModelMecanica {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+//implementar o serializable
+public class ModelMecanica implements Serializable {
+
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	// com equals e hashcode
+	// criar construtor vazio
 
 	private Double areaDoAmbiente;
 	private Integer numeroDePessoas;
 	private Double btuh;
 	private String quantidadeDeSol;
 	private Integer numeroDeEquipamentos;
-	private String nomeDoAmbiente;
-	private Date dataCalculo;
+
 	private Double alturaDuto;
 	private Double larguraDuto;
 	private Double comprimentoDuto;
 	private Double areaChapa;
 	private Double pesoChapa;
 	private String chapaSelecionada;
+
+	public ModelMecanica() {
+		// TODO Auto-generated constructor stub
+	}
 	
+		@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ModelMecanica other = (ModelMecanica) obj;
+		return Objects.equals(id, other.id);
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getChapaSelecionada() {
 		return chapaSelecionada;
 	}
@@ -66,22 +111,6 @@ public class ModelMecanica {
 		this.pesoChapa = pesoChapa;
 	}
 
-	public Date getDataCalculo() {
-		return dataCalculo;
-	}
-
-	public void setDataCalculo(Date dataCalculo) {
-		this.dataCalculo = dataCalculo;
-	}
-
-	public String getNomeDoAmbiente() {
-		return nomeDoAmbiente;
-	}
-
-	public void setNomeDoAmbiente(String nomeDoAmbiente) {
-		this.nomeDoAmbiente = nomeDoAmbiente;
-	}
-
 	public Double getAreaDoAmbiente() {
 		return areaDoAmbiente;
 	}
@@ -121,7 +150,7 @@ public class ModelMecanica {
 	public void setNumeroDeEquipamentos(Integer numeroDeEquipamentos) {
 		this.numeroDeEquipamentos = numeroDeEquipamentos;
 	}
-
+	
 	/*
 	 * 
 	 * 
@@ -129,7 +158,7 @@ public class ModelMecanica {
 	 * 
 	 * 
 	 * */
-	
+
 	public Double calcularSplit(Double areaDoAmbiente, Integer numeroDePessoas, String quantidadeDeSol,
 			Integer numeroDeEquipamentos) {
 
@@ -145,63 +174,66 @@ public class ModelMecanica {
 
 			return btuh;
 		}
+
 	}
-	
 
 	public Double calcularPesoDeChapaDeDuto(Double alturaDuto, Double larguraDuto, Double comprimentoDuto) {
-		
+
 		this.areaChapa = ((alturaDuto * 2 + larguraDuto * 2) / 1000) * comprimentoDuto;
-		
-		if(alturaDuto > larguraDuto || alturaDuto.equals(larguraDuto)) {
-			if(alturaDuto <= 300) {
+
+		if (alturaDuto > larguraDuto || alturaDuto.equals(larguraDuto)) {
+			if (alturaDuto <= 300) {
 				pesoChapa = areaChapa * 4.42;
 				chapaSelecionada = "#26";
-				
-			}else if (alturaDuto > 300 && alturaDuto <= 750) {
+
+			} else if (alturaDuto > 300 && alturaDuto <= 750) {
 				pesoChapa = areaChapa * 5.64;
 				chapaSelecionada = "#24";
-				
-			}else if (alturaDuto > 750 && alturaDuto <= 1400) {
+
+			} else if (alturaDuto > 750 && alturaDuto <= 1400) {
 				pesoChapa = areaChapa * 6.86;
 				chapaSelecionada = "#22";
-				
-			}else if (alturaDuto > 1400 && alturaDuto <= 2100) {
+
+			} else if (alturaDuto > 1400 && alturaDuto <= 2100) {
 				pesoChapa = areaChapa * 8.08;
 				chapaSelecionada = "#20";
-				
-			}else {
+
+			} else {
 				pesoChapa = areaChapa * 10.52;
 				chapaSelecionada = "#18";
-				
+
 			}
-			
-			
+
 		} else {
-			if(larguraDuto <= 300) {
+			if (larguraDuto <= 300) {
 				pesoChapa = areaChapa * 4.42;
 				chapaSelecionada = "#26";
-				
-			}else if (larguraDuto > 300 && larguraDuto <= 750) {
+
+			} else if (larguraDuto > 300 && larguraDuto <= 750) {
 				pesoChapa = areaChapa * 5.64;
 				chapaSelecionada = "#24";
-				
-			}else if (larguraDuto > 750 && larguraDuto <= 1400) {
+
+			} else if (larguraDuto > 750 && larguraDuto <= 1400) {
 				pesoChapa = areaChapa * 6.86;
 				chapaSelecionada = "#22";
-				
-			}else if (larguraDuto > 1400 && larguraDuto <= 2100) {
+
+			} else if (larguraDuto > 1400 && larguraDuto <= 2100) {
 				pesoChapa = areaChapa * 8.08;
 				chapaSelecionada = "#20";
-				
-			}else {
+
+			} else {
 				pesoChapa = areaChapa * 10.52;
 				chapaSelecionada = "#18";
-				
+
 			}
-			
+
 		}
-		
+
 		return pesoChapa;
 	}
 	
+	
+
+	
+
 }

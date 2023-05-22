@@ -1,5 +1,6 @@
 @charset "ISO-8859-1";
 
+
 body {
 	padding: 0px 2% 0px 2%;
 	background-image: url("../img/projeto.jpg");
@@ -122,3 +123,4 @@ tbody, td, tfoot, th, thead, tr {
 		width: 900px;
 	}
 }
+

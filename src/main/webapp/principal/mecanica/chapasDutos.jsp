@@ -12,7 +12,7 @@
 <title>Peso de Chapa de Dutos</title>
 </head>
 <body>
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
 
 	<main>
@@ -77,9 +77,48 @@
 			<button type="submit" class="btn btn-success">Calcular</button>
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 			<jsp:include page="tabela-chapas-dutos/tabelaChapasDutos.jsp"></jsp:include>
+			
 
 
 		</form>
+		
+		<br>
+		<div style="height: 300px; overflow: scroll;">
+			<table class="table table-bordered tabelas-mecanicas form-control"
+				id="tabelaMecanicas">
+				
+				<thead>
+					<tr class="captionRow">
+						<th colspan="7"><h3>Resultados anteriores</h3></th>
+					</tr>
+					<tr style="text-align: center">
+						<th class="cabecalho" scope="col">ID</th>
+						<th class="cabecalho" scope="col">Largura do duto</th>
+						<th class="cabecalho" scope="col">Altura do duto</th>
+						<th class="cabecalho" scope="col">Comprimento do duto</th>
+						<th class="cabecalho" scope="col">Área de chapa calculada</th>
+						<th class="cabecalho" scope="col">Chapa selecionada</th>
+						<th class="cabecalho" scope="col">Peso calculado</th>
+						<th class="cabecalho" scope="col">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items='${mecanicas}' var='m'>
+						<tr>
+							<td><c:out value="${m.id}"></c:out></td>
+							<td><c:out value="${m.larguraDuto}"></c:out></td>
+							<td><c:out value="${m.alturaDuto}"></c:out></td>
+							<td><c:out value="${m.comprimentoDuto}"></c:out></td>
+							<td><c:out value="${m.areaChapa}"></c:out></td>
+							<td><c:out value="${m.chapaSelecionada}"></c:out></td>
+							<td><c:out value="${m.pesoChapa}"></c:out></td>
+							<td><a class="btn btn-success"
+									href="<%= request.getContextPath() %>/MecanicaServlet?acao=excluirChapas&id=${m.id}">Excluir</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 
 
 

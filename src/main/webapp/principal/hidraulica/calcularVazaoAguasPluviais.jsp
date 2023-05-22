@@ -13,7 +13,7 @@
 <title>Calcular Vazão de Projeto Aguas Pluviais</title>
 </head>
 <body>
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 	<h3 id="titulo" class="form-control">Tubos verticais e horizontais</h3>
 	<form class="form-control" method="post"
 		action="<%=request.getContextPath()%>/HidrossanitarioServlet?acao=calcularVazaoAguasPluviais"

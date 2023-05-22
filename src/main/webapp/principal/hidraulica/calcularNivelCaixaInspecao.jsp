@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
 	<main>
 
@@ -46,7 +46,7 @@
 					calculada (m)</label>
 				<input type="text" class="form-control" id="altura1"
 					readonly="readonly" aria-describedby="altura1" name="altura1"
-					value="<fmt:formatNumber pattern = "#.##"  value = "${modelHidrossanitario.altura1}" />">
+					value="<fmt:formatNumber pattern = "#.###"  value = "${modelHidrossanitario.altura1}" />">
 			</div>
 
 			<div class="mb-3">
@@ -80,7 +80,7 @@
 					de fundo calculada (m)</label>
 				<input type="text" class="form-control" id="cotaFundo2"
 					readonly="readonly" aria-describedby="cotaFundo2" name="cotaFundo2"
-					value="<fmt:formatNumber pattern = "#.##"  value = "${modelHidrossanitario.cotaFundo2}" />">
+					value="<fmt:formatNumber pattern = "#.###"  value = "${modelHidrossanitario.cotaFundo2}" />">
 			</div>
 
 			<div class="mb-3">
@@ -88,7 +88,7 @@
 					calculada</label>
 				<input type="text" class="form-control" id="altura2"
 					readonly="readonly" aria-describedby="altura2" name="altura2"
-					value="<fmt:formatNumber pattern = "#.##"  value = "${modelHidrossanitario.altura2}" />">
+					value="<fmt:formatNumber pattern = "#.###"  value = "${modelHidrossanitario.altura2}" />">
 			</div>
 
 			<button type="submit" class="btn btn-success">Calcular caixa</button>

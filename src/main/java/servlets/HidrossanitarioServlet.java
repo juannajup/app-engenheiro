@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,9 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DAOGeneric;
+import dao.DAOHidrossanitario;
 import model.ModelHidrossanitario;
 
-@WebServlet("/HidrossanitarioServlet")
+@WebServlet(urlPatterns = { "/HidrossanitarioServlet" })
 public class HidrossanitarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -18,9 +21,64 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 	}
 
+	private DAOGeneric<ModelHidrossanitario> daoGeneric = new DAOGeneric<ModelHidrossanitario>();
+	private DAOHidrossanitario daoHidrossanitario = new DAOHidrossanitario();
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doPost(request, response);
+		String acao = request.getParameter("acao");
+
+		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarCalhas")) {
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularCalha.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("bbb")) {
+
+			
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirCalha")) {
+
+			String id = request.getParameter("id");
+
+			try {
+				daoHidrossanitario.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+				
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularCalha.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirbbb")) {
+
+			
+
+		} else {
+
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -131,6 +189,16 @@ public class HidrossanitarioServlet extends HttpServlet {
 			modelHidrossanitario.calcularCapacidadeDeCalha(modelHidrossanitario.getAreaMolhada(),
 					modelHidrossanitario.getPerimetroMolhado(), modelHidrossanitario.getRugosidade(),
 					modelHidrossanitario.getDeclividade());
+			
+			daoGeneric.salvar(modelHidrossanitario);
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);

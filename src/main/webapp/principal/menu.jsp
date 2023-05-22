@@ -42,7 +42,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="color: white;"> Instalações Hidráulicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularCalha.jsp">Calcular capacidade de calha</a> 					
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/HidrossanitarioServlet?acao=listarCalhas">Calcular capacidade de calha</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularNivelCaixaInspecao.jsp">Calcular niveis das caixas de inspeção</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularReservatorio.jsp">Calcular reseratório de água fria</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularVazaoAguasPluviais.jsp">Calcular vazão de projeto - águas pluviais</a> 					
@@ -55,8 +55,8 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="color:white;"> Instalações Mecânicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/calcularBtuh.jsp">Calcular ar condicionado split</a> 
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/chapasDutos.jsp">Calcular peso de chapa de dutos</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/MecanicaServlet?acao=listarBtuh">Calcular ar condicionado split</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/MecanicaServlet?acao=listarChapas">Calcular peso de chapa de dutos</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/isolamento_tubulacoes.jsp">Isolamento tubulações frigorigenas</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/conversao.jsp">Tabela de conversão de tubos de cobre</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/frigorigenas.jsp">Tabela de seleção de tubulações frigorigenas</a> 

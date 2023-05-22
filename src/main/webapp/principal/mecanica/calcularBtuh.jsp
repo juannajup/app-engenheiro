@@ -12,7 +12,7 @@
 <title>Calcular Split</title>
 </head>
 <body>
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
 	<main>
 		<h3 id="titulo" class="form-control">Calcular BTU/h Para Ar
@@ -85,6 +85,41 @@
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 
 		</form>
+		<br>
+		<div style="height: 300px; overflow: scroll;">
+			<table class="table table-bordered tabelas-mecanicas form-control"
+				id="tabelaMecanicas">
+				
+				<thead>
+					<tr class="captionRow">
+						<th colspan="7"><h3>Resultados anteriores</h3></th>
+					</tr>
+					<tr style="text-align: center">
+						<th class="cabecalho" scope="col">ID</th>
+						<th class="cabecalho" scope="col">Area do ambiente</th>
+						<th class="cabecalho" scope="col">Incidencia de sol</th>
+						<th class="cabecalho" scope="col">Numero de pessoas</th>
+						<th class="cabecalho" scope="col">Numero de pessoas</th>
+						<th class="cabecalho" scope="col">Btu/h calculado</th>
+						<th class="cabecalho" scope="col">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items='${mecanicas}' var='m'>
+						<tr>
+							<td><c:out value="${m.id}"></c:out></td>
+							<td><c:out value="${m.areaDoAmbiente}"></c:out></td>
+							<td><c:out value="${m.quantidadeDeSol}"></c:out></td>
+							<td><c:out value="${m.numeroDePessoas}"></c:out></td>
+							<td><c:out value="${m.numeroDeEquipamentos}"></c:out></td>
+							<td><c:out value="${m.btuh}"></c:out></td>
+							<td><a class="btn btn-success"
+									href="<%= request.getContextPath() %>/MecanicaServlet?acao=excluirBtuh&id=${m.id}">Excluir</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 
 
 

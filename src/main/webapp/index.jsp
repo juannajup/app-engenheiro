@@ -7,41 +7,53 @@
 
 
 <jsp:include page="principal/bootstrap-css.jsp"></jsp:include>
+<style type="text/css">
+body{
+	 background-color: #2B577A;
+	 background-image: none;
+}
+</style>
 
-<title>Inicio</title>
+<title>Home</title>
 </head>
 <body>
-	<jsp:include page="/menu.jsp"></jsp:include>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light form-control">
-		<div class="container-fluid">
-			<h1 class="titulo">Bem-vindo ao App do Engenheiro!</h1>
-		</div>
-	</nav>
+	<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
 
-	<div class="container-fluid list-group form-control">
-		<ul>
-			<h2>Novas funcionalidades:</h2>
-			<li>
-				<h3>
-					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/hidraulica/calcularCalha.jsp">Calcular
-						capacidade de calha</a>
-				</h3>
-			</li>
-			<li>
-				<h3>
-					<a class="dropdown-item"
-						href="<%=request.getContextPath()%>/principal/hidraulica/calcularTanqueSeptico.jsp">Dimensionamento tanque septico</a>
-				</h3>
-			</li>
-		</ul>
-		<ul>
-			<h2>Proximas implementações:</h2>
-			<li><h3>Dimensionamento de dutos</h3></li>
-			<li><h3>Dimensionamento de caixa coletora de oleo</h3></li>
-			<li><h3>Dimensionamento de sumidouro</h3></li>
-		</ul>
-	</div>
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Bem-vindo!</h2>
+              <p class="text-white-50 mb-5">Por favor digite seu email e sua senha</p>
+
+			  <form method="post"
+				action="<%=request.getContextPath()%>/LoginServlet?acao=login" id="form">
+				<input type="hidden" value="<%=  request.getParameter("url")%>" name="url">
+              <div class="form-outline form-white mb-4">
+                <input type="email" name="email" id="email" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX">Email</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="password" name="senha" id="senha" class="form-control form-control-lg" />
+                <label class="form-label" for="typePasswordX">Senha</label>
+              </div>
+
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+              <br>
+              <span style="color: red;">${msg}</span>
+			</form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 	<footer id="rodape">
 		<a href="https://github.com/juannajup" target="_blank">Desenvolvido
 			por Juan Pablo - https://github.com/juannajup</a>

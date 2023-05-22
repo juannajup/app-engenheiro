@@ -11,7 +11,7 @@
 <title>Calcular Traço</title>
 </head>
 <body>
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
 	<main>
 		<h3 id="titulo" class="form-control">Calcular Traço de Concreto

@@ -13,7 +13,7 @@
 <title>Calcular Capacidade de Calha</title>
 </head>
 <body>
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 	<h3 id="titulo" class="form-control">Calcular vazão de projeto para calhas</h3>
 	<form class="form-control" method="post"
 		action="<%=request.getContextPath()%>/HidrossanitarioServlet?acao=calha"
@@ -60,6 +60,42 @@
 		<jsp:include page="tabelasAguasPluviais/capacidade_calhas.jsp"></jsp:include>
 		
 	</form>
+	
+	<br>
+	<div style="height: 300px; overflow: scroll;">
+		<table class="table table-bordered tabelas-mecanicas form-control"
+			id="tabelaHidrossanitarios">
+
+			<thead>
+				<tr class="captionRow">
+					<th colspan="7"><h3>Resultados anteriores</h3></th>
+				</tr>
+				<tr style="text-align: center">
+					<th class="cabecalho" scope="col">ID</th>
+					<th class="cabecalho" scope="col">Seção molhada</th>
+					<th class="cabecalho" scope="col">Perimetro molhado</th>
+					<th class="cabecalho" scope="col">Coeficiente de Rugosidade</th>
+					<th class="cabecalho" scope="col">Declividade</th>
+					<th class="cabecalho" scope="col">Capacidade de calha</th>
+					<th class="cabecalho" scope="col">Excluir</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items='${hidrossanitarios}' var='m'>
+					<tr>
+						<td><c:out value="${m.id}"></c:out></td>
+						<td><c:out value="${m.areaMolhada}"></c:out></td>
+						<td><c:out value="${m.perimetroMolhado}"></c:out></td>
+						<td><c:out value="${m.rugosidade}"></c:out></td>
+						<td><c:out value="${m.declividade}"></c:out></td>
+						<td><c:out value="${m.capacidadeCalha}"></c:out></td>
+						<td><a class="btn btn-success"
+								href="<%= request.getContextPath() %>/HidrossanitarioServlet?acao=excluirCalha&id=${m.id}">Excluir</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 
 	<script type="text/javascript">
 		function limpar() {

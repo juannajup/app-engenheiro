@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
 	<main>
 		<h3 id="titulo" class="form-control">Dimensionamento de Tubos de Esgoto (NBR 8160/99)</h3>

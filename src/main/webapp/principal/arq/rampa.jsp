@@ -12,7 +12,7 @@
 <title>Calcular Inclinação Rampa</title>
 </head>
 <body>
-	<jsp:include page="/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
 	<main>
 		<h3 id="titulo" class="form-control">Calcular Inclinação Rampa</h3>

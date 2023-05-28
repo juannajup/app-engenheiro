@@ -87,13 +87,12 @@ public class DAOHidrossanitario {
 		connection.commit();
 	}
 
-	public void deleteAll() throws Exception {
+	public void limparHidrossanitarios() throws Exception {
 
 		String sql = "delete * from modelhidrossanitario";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-		// checar se está correto
+		
 		preparedStatement.executeQuery();
 
 		connection.commit();

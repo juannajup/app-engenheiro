@@ -63,11 +63,13 @@ public class DAOMecanica {
 		connection.commit();
 	}
 	
-	public void deleteAll() throws Exception {
+	public void limparMecanicas() throws Exception {
 
 		String sql = "delete * from modelmecanica";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		
+		preparedStatement.executeQuery();
 
 		connection.commit();
 	}

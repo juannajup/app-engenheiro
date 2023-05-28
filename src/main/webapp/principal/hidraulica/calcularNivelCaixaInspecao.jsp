@@ -98,6 +98,48 @@
 
 
 		</form>
+
+		<br>
+		<div style="height: 300px; overflow: scroll;">
+			<table class="table table-bordered tabelas-mecanicas form-control"
+				id="tabelaHidrossanitarios" style="width: 70%;">
+
+				<thead>
+					<tr class="captionRow">
+						<th colspan="10"><h3>Resultados anteriores</h3></th>
+					</tr>
+					<tr style="text-align: center">
+						<th class="cabecalho" scope="col">ID</th>
+						<th class="cabecalho" scope="col">1° Cota de topo</th>
+						<th class="cabecalho" scope="col">1° Cota de fundo</th>
+						<th class="cabecalho" scope="col">1° Altura calculada</th>
+						<th class="cabecalho" scope="col">Inclinação</th>
+						<th class="cabecalho" scope="col">Distancia</th>
+						<th class="cabecalho" scope="col">2° Cota de topo</th>
+						<th class="cabecalho" scope="col">2° Cota de fundo</th>
+						<th class="cabecalho" scope="col">2° Altura calculada</th>
+						<th class="cabecalho" scope="col">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items='${hidrossanitarios}' var='m'>
+						<tr>
+							<td><c:out value="${m.id}"></c:out></td>
+							<td><c:out value="${m.cotaTopo1}"></c:out></td>
+							<td><c:out value="${m.cotaFundo1}"></c:out></td>
+							<td><c:out value="${m.altura1}"></c:out></td>
+							<td><c:out value="${m.inclinacaoTubo}"></c:out></td>
+							<td><c:out value="${m.distanciaCaixas}"></c:out></td>
+							<td><c:out value="${m.cotaTopo2}"></c:out></td>
+							<td><c:out value="${m.cotaFundo2}"></c:out></td>
+							<td><c:out value="${m.altura2}"></c:out></td>
+							<td><a class="btn btn-success"
+									href="<%= request.getContextPath() %>/HidrossanitarioServlet?acao=excluirInspecao&id=${m.id}">Excluir</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</main>
 
 	<script type="text/javascript">

@@ -33,7 +33,7 @@ body{
 				action="<%=request.getContextPath()%>/LoginServlet?acao=login" id="form">
 				<input type="hidden" value="<%=  request.getParameter("url")%>" name="url">
               <div class="form-outline form-white mb-4">
-                <input type="email" name="email" id="email" class="form-control form-control-lg" />
+                <input type="text" name="email" id="email" class="form-control form-control-lg" />
                 <label class="form-label" for="typeEmailX">Email</label>
               </div>
 

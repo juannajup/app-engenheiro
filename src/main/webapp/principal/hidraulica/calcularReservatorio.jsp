@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,94 +12,162 @@
 <title>Calcular Reservatório</title>
 </head>
 <body>
-<jsp:include page="/principal/menu.jsp"></jsp:include>
+	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
 	<main>
 
-		<h3 id="titulo" class="form-control">
-			Calcular Reservatório de Água Fria 
-		</h3>
-		<form class="form-control" method="post" action="<%=request.getContextPath()%>/HidrossanitarioServlet?acao=reservatorio" id="form">
-		
+		<h3 id="titulo" class="form-control">Calcular Reservatório de
+			Água Fria</h3>
+		<form class="form-control" method="post"
+			action="<%=request.getContextPath()%>/HidrossanitarioServlet?acao=reservatorio"
+			id="form">
+
 			<div class="mb-3">
-				<label for="numeroDePessoas" class="form-label">Numero de pessoas na edificação (consultar tabela 1, abaixo)</label> 
-				<input type="number" class="form-control" id="numeroDePessoas" required="required"
-					aria-describedby="numeroDePessoas" name="numeroDePessoas" value="${modelHidrossanitario.numeroDePessoas}">
+				<label for="numeroDePessoas" class="form-label">Numero de
+					pessoas na edificação (consultar tabela 1, abaixo)</label>
+				<input type="number" class="form-control" id="numeroDePessoas"
+					required="required" aria-describedby="numeroDePessoas"
+					name="numeroDePessoas"
+					value="${modelHidrossanitario.numeroDePessoas}">
 			</div>
-			
+
 			<div class="mb-3">
-				<label for="consumoPerCapita" class="form-label">Consumo per capita (l/dia) (consultar tabela 2, abaixo)</label> 
-				<input type="number" class="form-control" id="consumoPerCapita" required="required"
-					aria-describedby="consumoPerCapita" name="consumoPerCapita" value="${modelHidrossanitario.consumoPerCapita}">
-					
-					
+				<label for="consumoPerCapita" class="form-label">Consumo per
+					capita (l/dia) (consultar tabela 2, abaixo)</label>
+				<input type="number" class="form-control" id="consumoPerCapita"
+					required="required" aria-describedby="consumoPerCapita"
+					name="consumoPerCapita"
+					value="${modelHidrossanitario.consumoPerCapita}">
+
+
 			</div>
-			
+
 			<div class="mb-3">
-				<label for="numeroDePavimentos" class="form-label">Numero de pavimentos do prédio </label> 
-				<input type="number" class="form-control" id="numeroDePavimentos" required="required" placeholder="Se for térreo, considerar 1"
-					aria-describedby="numeroDePavimentos" name="numeroDePavimentos" value="${modelHidrossanitario.numeroDePavimentos}">
+				<label for="numeroDePavimentos" class="form-label">Numero de
+					pavimentos do prédio </label>
+				<input type="number" class="form-control" id="numeroDePavimentos"
+					required="required" placeholder="Se for térreo, considerar 1"
+					aria-describedby="numeroDePavimentos" name="numeroDePavimentos"
+					value="${modelHidrossanitario.numeroDePavimentos}">
 			</div>
-			
+
 			<div class="mb-3">
-				<label for="diasSemAgua" class="form-label">Numero de dias sem abastecimento</label> 
-				<input type="number" class="form-control" id="diasSemAgua" required="required" placeholder="2"
-					aria-describedby="diasSemAgua" name="diasSemAgua" value="${modelHidrossanitario.diasSemAgua}">
+				<label for="diasSemAgua" class="form-label">Numero de dias
+					sem abastecimento</label>
+				<input type="number" class="form-control" id="diasSemAgua"
+					required="required" placeholder="2" aria-describedby="diasSemAgua"
+					name="diasSemAgua" value="${modelHidrossanitario.diasSemAgua}">
 			</div>
-			
+
 			<div class="mb-3">
-				<label for="consumoDiario" class="form-label">Consumo diário calculado (l/dia)</label> 
-				<input type="text" class="form-control" id="consumoDiario" readonly="readonly"
-					aria-describedby="consumoDiario" name="consumoDiario" value="${modelHidrossanitario.consumoDiario}">
+				<label for="consumoDiario" class="form-label">Consumo diário
+					calculado (l/dia)</label>
+				<input type="text" class="form-control" id="consumoDiario"
+					readonly="readonly" aria-describedby="consumoDiario"
+					name="consumoDiario" value="${modelHidrossanitario.consumoDiario}">
 			</div>
-			
+
 			<!-- Teste logico para quando o prédio tiver mais de um pavimento ou não  -->
 			<c:choose>
-			
+
 				<c:when test="${modelHidrossanitario.numeroDePavimentos <= 3}">
-				<div class="mb-3">
-					<label for="volumeReservatorio" class="form-label">Volume do reservatório (l)</label> 
-					<input type="text" class="form-control" id="volumeReservatorio" readonly="readonly"
-						aria-describedby="volumeReservatorio" name="volumeReservatorio" value="${modelHidrossanitario.volumeReservatorio}">
-				</div>			
+					<div class="mb-3">
+						<label for="volumeReservatorio" class="form-label">Volume
+							do reservatório (l)</label>
+						<input type="text" class="form-control" id="volumeReservatorio"
+							readonly="readonly" aria-describedby="volumeReservatorio"
+							name="volumeReservatorio"
+							value="${modelHidrossanitario.volumeReservatorio}">
+					</div>
 				</c:when>
 
 				<c:otherwise>
 					<div class="mb-3">
-						<label for="volumeReservatorioSuperior" class="form-label">Volume do reservatório superior (40% do volume calculado)</label> 
-						<input type="text" class="form-control" id="volumeReservatorioSuperior" readonly="readonly"
-							aria-describedby="volumeReservatorioSuperior" name="volumeReservatorioSuperior " value="${modelHidrossanitario.volumeReservatorioSuperior}">
-					</div>	
-					
+						<label for="volumeReservatorioSuperior" class="form-label">Volume
+							do reservatório superior (40% do volume calculado)</label>
+						<input type="text" class="form-control"
+							id="volumeReservatorioSuperior" readonly="readonly"
+							aria-describedby="volumeReservatorioSuperior"
+							name="volumeReservatorioSuperior "
+							value="${modelHidrossanitario.volumeReservatorioSuperior}">
+					</div>
+
 					<div class="mb-3">
-						<label for="volumeReservatorioInferior" class="form-label">Volume do reservatório inferior (60% do volume calculado)</label> 
-						<input type="text" class="form-control" id="volumeReservatorioInferior" readonly="readonly"
-							aria-describedby="volumeReservatorioInferior" name="volumeReservatorioInferior " value="${modelHidrossanitario.volumeReservatorioInferior}">
-					</div>	
+						<label for="volumeReservatorioInferior" class="form-label">Volume
+							do reservatório inferior (60% do volume calculado)</label>
+						<input type="text" class="form-control"
+							id="volumeReservatorioInferior" readonly="readonly"
+							aria-describedby="volumeReservatorioInferior"
+							name="volumeReservatorioInferior "
+							value="${modelHidrossanitario.volumeReservatorioInferior}">
+					</div>
 				</c:otherwise>
 			</c:choose>
-			
+
 			<button type="submit" class="btn btn-success">Calcular</button>
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 
 			<br>
-			<jsp:include page="tabelasHelioCreder/taxaDeOcupacao/taxaDeOcupacao.jsp"></jsp:include>
+			<jsp:include
+				page="tabelasHelioCreder/taxaDeOcupacao/taxaDeOcupacao.jsp"></jsp:include>
 			<br>
-			<jsp:include page="tabelasHelioCreder/consumoDiario/consumoDiario.jsp"></jsp:include>
+			<jsp:include
+				page="tabelasHelioCreder/consumoDiario/consumoDiario.jsp"></jsp:include>
 
 		</form>
+		<br>
+		<div style="height: 300px; overflow: scroll;">
+			<table class="table table-bordered tabelas-mecanicas form-control"
+				id="tabelaHidrossanitarios" style="width: 70%;">
+
+				<thead>
+					<tr class="captionRow">
+						<th colspan="10"><h3>Resultados anteriores</h3></th>
+					</tr>
+					<tr style="text-align: center">
+						<th class="cabecalho" scope="col">ID</th>
+						<th class="cabecalho" scope="col">N° pessoas</th>
+						<th class="cabecalho" scope="col">Consumo</th>
+						<th class="cabecalho" scope="col">N° pavimentos</th>
+						<th class="cabecalho" scope="col">Dias sem agua</th>
+						<th class="cabecalho" scope="col">Consumo diario</th>
+						<th class="cabecalho" scope="col">Volume reservatorio (1 pavimento)</th>
+						<th class="cabecalho" scope="col">Volume reservatorio superior</th>
+						<th class="cabecalho" scope="col">Volume reservatorio inferior</th>
+						<th class="cabecalho" scope="col">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items='${hidrossanitarios}' var='m'>
+						<tr>
+							<td><c:out value="${m.id}"></c:out></td>
+							<td><c:out value="${m.numeroDePessoas}"></c:out></td>
+							<td><c:out value="${m.consumoPerCapita}"></c:out></td>
+							<td><c:out value="${m.numeroDePavimentos}"></c:out></td>
+							<td><c:out value="${m.diasSemAgua}"></c:out></td>
+							<td><c:out value="${m.consumoDiario}"></c:out></td>
+							<td><c:out value="${m.volumeReservatorio}"></c:out></td>
+							<td><c:out value="${m.volumeReservatorioSuperior}"></c:out></td>
+							<td><c:out value="${m.volumeReservatorioInferior}"></c:out></td>
+							<td><a class="btn btn-success"
+									href="<%= request.getContextPath() %>/HidrossanitarioServlet?acao=excluirReservatorio&id=${m.id}">
+									Excluir</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</main>
-	
+
 	<script type="text/javascript">
-	
-	function limpar() {
-	    
-	    var elementos = document.getElementById("form").elements; /*Retorna os elementos html dentro do form*/
-	    
-	    for (p = 0; p < elementos.length; p ++){
-		    elementos[p].value = '';
-	    }
-	}
+		function limpar() {
+
+			var elementos = document.getElementById("form").elements; /*Retorna os elementos html dentro do form*/
+
+			for (p = 0; p < elementos.length; p++) {
+				elementos[p].value = '';
+			}
+		}
 	</script>
 </body>
 </html>

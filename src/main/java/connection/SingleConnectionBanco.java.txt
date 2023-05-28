@@ -1,0 +1,39 @@
+package connection;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class SingleConnectionBanco {
+
+	
+	private static String banco = "jdbc:postgresql://localhost:5432/appengcom_app-engenheiro?autoReconnect=true";
+	private static String user = "appengcom";
+	private static String senha = "usJr1mW]1xAX";
+	private static Connection connection = null;
+
+	public static Connection getConnection() {
+		return connection;
+	}
+	
+	static {
+		conectar();
+	}
+	
+	public SingleConnectionBanco() {//quando tiver uma instancia da classe, irá conectar
+		conectar();
+	}
+
+	private static void conectar() {
+		try {
+			if (connection == null) {
+				Class.forName("org.postgresql.Driver");// carrega o driver de conexao do banco caso a conexao ainda
+														// esteja estabelecida
+				connection = DriverManager.getConnection(banco, user, senha);
+				connection.setAutoCommit(false);// para nao efetuar alteraçoes no banco sem nosso comando
+			}
+		} catch (Exception e) {
+			e.printStackTrace();// mostrar qualquer erro no momento de conectar
+		}
+	}
+
+}

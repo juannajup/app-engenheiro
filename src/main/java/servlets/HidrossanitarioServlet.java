@@ -23,7 +23,7 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 	private DAOGeneric<ModelHidrossanitario> daoGeneric = new DAOGeneric<ModelHidrossanitario>();
 	private DAOHidrossanitario daoHidrossanitario = new DAOHidrossanitario();
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String acao = request.getParameter("acao");
@@ -39,9 +39,29 @@ public class HidrossanitarioServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 
-		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("bbb")) {
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarInspecao")) {
 
-			
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularNivelCaixaInspecao.jsp").forward(request,
+						response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarReservatorio")) {
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularReservatorio.jsp").forward(request,
+						response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirCalha")) {
 
@@ -57,7 +77,7 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 			// recarrega na tela os calculos restantes apos excluir
 			try {
-				
+
 				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
 				request.setAttribute("hidrossanitarios", hidrossanitario);
 
@@ -70,9 +90,61 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 			return;
 
-		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirbbb")) {
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirInspecao")) {
 
-			
+			String id = request.getParameter("id");
+
+			try {
+				daoHidrossanitario.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularNivelCaixaInspecao.jsp").forward(request,
+						response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirReservatorio")) {
+
+			String id = request.getParameter("id");
+
+			try {
+				daoHidrossanitario.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularReservatorio.jsp").forward(request,
+						response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
 
 		} else {
 
@@ -118,6 +190,16 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 			}
 
+			daoGeneric.salvar(modelHidrossanitario);
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
 
@@ -147,6 +229,16 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 			modelHidrossanitario.alturaCaixaInsp2(modelHidrossanitario.getCotaTopo2());
 
+			daoGeneric.salvar(modelHidrossanitario);
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
 
@@ -165,6 +257,16 @@ public class HidrossanitarioServlet extends HttpServlet {
 
 			modelHidrossanitario.calcularVazao(modelHidrossanitario.getAreaMolhada(),
 					modelHidrossanitario.getIntensidadePluviometrica());
+
+			daoGeneric.salvar(modelHidrossanitario);
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
@@ -189,7 +291,7 @@ public class HidrossanitarioServlet extends HttpServlet {
 			modelHidrossanitario.calcularCapacidadeDeCalha(modelHidrossanitario.getAreaMolhada(),
 					modelHidrossanitario.getPerimetroMolhado(), modelHidrossanitario.getRugosidade(),
 					modelHidrossanitario.getDeclividade());
-			
+
 			daoGeneric.salvar(modelHidrossanitario);
 
 			try {
@@ -224,14 +326,25 @@ public class HidrossanitarioServlet extends HttpServlet {
 			modelHidrossanitario.calcularContribuicaoDiaria(modelHidrossanitario.getNumeroDePessoas(),
 					modelHidrossanitario.getContribuicao());
 
-			modelHidrossanitario.volumeTanqueSeptico(modelHidrossanitario.getTaxaAcumulacao(), modelHidrossanitario.getLodoFresco());
-			
+			modelHidrossanitario.volumeTanqueSeptico(modelHidrossanitario.getTaxaAcumulacao(),
+					modelHidrossanitario.getLodoFresco());
+
 			modelHidrossanitario.calcularLarguraTanquePrismatico(modelHidrossanitario.getAltura());
 			modelHidrossanitario.calcularComprimentoTanquePrismatico();
 			modelHidrossanitario.calcularAlturaTotalTanquePrismatico();
 			modelHidrossanitario.calcularLarguraTanqueCilindrico();
 			modelHidrossanitario.calcularAlturaTotalTanqueCilindrico();
-			
+
+			daoGeneric.salvar(modelHidrossanitario);
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelHidrossanitario", modelHidrossanitario);
 

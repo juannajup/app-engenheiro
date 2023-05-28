@@ -10,6 +10,7 @@ public class ModelLogin implements Serializable {
 	private Long id;
 	private String email;
 	private String senha;
+	private String nome;
 
 	public boolean isNovo() {
 
@@ -52,6 +53,14 @@ public class ModelLogin implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	@Override

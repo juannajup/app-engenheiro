@@ -43,8 +43,8 @@
 							aria-expanded="false" style="color: white;"> Instalações Hidráulicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/HidrossanitarioServlet?acao=listarCalhas">Calcular capacidade de calha</a> 					
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularNivelCaixaInspecao.jsp">Calcular niveis das caixas de inspeção</a> 					
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularReservatorio.jsp">Calcular reseratório de água fria</a> 					
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/HidrossanitarioServlet?acao=listarInspecao">Calcular niveis das caixas de inspeção</a> 					
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/HidrossanitarioServlet?acao=listarReservatorio">Calcular reservatório de água fria</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularVazaoAguasPluviais.jsp">Calcular vazão de projeto - águas pluviais</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/calcularTanqueSeptico.jsp">Calcular volume tanque septico</a> 					
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/hidraulica/dimTubosEsgoto.jsp">Dimensionamento de tubos de esgoto</a> 					
@@ -72,16 +72,18 @@
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/arq/blondel.jsp">Calcular escada - Formula de Blondel</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/arq/rampa.jsp">Calcular inclinação rampa</a>
 							</div></li>
+							
+							<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle btn btn-info" href="#" id="navbarDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false" style="color: white;">Bem-vindo <%= session.getAttribute("usuario") %></a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/LoginServlet?acao=sair">Sair</a>
+							</div></li>
 						
 					</ul>
 					
-					<!-- 
-					<form class="d-flex">
-						<input class="form-control mr-sm-2" type="search"
-							placeholder="Buscar" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-					</form>
-					 -->
+					
 					 
 				</div>
 			</div>

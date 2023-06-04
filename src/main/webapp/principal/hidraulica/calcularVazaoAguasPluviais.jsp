@@ -43,14 +43,45 @@
 		<button type="submit" class="btn btn-success">Calcular</button>
 		<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 
-		<br>
-		<br>
+		<br> <br>
 		<jsp:include page="tabelasAguasPluviais/coeficiente_rugosidade.jsp"></jsp:include>
 		<br>
 		<jsp:include page="tabelasAguasPluviais/conduto_vertical.jsp"></jsp:include>
 		<br>
 		<jsp:include page="tabelasAguasPluviais/conduto_horizontal.jsp"></jsp:include>
 	</form>
+
+	<br>
+	<div style="height: 300px; overflow: scroll;">
+		<table class="table table-bordered tabelas-mecanicas form-control"
+			id="tabelaHidrossanitarios">
+
+			<thead>
+				<tr class="captionRow">
+					<th colspan="10"><h3>Resultados anteriores</h3></th>
+				</tr>
+				<tr style="text-align: center">
+					<th class="cabecalho" scope="col">ID</th>
+					<th class="cabecalho" scope="col">Intensidade pluviometrica</th>
+					<th class="cabecalho" scope="col">Area molhada</th>
+					<th class="cabecalho" scope="col">Vazão calculada</th>
+					<th class="cabecalho" scope="col">Excluir</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items='${hidrossanitarios}' var='m'>
+					<tr>
+						<td><c:out value="${m.id}"></c:out></td>
+						<td><c:out value="${m.intensidadePluviometrica}"></c:out></td>
+						<td><c:out value="${m.areaMolhada}"></c:out></td>
+						<td><c:out value="${m.vazaoDeProjeto}"></c:out></td>
+						<td><a class="btn btn-success"
+								href="<%= request.getContextPath() %>/HidrossanitarioServlet?acao=excluirAguasPluviais&id=${m.id}">Excluir</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 
 	<script type="text/javascript">
 		function limpar() {

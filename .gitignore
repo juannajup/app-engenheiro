@@ -2,12 +2,7 @@
 /target/
 src/connection.properties
 heroku.txt
-C:\Users\juan_\eclipse-workspace\app-engenheiro\src\main\java\META-INF\persistence.xml
-src/main/java/META-INF/persistence.xml
-src/main/java/META-INF/persistence - Copia.txt
-src/main/java/META-INF/persistence.xml
-src/main/java/META-INF/persistence.xml
-src/main/java/connection/SingleConnectionBanco - Copia.txt
 src/main/java/connection/SingleConnectionBanco.java
+src/main/java/connection/SingleConnectionBanco.java.txt
 src/main/java/META-INF/persistence.xml
-src/main/java/META-INF/persistence.xml
+src/main/java/META-INF/persistence.xml.txt

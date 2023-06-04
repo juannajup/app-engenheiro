@@ -63,7 +63,31 @@ public class HidrossanitarioServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 
-		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirCalha")) {
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarTanqueSeptico")) {
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularTanqueSeptico.jsp").forward(request,
+						response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarAguasPluviais")) {
+
+			try {
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularVazaoAguasPluviais.jsp").forward(request,
+						response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}else if (acao != null && !acao.isEmpty() && acao.equals("excluirCalha")) {
 
 			String id = request.getParameter("id");
 
@@ -137,6 +161,62 @@ public class HidrossanitarioServlet extends HttpServlet {
 				request.setAttribute("hidrossanitarios", hidrossanitario);
 
 				request.getRequestDispatcher("principal/hidraulica/calcularReservatorio.jsp").forward(request,
+						response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirAguasPluviais")) {
+
+			String id = request.getParameter("id");
+
+			try {
+				daoHidrossanitario.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularVazaoAguasPluviais.jsp").forward(request,
+						response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirTanqueSeptico")) {
+
+			String id = request.getParameter("id");
+
+			try {
+				daoHidrossanitario.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+
+				List<ModelHidrossanitario> hidrossanitario = daoHidrossanitario.listarHidrossanitarios();
+				request.setAttribute("hidrossanitarios", hidrossanitario);
+
+				request.getRequestDispatcher("principal/hidraulica/calcularTanqueSeptico.jsp").forward(request,
 						response);
 			} catch (Exception e) {
 				e.printStackTrace();

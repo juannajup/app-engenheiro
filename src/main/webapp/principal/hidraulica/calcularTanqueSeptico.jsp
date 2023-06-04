@@ -122,6 +122,56 @@
 			<jsp:include page="tabelas7229/tabela3.jsp"></jsp:include>
 		</form>
 	</main>
+	
+	<br>
+	<div style="height: 300px; overflow: scroll;">
+		<table class="table table-bordered tabelas-mecanicas form-control"
+			id="tabelaHidrossanitarios" style="width: 90%;">
+
+			<thead>
+				<tr class="captionRow">
+					<th colspan="14"><h3>Resultados anteriores</h3></th>
+				</tr>
+				<tr style="text-align: center">
+					<th class="cabecalho" scope="col">ID</th>
+					<th class="cabecalho" scope="col">Pessoas</th>
+					<th class="cabecalho" scope="col">Contribuição despejos</th>
+					<th class="cabecalho" scope="col">Contribuição lodo</th>
+					<th class="cabecalho" scope="col">Acumulação lodo</th>
+					<th class="cabecalho" scope="col">Altura adotada</th>
+					<th class="cabecalho" scope="col">Contribuição diaria</th>
+					<th class="cabecalho" scope="col">Volume calculado</th>
+					<th class="cabecalho" scope="col">Largura prismatico</th>
+					<th class="cabecalho" scope="col">Comprimento prismatico</th>
+					<th class="cabecalho" scope="col">Altura total prismatico</th>
+					<th class="cabecalho" scope="col">Largura cilindrico</th>
+					<th class="cabecalho" scope="col">Altura total cilindrico</th>
+					<th class="cabecalho" scope="col">Excluir</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items='${hidrossanitarios}' var='m'>
+					<tr>
+						<td><c:out value="${m.id}"></c:out></td>
+						<td><c:out value="${m.numeroDePessoas}"></c:out></td>
+						<td><c:out value="${m.contribuicao}"></c:out></td>
+						<td><c:out value="${m.lodoFresco}"></c:out></td>
+						<td><c:out value="${m.taxaAcumulacao}"></c:out></td>
+						<td><c:out value="${m.altura}"></c:out></td>
+						<td><c:out value="${m.contribuicaoDiaria}"></c:out></td>
+						<td><c:out value="${m.volumeTanqueSeptico}"></c:out></td>
+						<td><c:out value="${m.larguraPrismatico}"></c:out></td>
+						<td><c:out value="${m.comprimentoPrismatico}"></c:out></td>
+						<td><c:out value="${m.alturaTotalPrismatico}"></c:out></td>
+						<td><c:out value="${m.larguraCilindrico}"></c:out></td>
+						<td><c:out value="${m.alturaTotalCilindrico}"></c:out></td>
+						<td><a class="btn btn-success"
+								href="<%= request.getContextPath() %>/HidrossanitarioServlet?acao=excluirTanqueSeptico&id=${m.id}">Excluir</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 
 	<script type="text/javascript">
 	

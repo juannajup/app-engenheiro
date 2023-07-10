@@ -1,18 +1,11 @@
 package dao;
 
-import java.sql.Connection;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import jpautil.JPAUtil;
 
 public class DAOGeneric<E> {
-
-	private JPAUtil jpaUtil;
-	private EntityManager entityManager;
-	
-	private Connection connection;
 
 	public void salvar(E entidade) {
 

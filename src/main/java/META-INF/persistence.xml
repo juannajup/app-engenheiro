@@ -4,12 +4,14 @@
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	<class>model.ModelMecanica</class>
 	<class>model.ModelHidrossanitario</class>
+	<class>model.ModelEletrica</class>
+	<class>model.ModelLum</class>
 	
 	
 	<properties>
-		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/app-engenheiro"/>
-		<property name="javax.persistence.jdbc.user" value="postgres"/>
-		<property name="javax.persistence.jdbc.password" value="Naotemsenha1!"/>
+		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/appengcom_app-engenheiro"/>
+		<property name="javax.persistence.jdbc.user" value="appengcom"/>
+		<property name="javax.persistence.jdbc.password" value="usJr1mW]1xAX"/>
 		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 		<!-- para mostrar no console e formatar o sql, respectivamente -->
@@ -19,6 +21,7 @@
 		<property name="hibernate.hbm2ddl.auto" value="update"/>
 		
 	</properties>
+	
 	
 	</persistence-unit>
 </persistence>

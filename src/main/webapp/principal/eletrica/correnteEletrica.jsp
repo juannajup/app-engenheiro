@@ -85,7 +85,51 @@
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 			</form>
 		<small>*Caso seja bifasico 220V, marcar monofasico 220V</small>
+		
+		<br>
+		<div style="height: 300px; overflow: scroll;">
+			<table class="table table-bordered tabelas-mecanicas form-control"
+				id="tabelaEletricas" style="width: 70%;">
+
+				<thead>
+					<tr class="captionRow">
+						<th colspan="10"><h3>Resultados anteriores</h3></th>
+					</tr>
+					<tr style="text-align: center">
+						<th class="cabecalho" scope="col">ID</th>
+						<th class="cabecalho" scope="col">Tensão</th>
+						<th class="cabecalho" scope="col">Rede</th>
+						<th class="cabecalho" scope="col">Potencia</th>
+						<th class="cabecalho" scope="col">Fator</th>
+						<th class="cabecalho" scope="col">Volt-amper</th>
+						<th class="cabecalho" scope="col">Corrente</th>
+						<th class="cabecalho" scope="col">Disjuntor</th>
+						<th class="cabecalho" scope="col">1/3 corrente do cabo</th>
+						<th class="cabecalho" scope="col">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items='${eletricas}' var='m'>
+						<tr>
+							<td><c:out value="${m.id}"></c:out></td>
+							<td><c:out value="${m.tensao}"></c:out></td>
+							<td><c:out value="${m.rede}"></c:out></td>
+							<td><c:out value="${m.potencia}"></c:out></td>
+							<td><c:out value="${m.fatorDePotencia}"></c:out></td>
+							<td><c:out value="${m.voltAmper}"></c:out></td>
+							<td><c:out value="${m.corrente}"></c:out></td>
+							<td><c:out value="${m.correnteDisjuntor}"></c:out></td>
+							<td><c:out value="${m.correnteFatorDeAgrupamento}"></c:out></td>
+							<td><a class="btn btn-success"
+									href="<%= request.getContextPath() %>/EletricaServlet?acao=excluirCorrente&id=${m.id}">Excluir</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</main>
+	
+	
 	<script type="text/javascript">
 	
 	function limpar() {

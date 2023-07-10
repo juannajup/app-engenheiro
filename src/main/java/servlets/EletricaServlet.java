@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DAOEletrica;
+import dao.DAOGeneric;
+import dao.DAOLum;
 import model.ModelCabosDados;
 import model.ModelCabosEletricos;
 import model.ModelEletrica;
@@ -23,9 +27,174 @@ public class EletricaServlet extends HttpServlet {
 		super();
 	}
 
+	private DAOGeneric<ModelEletrica> daoGeneric = new DAOGeneric<ModelEletrica>();
+	private DAOGeneric<ModelLum> daoGenericLum = new DAOGeneric<ModelLum>();
+	private DAOEletrica daoEletrica = new DAOEletrica();
+	private DAOLum daoLum = new DAOLum();
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doPost(request, response);
+
+		String acao = request.getParameter("acao");
+
+		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarCorrente")) {
+
+			try {
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				request.setAttribute("eletricas", eletrica);
+
+				request.getRequestDispatcher("principal/eletrica/correnteEletrica.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarQueda")) {
+
+			try {
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				request.setAttribute("eletricas", eletrica);
+
+				request.getRequestDispatcher("principal/eletrica/quedaDeTensao.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarLum")) {
+
+			try {
+				List<ModelLum> lum = daoLum.listarLum();
+				request.setAttribute("lum", lum);
+
+				request.getRequestDispatcher("principal/eletrica/luminotecnico.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarLum2")) {
+
+			try {
+				List<ModelLum> lum = daoLum.listarLum();
+				request.setAttribute("lum", lum);
+
+				request.getRequestDispatcher("principal/eletrica/luminotecnico2.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirCorrente")) {
+
+			String id = request.getParameter("id");
+
+			try {
+				daoEletrica.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				request.setAttribute("eletricas", eletrica);
+
+				request.getRequestDispatcher("principal/eletrica/correnteEletrica.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirQueda")) {
+
+			String id = request.getParameter("id");
+
+			try {
+				daoEletrica.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				request.setAttribute("eletricas", eletrica);
+
+				request.getRequestDispatcher("principal/eletrica/quedaDeTensao.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirLum")) {
+
+			String id = request.getParameter("id");
+
+			try {
+				daoLum.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+
+				List<ModelLum> lum = daoLum.listarLum();
+				request.setAttribute("lum", lum);
+
+				request.getRequestDispatcher("principal/eletrica/luminotecnico2.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirLum1")) {
+
+			String id = request.getParameter("id");
+
+			try {
+				daoLum.deletePorId(Long.parseLong(id));
+			} catch (NumberFormatException e1) {
+				e1.printStackTrace();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+			// recarrega na tela os calculos restantes apos excluir
+			try {
+
+				List<ModelLum> lum = daoLum.listarLum();
+				request.setAttribute("lum", lum);
+
+				request.getRequestDispatcher("principal/eletrica/luminotecnico.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// retorna a tela os dados enviados para o calculo
+
+			return;
+
+		} else {
+
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+
+		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -73,6 +242,16 @@ public class EletricaServlet extends HttpServlet {
 			// ocupação
 			modelEletrica.calcularCorrenteFatorDeAgrupamento(modelEletrica.getCorrente());
 
+			daoGeneric.salvar(modelEletrica);
+
+			try {
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				request.setAttribute("eletricas", eletrica);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelEletrica", modelEletrica);
 
@@ -101,6 +280,16 @@ public class EletricaServlet extends HttpServlet {
 					modelEletrica.getCaboTeste(), modelEletrica.getCondutor());
 			modelEletrica.calcularEspessuraCabo(modelEletrica.getCorrente(), modelEletrica.getComprimento(),
 					modelEletrica.getCaboTeste(), modelEletrica.getCondutor(), modelEletrica.getQuedaPermitida());
+
+			daoGeneric.salvar(modelEletrica);
+
+			try {
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				request.setAttribute("eletricas", eletrica);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelEletrica", modelEletrica);
@@ -153,6 +342,16 @@ public class EletricaServlet extends HttpServlet {
 			modelLum.calcularNumeroDeLuminarias(modelLum.getFluxoLuminosoTotal(), modelLum.getFluxoLuminoso());
 			modelLum.mostrarIndiceK(modelLum.getIndiceK());
 
+			daoGenericLum.salvar(modelLum);
+
+			try {
+				List<ModelLum> lum = daoLum.listarLum();
+				request.setAttribute("lum", lum);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 			// retorna a tela os dados enviados para o calculo
 			request.setAttribute("modelLum", modelLum);
 

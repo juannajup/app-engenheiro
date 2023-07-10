@@ -29,11 +29,11 @@
 							aria-expanded="false"> Instalações Elétricas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 																
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/correnteEletrica.jsp">Calculo de corrente elétrica</a> 
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/luminotecnico.jsp">Calculo luminotécnico</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/EletricaServlet?acao=listarCorrente">Calculo de corrente elétrica</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/EletricaServlet?acao=listarLum">Calculo luminotécnico</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/ocupacaoDados.jsp">Calcular ocupação de conduto - dados e voz</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/ocupacaoEletrica.jsp">Calcular ocupação de conduto - eletrica</a>
-								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/quedaDeTensao.jsp">Calcular queda de tensão</a>
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/EletricaServlet?acao=listarQueda">Calcular queda de tensão</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/tabelas5410.jsp">Tabelas NBR 5410</a>
 							</div></li>
 							

@@ -60,6 +60,52 @@
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 			<br>
 		</form>
+		
+		<br>
+		<div style="height: 300px; overflow: scroll;">
+			<table class="table table-bordered tabelas-mecanicas form-control"
+				id="tabelaLum" style="width: 70%;">
+
+				<thead>
+					<tr class="captionRow">
+						<th colspan="12"><h3>Resultados anteriores</h3></th>
+					</tr>
+					<tr style="text-align: center">
+						<th class="cabecalho" scope="col">ID</th>
+						<th class="cabecalho" scope="col">Comprimento</th>
+						<th class="cabecalho" scope="col">Largura</th>
+						<th class="cabecalho" scope="col">Altura</th>
+						<th class="cabecalho" scope="col">Indice k</th>
+						<th class="cabecalho" scope="col">Fluxo luminoso</th>
+						<th class="cabecalho" scope="col">Fluxo luminoso total</th>
+						<th class="cabecalho" scope="col">Em</th>
+						<th class="cabecalho" scope="col">Fator Deprec.</th>
+						<th class="cabecalho" scope="col">Fator Util.</th>
+						<th class="cabecalho" scope="col">Numero Luminarias</th>
+						<th class="cabecalho" scope="col">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items='${lum}' var='m'>
+						<tr>
+							<td><c:out value="${m.id}"></c:out></td>
+							<td><c:out value="${m.comprimento}"></c:out></td>
+							<td><c:out value="${m.largura}"></c:out></td>
+							<td><c:out value="${m.alturaInstalacao}"></c:out></td>
+							<td><c:out value="${m.indiceK}"></c:out></td>
+							<td><c:out value="${m.fluxoLuminoso}"></c:out></td>
+							<td><c:out value="${m.fluxoLuminosoTotal}"></c:out></td>
+							<td><c:out value="${m.nivelLuminancia}"></c:out></td>
+							<td><c:out value="${m.depreciacao}"></c:out></td>
+							<td><c:out value="${m.fatorUtilizacao}"></c:out></td>
+							<td><c:out value="${m.numeroDeLuminarias}"></c:out></td>
+							<td><a class="btn btn-success"
+									href="<%= request.getContextPath() %>/EletricaServlet?acao=excluirLum1&id=${m.id}">Excluir</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</main>
 	<script type="text/javascript">
 		function limpar() {

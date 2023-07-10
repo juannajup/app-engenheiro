@@ -2,10 +2,25 @@ package model;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
+import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "modeleletrica")
 public class ModelEletrica implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	// com equals e hashcode
+	// criar construtor vazio
 
 	private Integer tensao;
 	private Double corrente;
@@ -21,6 +36,35 @@ public class ModelEletrica implements Serializable {
 	private String condutor;
 	private Double correnteDisjuntor;
 	private Double correnteFatorDeAgrupamento;
+
+	public ModelEletrica() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ModelEletrica other = (ModelEletrica) obj;
+		return Objects.equals(id, other.id);
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public Double getCorrenteTaxaDeOcupacao() {
 		return correnteFatorDeAgrupamento;
@@ -160,7 +204,7 @@ public class ModelEletrica implements Serializable {
 	 * 
 	 * 
 	 */
-	
+
 	public Double calcularCorrenteFatorDeAgrupamento(Double corrente) {
 		return correnteFatorDeAgrupamento = this.corrente / 0.3;
 	}

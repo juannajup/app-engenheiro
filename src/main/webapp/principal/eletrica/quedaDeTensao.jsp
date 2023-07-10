@@ -81,6 +81,48 @@
 			<button type="submit" class="btn btn-success">Calcular</button>
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 			</form>
+			
+			<br>
+		<div style="height: 300px; overflow: scroll;">
+			<table class="table table-bordered tabelas-mecanicas form-control"
+				id="tabelaEletricas" style="width: 70%;">
+
+				<thead>
+					<tr class="captionRow">
+						<th colspan="10"><h3>Resultados anteriores</h3></th>
+					</tr>
+					<tr style="text-align: center">
+						<th class="cabecalho" scope="col">ID</th>
+						<th class="cabecalho" scope="col">Tensão</th>
+						<th class="cabecalho" scope="col">Corrente</th>
+						<th class="cabecalho" scope="col">Comprimento</th>
+						<th class="cabecalho" scope="col">Queda permitida</th>
+						<th class="cabecalho" scope="col">Espessura-teste</th>
+						<th class="cabecalho" scope="col">Condutor</th>
+						<th class="cabecalho" scope="col">Queda calculada</th>
+						<th class="cabecalho" scope="col">Espessura calculada</th>
+						<th class="cabecalho" scope="col">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items='${eletricas}' var='m'>
+						<tr>
+							<td><c:out value="${m.id}"></c:out></td>
+							<td><c:out value="${m.tensao}"></c:out></td>
+							<td><c:out value="${m.corrente}"></c:out></td>
+							<td><c:out value="${m.comprimento}"></c:out></td>
+							<td><c:out value="${m.quedaPermitida}"></c:out></td>
+							<td><c:out value="${m.caboTeste}"></c:out></td>
+							<td><c:out value="${m.condutor}"></c:out></td>
+							<td><c:out value="${m.quedaCalculada}"></c:out></td>
+							<td><c:out value="${m.caboCalc}"></c:out></td>
+							<td><a class="btn btn-success"
+									href="<%= request.getContextPath() %>/EletricaServlet?acao=excluirQueda&id=${m.id}">Excluir</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</main>
 	
 	<script type="text/javascript">

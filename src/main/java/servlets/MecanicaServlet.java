@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -181,6 +180,33 @@ public class MecanicaServlet extends HttpServlet {
 			request.setAttribute("modelMecanica", modelMecanica);
 
 			request.getRequestDispatcher("principal/mecanica/chapasDutos.jsp").forward(request, response);
+
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("calcularDutosVeloc")) {
+
+			String vazaoH = request.getParameter("vazaoH").replace(",", ".");
+			String velocidade = request.getParameter("velocidade").replace(",", ".");
+			String ladoA = request.getParameter("ladoA").replace(",", ".");
+			String ladoB = request.getParameter("ladoB").replace(",", ".");
+
+			ModelMecanica modelMecanica = new ModelMecanica();
+
+			modelMecanica.setVazaoH(Double.parseDouble(vazaoH));
+			modelMecanica.setVelocidade(Double.parseDouble(velocidade));
+			modelMecanica.setLadoA(Double.parseDouble(ladoA));
+			modelMecanica.setLadoB(Double.parseDouble(ladoB));
+
+			modelMecanica.calcularDutoVazaoS(modelMecanica.getVazaoH());
+			
+			modelMecanica.calcularDutoArea(modelMecanica.getVelocidade());
+			
+			modelMecanica.calcularDutoAreaRes(modelMecanica.getLadoA(), modelMecanica.getLadoB());
+			
+			modelMecanica.calcularDutoVelocRes(modelMecanica.getVazaoS(), modelMecanica.getLadoA(), modelMecanica.getLadoB());
+			
+			// retorna a tela os dados enviados para o calculo
+			request.setAttribute("modelMecanica", modelMecanica);
+
+			request.getRequestDispatcher("principal/mecanica/calcularDutos.jsp").forward(request, response);
 
 		} else {
 

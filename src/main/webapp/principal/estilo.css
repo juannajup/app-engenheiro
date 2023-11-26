@@ -95,6 +95,13 @@ small:hover {
 	align-content: center;
 }
 
+.cabecalho {
+	text-align: center;
+	margin: auto;
+	vertical-align: middle;
+	align-content: center;
+}
+
 tbody, td, tfoot, th, thead, tr {
 	border-radius: 10px;
 	border: 2px solid black;

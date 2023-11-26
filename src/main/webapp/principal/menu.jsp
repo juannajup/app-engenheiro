@@ -56,6 +56,7 @@
 							aria-expanded="false" style="color:white;"> Instalações Mecânicas </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/MecanicaServlet?acao=listarBtuh">Calcular ar condicionado split</a> 
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/calcularDutos.jsp">Calcular dutos - velocidade constante</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/MecanicaServlet?acao=listarChapas">Calcular peso de chapa de dutos</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/isolamento_tubulacoes.jsp">Isolamento tubulações frigorigenas</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/mecanica/conversao.jsp">Tabela de conversão de tubos de cobre</a> 

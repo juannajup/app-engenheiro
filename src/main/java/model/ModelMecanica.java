@@ -14,7 +14,6 @@ import javax.persistence.Table;
 //implementar o serializable
 public class ModelMecanica implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -36,11 +35,20 @@ public class ModelMecanica implements Serializable {
 	private Double pesoChapa;
 	private String chapaSelecionada;
 
+	private Double vazaoH;
+	private Double velocidade;
+	private Double vazaoS;
+	private Double area;
+	private Double areaRes;
+	private Double ladoA;
+	private Double ladoB;
+	private Double velocRes;
+
 	public ModelMecanica() {
 		// TODO Auto-generated constructor stub
 	}
-	
-		@Override
+
+	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
@@ -152,7 +160,71 @@ public class ModelMecanica implements Serializable {
 	public void setNumeroDeEquipamentos(Integer numeroDeEquipamentos) {
 		this.numeroDeEquipamentos = numeroDeEquipamentos;
 	}
-	
+
+	public Double getVazaoH() {
+		return vazaoH;
+	}
+
+	public Double getVelocidade() {
+		return velocidade;
+	}
+
+	public Double getVazaoS() {
+		return vazaoS;
+	}
+
+	public Double getArea() {
+		return area;
+	}
+
+	public Double getLadoA() {
+		return ladoA;
+	}
+
+	public Double getLadoB() {
+		return ladoB;
+	}
+
+	public Double getVelocRes() {
+		return velocRes;
+	}
+
+	public void setVazaoH(Double vazaoH) {
+		this.vazaoH = vazaoH;
+	}
+
+	public void setVelocidade(Double velocidade) {
+		this.velocidade = velocidade;
+	}
+
+	public void setVazaoS(Double vazaoS) {
+		this.vazaoS = vazaoS;
+	}
+
+	public void setArea(Double area) {
+		this.area = area;
+	}
+
+	public void setLadoA(Double ladoA) {
+		this.ladoA = ladoA;
+	}
+
+	public void setLadoB(Double ladoB) {
+		this.ladoB = ladoB;
+	}
+
+	public void setVelocRes(Double velocRes) {
+		this.velocRes = velocRes;
+	}
+
+	public Double getAreaRes() {
+		return areaRes;
+	}
+
+	public void setAreaRes(Double areaRes) {
+		this.areaRes = areaRes;
+	}
+
 	/*
 	 * 
 	 * 
@@ -233,9 +305,25 @@ public class ModelMecanica implements Serializable {
 
 		return pesoChapa;
 	}
-	
-	
 
+
+	public Double calcularDutoVazaoS(Double vazaoH) {
+		return vazaoS = vazaoH / 3600;
+
+	}
 	
+	public Double calcularDutoArea(Double velocidade) {
+		return area = vazaoS / velocidade;
+	}
+
+	public Double calcularDutoAreaRes(Double ladoA, Double ladoB) {
+		return areaRes = (ladoA / 1000) * (ladoB / 1000);
+
+	}
+
+	public Double calcularDutoVelocRes(Double vazaoS, Double ladoA, Double ladoB) {
+		return velocRes = vazaoS / ((ladoA / 1000) * (ladoB / 1000));
+
+	}
 
 }

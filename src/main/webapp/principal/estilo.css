@@ -1,6 +1,5 @@
 @charset "ISO-8859-1";
 
-
 body {
 	padding: 0px 2% 0px 2%;
 	background-image: url("../img/projeto.jpg");
@@ -95,6 +94,17 @@ small:hover {
 	align-content: center;
 }
 
+.tabelas-usuarios {
+	align-content: center;
+	text-align: center;
+	width: 100%; /* Garante que a tabela ocupe toda a largura da div */
+	display: table-cell;
+}
+
+.tabelas-usuarios table {
+	min-width: 300px;
+}
+
 .cabecalho {
 	text-align: center;
 	margin: auto;
@@ -130,4 +140,3 @@ tbody, td, tfoot, th, thead, tr {
 		width: 900px;
 	}
 }
-

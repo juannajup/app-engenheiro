@@ -79,6 +79,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="color: white;">Bem-vindo <%= session.getAttribute("usuario") %></a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/UsuarioServlet?acao=listarUsuarios">Usuarios</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/LoginServlet?acao=sair">Sair</a>
 							</div></li>
 						

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import javax.servlet.RequestDispatcher;
 
-@WebFilter(urlPatterns = { "/principal/*" }) // interceptará todas as requisições que ocorrem antes da pasta "principal"
+@WebFilter(urlPatterns = { "/principal/*" }) // interceptarï¿½ todas as requisiï¿½ï¿½es que ocorrem antes da pasta "principal"
 public class FilterAutenticacao implements javax.servlet.Filter {
 
 	public FilterAutenticacao() {

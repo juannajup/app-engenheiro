@@ -8,7 +8,6 @@ import java.util.List;
 
 import connection.SingleConnectionBanco;
 import model.ModelEletrica;
-import model.ModelMecanica;
 
 public class DAOEletrica {
 

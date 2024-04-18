@@ -1,7 +1,7 @@
 
 <table border=0 cellpadding=0 cellspacing=0 width=1249
 	style='border-collapse: collapse; table-layout: fixed; width: 938pt'
-	class="table table-bordered tabelas-eletricas">
+	class="table table-bordered tabelas-eletricas" id="tabela">
 	<col class=xl66 width=257
 		style='mso-width-source: userset; mso-width-alt: 9398; width: 193pt'>
 	<col class=xl66 width=60

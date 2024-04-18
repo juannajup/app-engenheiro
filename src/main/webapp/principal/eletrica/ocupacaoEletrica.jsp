@@ -9,8 +9,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <jsp:include page="/principal/bootstrap-css.jsp"></jsp:include>
-<title>Calcular ocupação de conduto - Eletrica</title>
+<title>Calcul ar ocupação de conduto - Eletrica</title>
 </head>
+<style>
+/* Estilo para o <input> dentro da <td> que contém informações */
+td input[type="text"][data-info="true"] {
+    background-color: #ff6666; /* Cor de fundo quando há informação */
+}
+
+</style>
 <body>
 	<jsp:include page="/principal/menu.jsp"></jsp:include>
 
@@ -70,6 +77,15 @@
 				elementos[p].value = '';
 			}
 		}
+		
+		document.addEventListener("DOMContentLoaded", function() {
+		    var inputs = document.querySelectorAll('#tabela td input[type="text"]');
+		    inputs.forEach(function(input) {
+		        if (input.value.trim() !== '') {
+		            input.setAttribute('data-info', 'true');
+		        }
+		    });
+		});
 	</script>
 </body>
 </html>

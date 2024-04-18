@@ -1,5 +1,5 @@
 <table border=0 cellpadding=0 cellspacing=0 width=734 style='border-collapse:
- collapse;table-layout:fixed;width:550pt' class="table table-bordered tabelas-eletricas">
+ collapse;table-layout:fixed;width:550pt' class="table table-bordered tabelas-eletricas" id="tabela">
  <col width=392 style='mso-width-source:userset;mso-width-alt:14336;width:294pt'>
  <col width=64 style='mso-width-source:userset;mso-width-alt:2340;width:48pt'>
  <col width=75 style='mso-width-source:userset;mso-width-alt:2742;width:56pt'>

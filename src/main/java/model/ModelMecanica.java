@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +22,9 @@ public class ModelMecanica implements Serializable {
 	private Long id;
 	// com equals e hashcode
 	// criar construtor vazio
+
+	@JoinColumn(name = "usuario_id") // Nome da coluna que será a chave estrangeira
+	private Long usuario_id; // Objeto ModelLogin que representa o usuário associado a esta ModelMecanica
 
 	private Double areaDoAmbiente;
 	private Integer numeroDePessoas;
@@ -223,6 +227,15 @@ public class ModelMecanica implements Serializable {
 
 	public void setAreaRes(Double areaRes) {
 		this.areaRes = areaRes;
+
+	}
+
+	public Long getUsuario_id() {
+		return usuario_id;
+	}
+
+	public void setUsuario_id(Long usuario_id) {
+		this.usuario_id = usuario_id;
 	}
 
 	/*
@@ -306,12 +319,11 @@ public class ModelMecanica implements Serializable {
 		return pesoChapa;
 	}
 
-
 	public Double calcularDutoVazaoS(Double vazaoH) {
 		return vazaoS = vazaoH / 3600;
 
 	}
-	
+
 	public Double calcularDutoArea(Double velocidade) {
 		return area = vazaoS / velocidade;
 	}

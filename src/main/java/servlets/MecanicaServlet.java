@@ -28,11 +28,13 @@ public class MecanicaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String acao = request.getParameter("acao");
+		// Recupera o ID do usuário logado da sessão
+	    Long usuarioID = (Long) request.getSession().getAttribute("usuarioID");
 
 		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarBtuh")) {
 
 			try {
-				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicas();
+				List<ModelMecanica> mecanicas = daoMecanica.listarSplitPorUsuario(usuarioID);
 
 				request.setAttribute("mecanicas", mecanicas);
 
@@ -44,7 +46,7 @@ public class MecanicaServlet extends HttpServlet {
 		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarChapas")) {
 
 			try {
-				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicas();
+				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicasPorUsuario(usuarioID);
 
 				request.setAttribute("mecanicas", mecanicas);
 
@@ -67,8 +69,7 @@ public class MecanicaServlet extends HttpServlet {
 
 			// recarrega na tela os calculos restantes apos excluir
 			try {
-				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicas();
-
+				List<ModelMecanica> mecanicas = daoMecanica.listarSplitPorUsuario(usuarioID);
 				request.setAttribute("mecanicas", mecanicas);
 
 				request.getRequestDispatcher("principal/mecanica/calcularBtuh.jsp").forward(request, response);
@@ -94,7 +95,7 @@ public class MecanicaServlet extends HttpServlet {
 
 			// recarrega na tela os calculos restantes apos excluir
 			try {
-				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicas();
+				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicasPorUsuario(usuarioID);
 
 				request.setAttribute("mecanicas", mecanicas);
 
@@ -118,6 +119,7 @@ public class MecanicaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String acao = request.getParameter("acao");
+		Long usuarioID = (Long) request.getSession().getAttribute("usuarioID");
 
 		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("calcularSplit")) {
 
@@ -132,6 +134,7 @@ public class MecanicaServlet extends HttpServlet {
 			modelMecanica.setNumeroDeEquipamentos(Integer.parseInt(numeroDeEquipamentos));
 			modelMecanica.setQuantidadeDeSol(quantidadeDeSol);
 			modelMecanica.setNumeroDePessoas(Integer.parseInt(numeroDePessoas));
+			modelMecanica.setUsuario_id((Long) request.getSession().getAttribute("usuarioID"));
 
 			modelMecanica.calcularSplit(modelMecanica.getAreaDoAmbiente(), modelMecanica.getNumeroDePessoas(),
 					modelMecanica.getQuantidadeDeSol(), modelMecanica.getNumeroDeEquipamentos());
@@ -139,7 +142,7 @@ public class MecanicaServlet extends HttpServlet {
 			daoGeneric.salvar(modelMecanica);
 
 			try {
-				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicas();
+				List<ModelMecanica> mecanicas = daoMecanica.listarSplitPorUsuario(usuarioID);
 				request.setAttribute("mecanicas", mecanicas);
 
 			} catch (Exception e) {
@@ -162,14 +165,15 @@ public class MecanicaServlet extends HttpServlet {
 			modelMecanica.setLarguraDuto(Double.parseDouble(larguraDuto));
 			modelMecanica.setAlturaDuto(Double.parseDouble(alturaDuto));
 			modelMecanica.setComprimentoDuto(Double.parseDouble(comprimentoDuto));
-
+			modelMecanica.setUsuario_id((Long) request.getSession().getAttribute("usuarioID"));
+			
 			modelMecanica.calcularPesoDeChapaDeDuto(modelMecanica.getAlturaDuto(), modelMecanica.getLarguraDuto(),
 					modelMecanica.getComprimentoDuto());
 
 			daoGeneric.salvar(modelMecanica);
 
 			try {
-				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicas();
+				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicasPorUsuario(usuarioID);
 				request.setAttribute("mecanicas", mecanicas);
 
 			} catch (Exception e) {
@@ -194,6 +198,7 @@ public class MecanicaServlet extends HttpServlet {
 			modelMecanica.setVelocidade(Double.parseDouble(velocidade));
 			modelMecanica.setLadoA(Double.parseDouble(ladoA));
 			modelMecanica.setLadoB(Double.parseDouble(ladoB));
+			modelMecanica.setUsuario_id((Long) request.getSession().getAttribute("usuarioID"));
 
 			modelMecanica.calcularDutoVazaoS(modelMecanica.getVazaoH());
 			
@@ -211,7 +216,7 @@ public class MecanicaServlet extends HttpServlet {
 		} else {
 
 			try {
-				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicas();
+				List<ModelMecanica> mecanicas = daoMecanica.listarMecanicasPorUsuario(usuarioID);
 				request.setAttribute("mecanicas", mecanicas);
 
 			} catch (Exception e) {

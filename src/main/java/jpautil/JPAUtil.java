@@ -9,9 +9,9 @@ public class JPAUtil {
 	private static EntityManagerFactory factory;
 	
 	static {
-		if(factory == null);{
-			
-			factory = Persistence.createEntityManagerFactory("app-engenheiro");
+		if (factory == null) {
+			factory = Persistence
+					.createEntityManagerFactory("app-engenheiro");
 		}
 	}
 	

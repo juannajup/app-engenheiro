@@ -17,6 +17,66 @@ public class DAOMecanica {
 		connection = SingleConnectionBanco.getConnection();
 	}
 
+	public List<ModelMecanica> listarSplitPorUsuario(long usuarioID) throws Exception {
+		List<ModelMecanica> retorno = new ArrayList<>();
+		
+		String sql = "SELECT * FROM modelmecanica WHERE usuario_id = ? AND areadoambiente IS NOT NULL ORDER BY id DESC";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setLong(1, usuarioID);
+		
+		ResultSet rs = preparedStatement.executeQuery();
+		
+		while (rs.next()) {
+			ModelMecanica modelMecanica = new ModelMecanica();
+			modelMecanica.setId(rs.getLong("id"));
+			modelMecanica.setAreaDoAmbiente(rs.getDouble("areadoambiente"));
+			modelMecanica.setNumeroDePessoas(rs.getInt("numerodepessoas"));
+			modelMecanica.setBtuh(rs.getDouble("btuh"));
+			modelMecanica.setQuantidadeDeSol(rs.getString("quantidadedesol"));
+			modelMecanica.setNumeroDeEquipamentos(rs.getInt("numerodeequipamentos"));
+			modelMecanica.setAlturaDuto(rs.getDouble("alturaduto"));
+			modelMecanica.setLarguraDuto(rs.getDouble("larguraduto"));
+			modelMecanica.setComprimentoDuto(rs.getDouble("comprimentoduto"));
+			modelMecanica.setAreaChapa(rs.getDouble("areachapa"));
+			modelMecanica.setPesoChapa(rs.getDouble("pesochapa"));
+			modelMecanica.setChapaSelecionada(rs.getString("chapaselecionada"));
+			
+			retorno.add(modelMecanica);
+		}
+		
+		return retorno;
+	}
+	
+	public List<ModelMecanica> listarMecanicasPorUsuario(long usuarioID) throws Exception {
+	    List<ModelMecanica> retorno = new ArrayList<>();
+
+	    String sql = "SELECT * FROM modelmecanica WHERE usuario_id = ? ORDER BY id DESC";
+	    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+	    preparedStatement.setLong(1, usuarioID);
+
+	    ResultSet rs = preparedStatement.executeQuery();
+
+	    while (rs.next()) {
+	        ModelMecanica modelMecanica = new ModelMecanica();
+	        modelMecanica.setId(rs.getLong("id"));
+	        modelMecanica.setAreaDoAmbiente(rs.getDouble("areadoambiente"));
+	        modelMecanica.setNumeroDePessoas(rs.getInt("numerodepessoas"));
+	        modelMecanica.setBtuh(rs.getDouble("btuh"));
+	        modelMecanica.setQuantidadeDeSol(rs.getString("quantidadedesol"));
+	        modelMecanica.setNumeroDeEquipamentos(rs.getInt("numerodeequipamentos"));
+	        modelMecanica.setAlturaDuto(rs.getDouble("alturaduto"));
+	        modelMecanica.setLarguraDuto(rs.getDouble("larguraduto"));
+	        modelMecanica.setComprimentoDuto(rs.getDouble("comprimentoduto"));
+	        modelMecanica.setAreaChapa(rs.getDouble("areachapa"));
+	        modelMecanica.setPesoChapa(rs.getDouble("pesochapa"));
+	        modelMecanica.setChapaSelecionada(rs.getString("chapaselecionada"));
+
+	        retorno.add(modelMecanica);
+	    }
+
+	    return retorno;
+	}
+	
 	public List<ModelMecanica> listarMecanicas() throws Exception {
 		
 		List<ModelMecanica> retorno = new ArrayList<ModelMecanica>();

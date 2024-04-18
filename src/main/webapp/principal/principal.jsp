@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -18,7 +19,7 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid list-group form-control">
+	<!-- <div class="container-fluid list-group form-control">
 		<ul>
 			<h2>Novas funcionalidades:</h2>
 			<li>
@@ -41,7 +42,7 @@
 			<li><h3>Dimensionamento de caixa coletora de oleo</h3></li>
 			<li><h3>Dimensionamento de sumidouro</h3></li>
 		</ul>
-	</div>
+	</div>  -->
 	<footer id="rodape">
 		<a href="https://github.com/juannajup" target="_blank">Desenvolvido
 			por Juan Pablo - https://github.com/juannajup</a>

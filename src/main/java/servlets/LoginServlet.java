@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
 		String url = request.getParameter("url");
-
+		
 		try {
 
 			if (email != null && !email.isEmpty() && senha != null && !senha.isEmpty()) {
@@ -56,6 +56,10 @@ public class LoginServlet extends HttpServlet {
 				if (daoLoginRepository.validarAutenticacao(modelLogin)) {
 
 					request.getSession().setAttribute("usuario", modelLogin.getEmail());
+					 // Obtém o ID do usuário autenticado
+				    long usuarioID = daoLoginRepository.obterIdUsuario(modelLogin);
+				    // Armazena o ID do usuário na sessão
+				    request.getSession().setAttribute("usuarioID", usuarioID);
 
 					if (url == null || url.equals("null")) {
 						url = "principal/principal.jsp";
@@ -70,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 					redirecionar.forward(request, response);
 				}
 
-			} else {
+			}  else {
 				RequestDispatcher redirecionar = request.getRequestDispatcher("index.jsp");
 				request.setAttribute("msg", "Informe o login e a senha corretamente");
 				redirecionar.forward(request, response);

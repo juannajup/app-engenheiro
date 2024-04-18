@@ -1,6 +1,6 @@
 <table border=0 cellpadding=0 cellspacing=0 width=789
 	style='border-collapse: collapse; table-layout: fixed; width: 594pt'
-	class="table table-bordered tabelas-eletricas">
+	class="table table-bordered tabelas-eletricas" id="tabela">
 	<col width=338
 		style='mso-width-source: userset; mso-width-alt: 12361; width: 254pt'>
 	<col width=77 span=5

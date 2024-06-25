@@ -17,12 +17,13 @@ public class DAOEletrica {
 		connection = SingleConnectionBanco.getConnection();
 	}
 
-	public List<ModelEletrica> listarEletricas() throws Exception {
+	public List<ModelEletrica> listarEletricas(long usuarioID) throws Exception {
 		
 		List<ModelEletrica> retorno = new ArrayList<ModelEletrica>();
 
-		String sql = "select * from modeleletrica order by id desc";
+		String sql = "select * from modeleletrica WHERE usuario_id = ? order by id desc";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setLong(1, usuarioID);
 
 		ResultSet rs = preparedStatement.executeQuery();
 

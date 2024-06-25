@@ -116,9 +116,9 @@
 
 		</form>
 		<br>
-		<div style="height: 300px; overflow: scroll;">
-			<table class="table table-bordered tabelas-mecanicas form-control"
-				id="tabelaHidrossanitarios" style="width: 70%;">
+		<div style="height: 700px; overflow: scroll;text-align: -webkit-center;">
+			<table class=" tabelas-usuarios table table-bordered form-control"
+				id="tabelaHidrossanitarios">
 
 				<thead>
 					<tr class="captionRow">

@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +37,17 @@ public class ModelEletrica implements Serializable {
 	private String condutor;
 	private Double correnteDisjuntor;
 	private Double correnteFatorDeAgrupamento;
+
+	@JoinColumn(name = "usuario_id") // Nome da coluna que serÃ¡ a chave estrangeira
+	private Long usuario_id; // Objeto ModelLogin que representa o usuÃ¡rio associado a esta ModelEletrica
+
+	public Long getUsuario_id() {
+		return usuario_id;
+	}
+
+	public void setUsuario_id(Long usuario_id) {
+		this.usuario_id = usuario_id;
+	}
 
 	public ModelEletrica() {
 		// TODO Auto-generated constructor stub
@@ -240,13 +252,13 @@ public class ModelEletrica implements Serializable {
 
 			if (condutor.equalsIgnoreCase("aluminio")) {
 
-				// quando o cabo é de aluminio
+				// quando o cabo ï¿½ de aluminio
 				quedaCalculada = (200 * 0.0282 * comprimento * corrente) / (caboTeste * tensao);
 				return quedaCalculada;
 
 			} else {
 
-				// quando o cabo é de cobre
+				// quando o cabo ï¿½ de cobre
 				quedaCalculada = (200 * 0.0179 * comprimento * corrente) / (caboTeste * tensao);
 				return quedaCalculada;
 
@@ -256,13 +268,13 @@ public class ModelEletrica implements Serializable {
 
 			if (condutor.equalsIgnoreCase("aluminio")) {
 
-				// quando o cabo é de aluminio
+				// quando o cabo ï¿½ de aluminio
 				quedaCalculada = (173.2 * 0.0282 * comprimento * corrente) / (caboTeste * tensao);
 				return quedaCalculada;
 
 			} else {
 
-				// quando o cabo é de cobre
+				// quando o cabo ï¿½ de cobre
 				quedaCalculada = (173.2 * 0.0179 * comprimento * corrente) / (caboTeste * tensao);
 				return quedaCalculada;
 
@@ -282,13 +294,13 @@ public class ModelEletrica implements Serializable {
 
 			if (condutor.equalsIgnoreCase("aluminio")) {
 
-				// quando o cabo é de aluminio
+				// quando o cabo ï¿½ de aluminio
 				caboCalc = (200 * 0.0282 * comprimento * corrente) / (quedaPermitida * tensao);
 				return caboCalc;
 
 			} else {
 
-				// quando o cabo é de cobre
+				// quando o cabo ï¿½ de cobre
 				caboCalc = (200 * 0.0179 * comprimento * corrente) / (quedaPermitida * tensao);
 				return caboCalc;
 
@@ -298,13 +310,13 @@ public class ModelEletrica implements Serializable {
 
 			if (condutor.equalsIgnoreCase("aluminio")) {
 
-				// quando o cabo é de aluminio
+				// quando o cabo ï¿½ de aluminio
 				caboCalc = (173.2 * 0.0282 * comprimento * corrente) / (quedaPermitida * tensao);
 				return caboCalc;
 
 			} else {
 
-				// quando o cabo é de cobre
+				// quando o cabo ï¿½ de cobre
 				caboCalc = (173.2 * 0.0179 * comprimento * corrente) / (quedaPermitida * tensao);
 				return caboCalc;
 

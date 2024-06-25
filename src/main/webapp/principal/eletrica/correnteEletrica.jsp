@@ -87,9 +87,9 @@
 		<small>*Caso seja bifasico 220V, marcar monofasico 220V</small>
 		
 		<br>
-		<div style="height: 300px; overflow: scroll;">
-			<table class="table table-bordered tabelas-mecanicas form-control"
-				id="tabelaEletricas" style="width: 70%;">
+		<div style="height: 700px; overflow: scroll; text-align: -webkit-center;">
+			<table class=" tabelas-usuarios table table-bordered form-control"
+				id="tabelaEletricas">
 
 				<thead>
 					<tr class="captionRow">

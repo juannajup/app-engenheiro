@@ -36,11 +36,12 @@ public class EletricaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String acao = request.getParameter("acao");
+		Long usuarioID = (Long) request.getSession().getAttribute("usuarioID");
 
 		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarCorrente")) {
 
 			try {
-				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas(usuarioID);
 				request.setAttribute("eletricas", eletrica);
 
 				request.getRequestDispatcher("principal/eletrica/correnteEletrica.jsp").forward(request, response);
@@ -51,7 +52,7 @@ public class EletricaServlet extends HttpServlet {
 		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarQueda")) {
 
 			try {
-				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas(usuarioID);
 				request.setAttribute("eletricas", eletrica);
 
 				request.getRequestDispatcher("principal/eletrica/quedaDeTensao.jsp").forward(request, response);
@@ -96,7 +97,7 @@ public class EletricaServlet extends HttpServlet {
 			// recarrega na tela os calculos restantes apos excluir
 			try {
 
-				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas(usuarioID);
 				request.setAttribute("eletricas", eletrica);
 
 				request.getRequestDispatcher("principal/eletrica/correnteEletrica.jsp").forward(request, response);
@@ -123,7 +124,7 @@ public class EletricaServlet extends HttpServlet {
 			// recarrega na tela os calculos restantes apos excluir
 			try {
 
-				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas(usuarioID);
 				request.setAttribute("eletricas", eletrica);
 
 				request.getRequestDispatcher("principal/eletrica/quedaDeTensao.jsp").forward(request, response);
@@ -201,6 +202,7 @@ public class EletricaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String acao = request.getParameter("acao");
+		Long usuarioID = (Long) request.getSession().getAttribute("usuarioID");
 
 		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("corrente")) {
 
@@ -215,8 +217,9 @@ public class EletricaServlet extends HttpServlet {
 			modelEletrica.setPotencia(Double.parseDouble(potencia));
 			modelEletrica.setFatorDePotencia(Double.parseDouble(fatorDePotencia));
 			modelEletrica.setRede(rede);
+			modelEletrica.setUsuario_id((Long) request.getSession().getAttribute("usuarioID"));
 
-			// verifica se a tensao é 220V ou 380V antes de calcular a corrente
+			// verifica se a tensao ï¿½ 220V ou 380V antes de calcular a corrente
 			if (modelEletrica.getTensao() == 110 && rede.equals("monofasico")) {
 				modelEletrica.calcularCorrenteMonofasica(modelEletrica.getTensao(), modelEletrica.getPotencia(),
 						modelEletrica.getFatorDePotencia());
@@ -239,13 +242,13 @@ public class EletricaServlet extends HttpServlet {
 			modelEletrica.calcularCorrenteDisjuntor(modelEletrica.getCorrente());
 
 			// calcular a corrente minima para o condutor nao entrar no calculo da taxa de
-			// ocupação
+			// ocupaï¿½ï¿½o
 			modelEletrica.calcularCorrenteFatorDeAgrupamento(modelEletrica.getCorrente());
 
 			daoGeneric.salvar(modelEletrica);
 
 			try {
-				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas(usuarioID);
 				request.setAttribute("eletricas", eletrica);
 
 			} catch (Exception e) {
@@ -275,6 +278,7 @@ public class EletricaServlet extends HttpServlet {
 			modelEletrica.setQuedaPermitida(Double.parseDouble(quedaPermitida));
 			modelEletrica.setCaboTeste(Double.parseDouble(caboTeste));
 			modelEletrica.setCondutor(condutor);
+			modelEletrica.setUsuario_id((Long) request.getSession().getAttribute("usuarioID"));
 
 			modelEletrica.calcularQuedaDeTensao(modelEletrica.getCorrente(), modelEletrica.getComprimento(),
 					modelEletrica.getCaboTeste(), modelEletrica.getCondutor());
@@ -284,7 +288,7 @@ public class EletricaServlet extends HttpServlet {
 			daoGeneric.salvar(modelEletrica);
 
 			try {
-				List<ModelEletrica> eletrica = daoEletrica.listarEletricas();
+				List<ModelEletrica> eletrica = daoEletrica.listarEletricas(usuarioID);
 				request.setAttribute("eletricas", eletrica);
 
 			} catch (Exception e) {

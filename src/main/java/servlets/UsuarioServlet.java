@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.metamodel.source.annotations.xml.mocker.MockHelper;
+
 import dao.DAOGeneric;
 import dao.DAOLoginRepository;
 import model.ModelLogin;
@@ -19,6 +21,7 @@ public class UsuarioServlet extends HttpServlet {
 
 	private DAOLoginRepository daoLoginRepository = new DAOLoginRepository();
 	private DAOGeneric<ModelLogin> daoGeneric = new DAOGeneric<ModelLogin>();
+	ModelLogin modelLogin = new ModelLogin();
 
 	public UsuarioServlet() {
 		super();
@@ -26,7 +29,7 @@ public class UsuarioServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String acao = request.getParameter("acao");
 
 		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarUsuarios")) {
@@ -39,6 +42,30 @@ public class UsuarioServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("editarUsuario")) {
+
+			String idUsuario = request.getParameter("id");
+			ModelLogin usuario = null;
+			try {
+				usuario = daoLoginRepository.consultaUsuarioID(idUsuario);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} // Substitua 'daoUsuario' pelo seu objeto de acesso a dados
+			request.setAttribute("usuario", usuario);
+			request.getRequestDispatcher("principal/editarUsuario.jsp").forward(request, response);
+
+		} else if (acao != null && !acao.isEmpty() && acao.equals("editarUsuarioEspecifico")) {
+
+			String idUsuario = request.getParameter("usuarioID");
+			ModelLogin usuario = null;
+			try {
+				usuario = daoLoginRepository.consultaUsuarioID(idUsuario);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} // Substitua 'daoUsuario' pelo seu objeto de acesso a dados
+			request.setAttribute("usuario", usuario);
+			request.getRequestDispatcher("principal/usuarioEdit.jsp").forward(request, response);
 
 		} else if (acao != null && !acao.isEmpty() && acao.equals("excluirUsuario")) {
 
@@ -84,14 +111,31 @@ public class UsuarioServlet extends HttpServlet {
 			String nome = request.getParameter("nome");
 			String email = request.getParameter("email");
 			String senha = request.getParameter("senha");
+			String tipoUsuario = request.getParameter("tipoUsuario");
 
 			ModelLogin modelLogin = new ModelLogin();
 
 			modelLogin.setNome(nome);
 			modelLogin.setEmail(email);
 			modelLogin.setSenha(senha);
+			modelLogin.setTipoUsuario(tipoUsuario);
 
-			daoGeneric.salvar(modelLogin);
+			try {
+				// Verifica se o email já existe
+				if (daoLoginRepository.emailExiste(email)) {
+					request.setAttribute("mensagemErro", "O email já está cadastrado.");
+				} else {
+					// Salva o novo usuário
+					daoGeneric.salvar(modelLogin);
+
+					// Lista os usuários atualizados
+					List<ModelLogin> login = daoLoginRepository.listarUsuarios();
+					request.setAttribute("logins", login);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				request.setAttribute("mensagemErro", "Ocorreu um erro ao tentar cadastrar o usuário.");
+			}
 
 			try {
 				List<ModelLogin> login = daoLoginRepository.listarUsuarios();
@@ -106,10 +150,60 @@ public class UsuarioServlet extends HttpServlet {
 
 			request.getRequestDispatcher("principal/eng.jsp").forward(request, response);
 
+		} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("atualizarUsuario")) {
+
+			int idUsuario = Integer.parseInt(request.getParameter("id"));
+			String nome = request.getParameter("nome");
+			String email = request.getParameter("email");
+			String senha = request.getParameter("senha");
+			String tipoUsuario = request.getParameter("tipoUsuario");
+
+			// Aqui você deve atualizar o usuário no banco de dados com os novos dados
+			DAOLoginRepository usuarioDAO = new DAOLoginRepository();
+			boolean sucesso = usuarioDAO.atualizarUsuario(idUsuario, nome, email, senha, tipoUsuario);
+
+			if (sucesso) {
+
+				// Após atualizar o usuário com sucesso, carrega novamente a lista de usuários
+				List<ModelLogin> usuarios = null;
+				try {
+					usuarios = daoLoginRepository.listarUsuarios();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				request.setAttribute("logins", usuarios);
+
+				request.getRequestDispatcher("principal/eng.jsp").forward(request, response);
+
+			} else {
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			}
+		}
+
+		else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("atualizarUsuarioEspecifico")) {
+
+			int idUsuario = Integer.parseInt(request.getParameter("id"));
+			String nome = request.getParameter("nome");
+			String email = request.getParameter("email");
+			String senha = request.getParameter("senha");
+			String tipoUsuario = request.getParameter("tipoUsuario");
+
+			// Aqui você deve atualizar o usuário no banco de dados com os novos dados
+			DAOLoginRepository usuarioDAO = new DAOLoginRepository();
+			boolean sucesso = usuarioDAO.atualizarUsuario(idUsuario, nome, email, senha, tipoUsuario);
+
+			if (sucesso) {
+				ModelLogin usuarios = new ModelLogin();
+				request.setAttribute("usuario", usuarios);
+				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
+
+			} else {
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			}
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
-		
+
 	}
 
 }

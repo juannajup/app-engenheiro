@@ -19,7 +19,16 @@ public class ModelLogin implements Serializable {
 	private String email;
 	private String senha;
 	private String nome;
-	
+	private String tipoUsuario;
+
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+
 	public boolean isNovo() {
 
 		if (this.id == null) {

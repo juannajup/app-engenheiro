@@ -54,8 +54,11 @@ public class LoginServlet extends HttpServlet {
 				modelLogin.setSenha(senha);
 
 				if (daoLoginRepository.validarAutenticacao(modelLogin)) {
+					
+					modelLogin = daoLoginRepository.consultaUsuario(email);
 
-					request.getSession().setAttribute("usuario", modelLogin.getEmail());
+					request.getSession().setAttribute("usuario", modelLogin.getNome());
+					request.getSession().setAttribute("administrador", modelLogin.getTipoUsuario());
 					 // Obtém o ID do usuário autenticado
 				    long usuarioID = daoLoginRepository.obterIdUsuario(modelLogin);
 				    // Armazena o ID do usuário na sessão

@@ -27,17 +27,47 @@
 			</div>
 			<div class="mb-3">
 				<label for="email" class="form-label">Email</label> 
-				<input type="text" class="form-control" id="email" required="required"
+				<input type="email" class="form-control" id="email" required="required"
 					aria-describedby="email" name="email" value="${modelLogin.email}">
 			</div>
 			<div class="mb-3">
 				<label for="senha" class="form-label">Senha</label> 
-				<input type="text" class="form-control" id="senha" required="required"
+				<input type="password" class="form-control" id="senha" required="required"
 					aria-describedby="senha" name="senha" value="${modelLogin.senha}">
+			</div>
+			
+			<div class="mb-3 form-check">
+				<!-- Codigo java inline para retornar à tela, após a requisição, o valor marcado no input type radio -->
+				<label for="rede" class="form-label">Tipo de usuario</label> 
+				<br> 
+				
+				<!-- Codigo java inline para retornar à tela, após a requisição, o valor marcado no input type radio -->
+				<input type="radio" id="tipoUsuario" aria-describedby="tipoUsuario" name="tipoUsuario"
+					value="administrador" required="required"
+					<%ModelLogin modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+					if (modelLogin != null && modelLogin.getTipoUsuario().equalsIgnoreCase("administrador")) {
+					out.print(" ");
+					out.print("checked=\"checked\"");
+					out.print(" ");
+					}%>>
+				<label for="tipoUsuario" class="form-label">Administrador</label> 
+				
+				<input type="radio" id="tipoUsuario" aria-describedby="tipoUsuario" name="tipoUsuario" value="usuario" required="required"
+				<% if (modelLogin != null && modelLogin.getTipoUsuario().equalsIgnoreCase("usuario")) {
+					out.print(" ");
+					out.print("checked=\"checked\"");
+					out.print(" ");
+					}%>
+				>
+				<label for="tipoUsuario" class="form-label">Usuario</label>
+				
+				
 			</div>
 
 			<button type="submit" class="btn btn-success">Cadastrar</button>
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
+			<br>
+             <span style="color: red;">${mensagemErro}</span>
 			</form>
 		
 		<br>
@@ -47,12 +77,14 @@
 
 				<thead>
 					<tr class="captionRow">
-						<th colspan="4"><h3>Usuarios cadastrados</h3></th>
+						<th colspan="6"><h3>Usuarios cadastrados</h3></th>
 					</tr>
 					<tr style="text-align: center">
 						<th class="cabecalho" scope="col">ID</th>
 						<th class="cabecalho" scope="col">Nome</th>
 						<th class="cabecalho" scope="col">Email</th>
+						<th class="cabecalho" scope="col">Tipo de Usuario</th>
+						<th class="cabecalho" scope="col">Editar</th>
 						<th class="cabecalho" scope="col">Excluir</th>
 					</tr>
 				</thead>
@@ -62,7 +94,10 @@
 							<td><c:out value="${m.id}"></c:out></td>
 							<td><c:out value="${m.nome}"></c:out></td>
 							<td><c:out value="${m.email}"></c:out></td>
+							<td><c:out value="${m.tipoUsuario}"></c:out></td>
 							<td><a class="btn btn-success"
+    								href="<%= request.getContextPath() %>/UsuarioServlet?acao=editarUsuario&id=${m.id}">Editar</a></td>
+							<td><a class="btn btn-info" onclick="return alerta();"
 									href="<%= request.getContextPath() %>/UsuarioServlet?acao=excluirUsuario&id=${m.id}">Excluir</a></td>
 						</tr>
 					</c:forEach>
@@ -80,6 +115,21 @@
 	    
 	    for (p = 0; p < elementos.length; p ++){
 		    elementos[p].value = '';
+	    }
+	}
+	
+	
+	function alerta() {
+	    // Exibe o diálogo de confirmação
+	    var confirmacao = confirm("Tem certeza que deseja excluir esse usuário?");
+
+	    // Verifica se o usuário confirmou a exclusão
+	    if (confirmacao) {
+	        // Se confirmado, retorna true para permitir a exclusão
+	        return true;
+	    } else {
+	        // Se cancelado, retorna false para cancelar a exclusão
+	        return false;
 	    }
 	}
 	</script>

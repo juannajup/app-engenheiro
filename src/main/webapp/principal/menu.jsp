@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+    String admin = (String) request.getSession().getAttribute("administrador");
+%>
+
 <header>
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light form-control">
 	
 	<div id="container-menu" class="container-fluid">
@@ -79,7 +86,19 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false" style="color: white;">Bem-vindo <%= session.getAttribute("usuario") %></a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								
+								 <% if (admin != null && admin.equalsIgnoreCase("administrador")) { %>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/UsuarioServlet?acao=listarUsuarios">Usuarios</a> 
+								 <% } %>
+
+								<%
+								// Recupera o ID do usuário da sessão
+									Long usuarioIDLong = (Long) session.getAttribute("usuarioID");
+									String usuarioID = usuarioIDLong != null ? usuarioIDLong.toString() : null;
+								%>
+								<a class="dropdown-item"
+									href="<%=request.getContextPath()%>/UsuarioServlet?acao=editarUsuarioEspecifico&usuarioID=<%=usuarioID%>">Editar
+									Perfil</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/LoginServlet?acao=sair">Sair</a>
 							</div></li>
 						

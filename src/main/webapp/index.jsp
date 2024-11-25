@@ -45,6 +45,8 @@ body{
               <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
               <br>
               <span style="color: red;">${msg}</span>
+              <br>
+              <a href="cadastro.jsp">É novo aqui? Crie seu usuario</a>
 			</form>
             </div>
 

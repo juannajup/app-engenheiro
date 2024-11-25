@@ -54,7 +54,7 @@
 				<label for="tipoUsuarioUsuario" class="form-label">Usuário</label>
 			</div>
 
-			<br> <input type="hidden" name="id" value="${usuario.id}">
+			<input type="hidden" name="id" value="${usuario.id}">
 			<!-- Adicione um campo oculto para armazenar o ID do usuário -->
 
 			<button type="submit" class="btn btn-success">Atualizar</button>

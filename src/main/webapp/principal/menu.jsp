@@ -41,6 +41,7 @@
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/ocupacaoDados.jsp">Calcular ocupação de conduto - dados e voz</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/ocupacaoEletrica.jsp">Calcular ocupação de conduto - eletrica</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/EletricaServlet?acao=listarQueda">Calcular queda de tensão</a>
+								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/selecaoBarramento.jsp">Seleção barramento elétrico</a>
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/principal/eletrica/tabelas5410.jsp">Tabelas NBR 5410</a>
 							</div></li>
 							
@@ -97,7 +98,7 @@
 									String usuarioID = usuarioIDLong != null ? usuarioIDLong.toString() : null;
 								%>
 								<a class="dropdown-item"
-									href="<%=request.getContextPath()%>/UsuarioServlet?acao=editarUsuarioEspecifico&usuarioID=<%=usuarioID%>">Editar
+									href="<%=request.getContextPath()%>/UsuarioServlet?acao=editarUsuarioEspecifico">Editar
 									Perfil</a> 
 								<a class="dropdown-item" href="<%=request.getContextPath() %>/LoginServlet?acao=sair">Sair</a>
 							</div></li>

@@ -114,8 +114,11 @@
 							<td><c:out value="${m.quedaPermitida}"></c:out></td>
 							<td><c:out value="${m.caboTeste}"></c:out></td>
 							<td><c:out value="${m.condutor}"></c:out></td>
-							<td><c:out value="${m.quedaCalculada}"></c:out></td>
-							<td><c:out value="${m.caboCalc}"></c:out></td>
+							<td><fmt:formatNumber value="${m.quedaCalculada}" type="number" 
+							maxFractionDigits="2" minFractionDigits="2"/></td>
+							<td><fmt:formatNumber value="${m.caboCalc}" type="number" 
+							maxFractionDigits="2" minFractionDigits="2"/></td>
+							
 							<td><a class="btn btn-success"
 									href="<%= request.getContextPath() %>/EletricaServlet?acao=excluirQueda&id=${m.id}">Excluir</a></td>
 						</tr>

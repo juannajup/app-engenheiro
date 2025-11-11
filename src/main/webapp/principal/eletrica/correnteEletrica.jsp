@@ -75,12 +75,8 @@
 				<input type="text" class="form-control" id="correnteDisjuntor" aria-describedby="correnteDisjuntor" name="correnteDisjuntor" 
 				value="<fmt:formatNumber pattern = "#"  value = "${modelEletrica.correnteDisjuntor}" />" readonly="readonly">
 			</div>
-			<div class="mb-3">
-				<label for="amper" class="form-label">Capacidade de corrente minima do condutor para não entrar no calculo do fator de agrupamento (A)</label> 
-				<input type="text" class="form-control" id="correnteFatorDeAgrupamento" aria-describedby="correnteFatorDeAgrupamento" name="correnteFatorDeAgrupamento" 
-				value="<fmt:formatNumber pattern = "#"  value = "${modelEletrica.correnteFatorDeAgrupamento}" />" readonly="readonly">
-			</div>
-
+			
+			
 			<button type="submit" class="btn btn-success">Calcular</button>
 			<button type="submit" class="btn btn-secondary" onclick="limpar();">Limpar</button>
 			</form>
@@ -104,7 +100,6 @@
 						<th class="cabecalho" scope="col">Volt-amper</th>
 						<th class="cabecalho" scope="col">Corrente</th>
 						<th class="cabecalho" scope="col">Disjuntor</th>
-						<th class="cabecalho" scope="col">1/3 corrente do cabo</th>
 						<th class="cabecalho" scope="col">Excluir</th>
 					</tr>
 				</thead>
@@ -116,10 +111,12 @@
 							<td><c:out value="${m.rede}"></c:out></td>
 							<td><c:out value="${m.potencia}"></c:out></td>
 							<td><c:out value="${m.fatorDePotencia}"></c:out></td>
-							<td><c:out value="${m.voltAmper}"></c:out></td>
-							<td><c:out value="${m.corrente}"></c:out></td>
-							<td><c:out value="${m.correnteDisjuntor}"></c:out></td>
-							<td><c:out value="${m.correnteFatorDeAgrupamento}"></c:out></td>
+							<td><fmt:formatNumber value="${m.voltAmper}" type="number" 
+							maxFractionDigits="2" minFractionDigits="2"/></td>
+							<td><fmt:formatNumber value="${m.corrente}" type="number" 
+							maxFractionDigits="2" minFractionDigits="2"/></td>
+							<td><fmt:formatNumber value="${m.correnteDisjuntor}" type="number" 
+							maxFractionDigits="2" minFractionDigits="2"/></td>
 							<td><a class="btn btn-success"
 									href="<%= request.getContextPath() %>/EletricaServlet?acao=excluirCorrente&id=${m.id}">Excluir</a></td>
 						</tr>
